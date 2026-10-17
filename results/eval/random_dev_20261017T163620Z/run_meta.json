@@ -1,0 +1,86 @@
+{
+  "timestamp_utc": "20261017T163620Z",
+  "agent": "random",
+  "agent_version": "random",
+  "agent_kwargs": {},
+  "checkpoint_step": null,
+  "split": "dev",
+  "games": [
+    "cn04-2fe56bfb",
+    "ls20-9607627b",
+    "s5i5-18d95033",
+    "tu93-0768757b"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "budget": 1000,
+  "click_grid": 8,
+  "only_reset_levels_env": null,
+  "git_commit": "unknown",
+  "versions": {
+    "python": "3.12.15",
+    "arc-agi": "0.9.9",
+    "arcengine": "0.9.3",
+    "gymnasium": "1.4.0",
+    "numpy": "2.4.4",
+    "torch": "not installed",
+    "stable-baselines3": "not installed",
+    "sb3-contrib": "not installed"
+  },
+  "hardware": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+    "cpu_count": 12,
+    "processor": "",
+    "cuda": null
+  },
+  "config": {
+    "games": {
+      "train": [
+        "ar25-0c556536",
+        "cd82-fb555c5d",
+        "dc22-fdcac232",
+        "ft09-0d8bbf25",
+        "lf52-271a04aa",
+        "lp85-305b61c3",
+        "m0r0-492f87ba",
+        "r11l-495a7899",
+        "re86-8af5384d",
+        "sc25-635fd71a",
+        "sp80-589a99af",
+        "tn36-ef4dde99",
+        "tr87-cd924810",
+        "wa30-ee6fef47"
+      ],
+      "dev": [
+        "cn04-2fe56bfb",
+        "ls20-9607627b",
+        "s5i5-18d95033",
+        "tu93-0768757b"
+      ],
+      "heldout": [
+        "bp35-0a0ad940",
+        "g50t-5849a774",
+        "ka59-38d34dbb",
+        "sb26-7fbdac44",
+        "sk48-d8078629",
+        "su15-1944f8ab",
+        "vc33-5430563c"
+      ]
+    },
+    "eval": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "game_seed": "same_as_run",
+      "max_actions_per_game": 1000,
+      "max_seconds_per_game": null,
+      "click_grid": 8,
+      "operation_mode": "normal"
+    }
+  }
+}

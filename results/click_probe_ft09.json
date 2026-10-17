@@ -1,0 +1,42 @@
+{
+  "game_id": "ft09-0d8bbf25",
+  "stride": 1,
+  "clicks": 4096,
+  "seconds": 2.5,
+  "responsive_pixels": 288,
+  "responsive_fraction": 0.0703,
+  "responsive_regions": 8,
+  "region_sizes": [
+    36,
+    36,
+    36,
+    36,
+    36,
+    36,
+    36,
+    36
+  ],
+  "game_over_clicks": 0,
+  "lattices": {
+    "4x4": {
+      "targets": 16,
+      "regions_reachable": 4,
+      "coverage": 0.5
+    },
+    "8x8": {
+      "targets": 64,
+      "regions_reachable": 8,
+      "coverage": 1.0
+    },
+    "16x16": {
+      "targets": 256,
+      "regions_reachable": 8,
+      "coverage": 1.0
+    },
+    "32x32": {
+      "targets": 1024,
+      "regions_reachable": 8,
+      "coverage": 1.0
+    }
+  }
+}
