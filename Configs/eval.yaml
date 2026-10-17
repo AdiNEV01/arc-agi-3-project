@@ -1,0 +1,43 @@
+# Shared evaluation protocol. Agree on this ONCE as a team, then freeze it.
+# Any change after baselines are run means re-running every agent.
+
+games:
+  # Stratified by tag (keyboard / click / keyboard_click / untagged),
+  # shuffled with random.Random(2026). Fixed on 17 Oct 2026; do not move games.
+  # Held-out games are used only for final reported numbers.
+  train:
+    - ar25-0c556536
+    - cd82-fb555c5d
+    - dc22-fdcac232
+    - ft09-0d8bbf25
+    - lf52-271a04aa
+    - lp85-305b61c3
+    - m0r0-492f87ba
+    - r11l-495a7899
+    - re86-8af5384d
+    - sc25-635fd71a
+    - sp80-589a99af
+    - tn36-ef4dde99
+    - tr87-cd924810
+    - wa30-ee6fef47
+  dev:
+    - cn04-2fe56bfb
+    - ls20-9607627b
+    - s5i5-18d95033
+    - tu93-0768757b
+  heldout:
+    - bp35-0a0ad940
+    - g50t-5849a774
+    - ka59-38d34dbb
+    - sb26-7fbdac44
+    - sk48-d8078629
+    - su15-1944f8ab
+    - vc33-5430563c
+
+eval:
+  seeds: [0, 1, 2]              # >= 3 independent seeds (assignment section 5)
+  game_seed: same_as_run        # or a fixed integer passed to Arcade.make(seed=...)
+  max_actions_per_game: 1000    # official actions (RESET excluded); same for every agent
+  max_seconds_per_game: null    # optional wall-clock cap
+  click_grid: 8                 # ACTION6 discretisation (8x8 = 64 click targets)
+  operation_mode: normal        # normal = download once then run locally; offline = cached only

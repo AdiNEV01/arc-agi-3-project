@@ -1,0 +1,10 @@
+# Python 3.12 is required by arc-agi
+arc-agi==0.9.9
+arcengine==0.9.3
+gymnasium==1.4.0
+numpy==2.4.4
+pyyaml==6.0.3
+# Tasks 1/2 add their own, e.g.:
+# torch
+# stable-baselines3
+# sb3-contrib   # MaskablePPO uses ArcGymEnv.action_masks()

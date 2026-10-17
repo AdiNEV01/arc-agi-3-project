@@ -1,0 +1,51 @@
+{
+  "agent_version": "random",
+  "split": "dev",
+  "budget": 1000,
+  "per_game": {
+    "cn04-2fe56bfb": {
+      "score_mean": 0.0,
+      "score_std": 0.0,
+      "levels_mean": 0.0,
+      "levels_std": 0.0,
+      "win_rate": 0.0,
+      "n": 3
+    },
+    "ls20-9607627b": {
+      "score_mean": 0.0,
+      "score_std": 0.0,
+      "levels_mean": 0.0,
+      "levels_std": 0.0,
+      "win_rate": 0.0,
+      "n": 3
+    },
+    "s5i5-18d95033": {
+      "score_mean": 0.0,
+      "score_std": 0.0,
+      "levels_mean": 0.0,
+      "levels_std": 0.0,
+      "win_rate": 0.0,
+      "n": 3
+    },
+    "tu93-0768757b": {
+      "score_mean": 0.0,
+      "score_std": 0.0,
+      "levels_mean": 0.0,
+      "levels_std": 0.0,
+      "win_rate": 0.0,
+      "n": 3
+    }
+  },
+  "overall": {
+    "score_mean_over_seeds": 0.0,
+    "score_std_over_seeds": 0.0,
+    "per_seed_scores": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "total_levels_completed": 0,
+    "total_official_actions": 12000,
+    "total_runtime_s": 31.18
+  }
+}
