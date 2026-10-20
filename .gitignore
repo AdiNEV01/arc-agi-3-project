@@ -225,3 +225,34 @@ __marimo__/
 Logs/DQN/*_console.txt
 Evaluations/DQN/**/*_console.txt
 Analysis/DQN/final_task1/*console.txt
+
+
+# Local credentials (keep example environment templates shareable).
+.env.*
+!.env.example
+!.env.sample
+credentials.json
+credentials/
+secrets/
+*.pem
+*.key
+
+# Local ARC runtime state; versioned environment_files game sources stay tracked.
+scorecards/
+.arc-agi/
+.arc_agi/
+.arc_cache/
+recordings/
+
+# DQN model binaries and disposable smoke/pilot logs; retain configs and results.
+/DQN/checkpoints/*.pt
+/DQN/checkpoints/*.pth
+/Logs/DQN/*_smoke*.csv
+/Logs/DQN/*_pilot*.csv
+
+# Machine-specific editor and OS artifacts.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
