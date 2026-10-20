@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+PPO_ToDo_List.md
+outputs/
+environment_files/

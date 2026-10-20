@@ -1,0 +1,12 @@
+{
+  "python": "3.11.5",
+  "os": "Windows-10-10.0.26200-SP0",
+  "arc-agi": "0.0.7",
+  "arcengine": "NOT INSTALLED",
+  "gymnasium": "1.4.0",
+  "stable-baselines3": "2.9.0",
+  "sb3-contrib": "2.9.0",
+  "torch": "2.14.1",
+  "numpy": "2.4.6",
+  "cuda_available": false
+}

@@ -1,0 +1,10 @@
+# Install PyTorch FIRST with the CUDA build (see steps in chat), then:
+#   pip install -r requirements.txt
+arc-agi
+gymnasium
+stable-baselines3
+sb3-contrib        # MaskablePPO (useful for Improvement 1: action masking)
+tensorboard
+numpy
+pandas
+matplotlib
