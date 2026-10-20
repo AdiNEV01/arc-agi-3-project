@@ -218,3 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Task 1: local environment and raw execution consoles stay on this machine.
+.venv*/
+Logs/DQN/*_console.txt
+Evaluations/DQN/**/*_console.txt
+Analysis/DQN/final_task1/*console.txt

@@ -1,0 +1,104 @@
+--- a/DQN/train.py
++++ b/DQN/train.py
+@@ -33,14 +33,22 @@
+     parser.add_argument("--epsilon-start", type=float, default=1.0)
+     parser.add_argument("--epsilon-end", type=float, default=0.1)
+     parser.add_argument("--epsilon-decay", type=int, default=500)
+-    parser.add_argument("--variant", choices=["v0", "v1", "v2"], default="v0")
+-    parser.add_argument("--novelty-beta", type=float, default=0.01)
++    parser.add_argument("--variant", choices=["v0", "v1", "v2", "v2_history_only"], default="v0")
++    parser.add_argument("--novelty-beta", type=float, default=None)
++    parser.add_argument("--buffer-capacity", type=int, default=3000)
++    parser.add_argument("--target-update-interval", type=int, default=250)
+ 
+     parser.add_argument("--num-frames", type=int, default=None)
+     parser.add_argument("--run-suffix", default="")
+     args = parser.parse_args()
+     if args.num_frames is None:
+-        args.num_frames = 4 if args.variant == "v2" else 1
++        args.num_frames = 4 if args.variant in ("v2", "v2_history_only") else 1
++    if args.novelty_beta is None:
++        args.novelty_beta = 0.0 if args.variant == "v2_history_only" else 0.01
++    if args.variant == "v2_history_only" and (args.num_frames != 4 or args.novelty_beta != 0):
++        parser.error("v2_history_only requires num-frames=4 and novelty-beta=0")
++    if args.novelty_beta < 0:
++        parser.error("novelty-beta must be non-negative")
+     if args.num_frames < 1:
+         parser.error("num-frames must be positive")
+     return args
+@@ -96,7 +104,7 @@
+         raise RuntimeError("Initial reset failed")
+ 
+     novelty = (StateNoveltyReward(beta=args.novelty_beta)
+-        if args.variant in ("v1", "v2") else None)
++        if args.variant in ("v1", "v2", "v2_history_only") else None)
+ 
+     if novelty is not None:
+         novelty.register_reset(obs)
+@@ -108,6 +116,8 @@
+         batch_size=args.batch_size,
+         device="cpu",
+         num_frames=args.num_frames,
++        buffer_capacity=args.buffer_capacity,
++        target_update_interval=args.target_update_interval,
+     )
+ 
+     history = FrameHistory(args.num_frames)
+--- a/DQN/evaluate.py
++++ b/DQN/evaluate.py
+@@ -24,16 +24,24 @@
+     parser.add_argument("--seed", type=int, default=1001)
+     parser.add_argument("--max-actions", type=int, default=200)
+     parser.add_argument("--checkpoint", required=True)
++    parser.add_argument("--output-dir", default="Evaluations/DQN")
+     args = parser.parse_args()
++    if args.max_actions < 1:
++        parser.error("max-actions must be positive")
+ 
+     random.seed(args.seed)
+     np.random.seed(args.seed)
+     torch.manual_seed(args.seed)
+ 
+-    output_dir = Path("Evaluations/DQN")
++    output_dir = Path(args.output_dir)
+     output_dir.mkdir(parents=True, exist_ok=True)
+ 
+     checkpoint_path = Path(args.checkpoint)
++    run_name = f"{checkpoint_path.stem}_eval_{args.game}_seed{args.seed}"
++    for suffix in (".csv", ".json"):
++        path = output_dir / (run_name + suffix)
++        if path.exists():
++            raise FileExistsError(f"Refusing to overwrite {path}; use --output-dir")
+     checkpoint = torch.load(
+         checkpoint_path,
+         map_location="cpu",
+@@ -46,6 +54,8 @@
+         checkpoint["online_state_dict"]
+     )
+     agent.online.eval()
++    gradients_before = agent.gradient_steps
++    weights_before = {key: value.clone() for key, value in agent.online.state_dict().items()}
+ 
+     arc = arc_agi.Arcade()
+     env = arc.make(args.game, seed=args.seed)
+@@ -140,6 +150,9 @@
+         writer.writeheader()
+         writer.writerows(trajectory)
+ 
++    unchanged = all(torch.equal(value, weights_before[key]) for key, value in agent.online.state_dict().items())
++    assert unchanged and agent.gradient_steps == gradients_before, "Frozen policy changed during evaluation"
++
+     summary = {
+         "checkpoint": str(checkpoint_path),
+         "game": obs.game_id,
+@@ -152,7 +165,9 @@
+         "final_state": obs.state.name,
+         "runtime_seconds": round(runtime, 3),
+         "local_scorecard_score": scorecard_score,
+-        "gradient_updates_during_eval": 0,
++        "gradient_updates_during_eval": agent.gradient_steps - gradients_before,
++        "num_frames": num_frames,
++        "policy_parameters_unchanged": unchanged,
+     }
+ 
+     json_path.write_text(

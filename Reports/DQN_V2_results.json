@@ -1,0 +1,81 @@
+[
+  {
+    "seed": 42,
+    "interactions": 3000,
+    "gradient_updates": 588,
+    "training_max_levels": 0,
+    "training_task_reward": 0.0,
+    "training_novelty_reward": 24.94663284756712,
+    "unique_observations": 1785,
+    "evaluation": {
+      "checkpoint": "DQN\\checkpoints\\dqn_v2_ls20_seed42.pt",
+      "game": "ls20-9607627b",
+      "evaluation_seed": 1001,
+      "actions_used": 129,
+      "max_actions": 200,
+      "levels_completed": 0,
+      "total_levels": 7,
+      "success": false,
+      "final_state": "GAME_OVER",
+      "runtime_seconds": 2.816,
+      "local_scorecard_score": 0.0,
+      "gradient_updates_during_eval": 0
+    },
+    "evaluation_action_counts": {
+      "ACTION2": 38,
+      "ACTION3": 91
+    }
+  },
+  {
+    "seed": 123,
+    "interactions": 3000,
+    "gradient_updates": 588,
+    "training_max_levels": 0,
+    "training_task_reward": 0.0,
+    "training_novelty_reward": 24.874810539136096,
+    "unique_observations": 1860,
+    "evaluation": {
+      "checkpoint": "DQN\\checkpoints\\dqn_v2_ls20_seed123.pt",
+      "game": "ls20-9607627b",
+      "evaluation_seed": 1001,
+      "actions_used": 129,
+      "max_actions": 200,
+      "levels_completed": 0,
+      "total_levels": 7,
+      "success": false,
+      "final_state": "GAME_OVER",
+      "runtime_seconds": 1.693,
+      "local_scorecard_score": 0.0,
+      "gradient_updates_during_eval": 0
+    },
+    "evaluation_action_counts": {
+      "ACTION2": 129
+    }
+  },
+  {
+    "seed": 456,
+    "interactions": 3000,
+    "gradient_updates": 588,
+    "training_max_levels": 0,
+    "training_task_reward": 0.0,
+    "training_novelty_reward": 24.86855920414237,
+    "unique_observations": 1770,
+    "evaluation": {
+      "checkpoint": "DQN\\checkpoints\\dqn_v2_ls20_seed456.pt",
+      "game": "ls20-9607627b",
+      "evaluation_seed": 1001,
+      "actions_used": 129,
+      "max_actions": 200,
+      "levels_completed": 0,
+      "total_levels": 7,
+      "success": false,
+      "final_state": "GAME_OVER",
+      "runtime_seconds": 1.333,
+      "local_scorecard_score": 0.0,
+      "gradient_updates_during_eval": 0
+    },
+    "evaluation_action_counts": {
+      "ACTION4": 129
+    }
+  }
+]

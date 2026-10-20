@@ -1,0 +1,25 @@
+{
+  "simulated_not_policy_progress": true,
+  "records": [
+    {
+      "event": "initial_reset",
+      "levels": 0,
+      "full_reset": true
+    },
+    {
+      "event": "reset_after_action",
+      "levels": 0,
+      "full_reset": false
+    },
+    {
+      "event": "reset_immediately_after_simulated_advance",
+      "levels": 0,
+      "full_reset": true
+    },
+    {
+      "event": "reset_after_action_in_simulated_level2",
+      "levels": 1,
+      "full_reset": false
+    }
+  ]
+}
