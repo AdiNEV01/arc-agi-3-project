@@ -28,6 +28,7 @@ from stable_baselines3 import PPO
 # policy checkpoints are deserialized.
 from policy_networks import GridCNNFeaturesExtractor  # noqa: F401
 from arc_gym import ACTION_NAMES, ArcEnv
+from grid_observation import OneHotGridObservation
 
 
 def safe_tag(tag: str) -> str:
@@ -49,6 +50,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--seeds", nargs="+", type=int, default=[0, 1, 2])
     parser.add_argument("--episodes-per-seed", type=int, default=1)
     parser.add_argument("--max-steps", type=int, default=500)
+    parser.add_argument(
+        "--observation-mode", choices=["standard", "grid"], default="standard",
+        help="Use standard observations, or the one-hot grid encoding required by grid_ppo.py.",
+    )
     parser.add_argument("--tag", default=None)
     parser.add_argument("--stochastic", action="store_true",
                         help="Sample PPO actions. Default: deterministic actions.")
@@ -87,7 +92,7 @@ def main() -> None:
 
     fields = [
         "tag", "policy", "game_id", "game_seed", "episode_index",
-        "action_seed", "levels_completed", "success", "steps",
+        "observation_mode", "action_seed", "levels_completed", "success", "steps",
         "end_state", "terminated", "truncated", "extrinsic_return",
         "model_path", "ppo_stochastic", "elapsed_seconds",
     ]
@@ -105,6 +110,8 @@ def main() -> None:
                 max_steps=args.max_steps,
                 seed=game_seed,
             )
+            if args.observation_mode == "grid":
+                env = OneHotGridObservation(env)
             try:
                 for episode_index in range(args.episodes_per_seed):
                     # Resetting the action space allows random action sequences
@@ -154,6 +161,7 @@ def main() -> None:
                         "game_id": args.game_id,
                         "game_seed": game_seed,
                         "episode_index": episode_index,
+                        "observation_mode": args.observation_mode,
                         "action_seed": action_seed,
                         "levels_completed": levels_completed,
                         "success": int(levels_completed > 0),
@@ -184,6 +192,7 @@ def main() -> None:
         "game_id": args.game_id,
         "seeds": args.seeds,
         "episodes_per_seed": args.episodes_per_seed,
+        "observation_mode": args.observation_mode,
         "episodes": count,
         "successful_episodes": successes,
         "success_rate": successes / count if count else 0.0,

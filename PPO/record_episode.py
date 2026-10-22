@@ -12,13 +12,23 @@ from PIL import Image, ImageDraw
 from stable_baselines3 import PPO
 
 from arc_gym import ACTION_NAMES, ArcEnv
+from grid_observation import OneHotGridObservation, grid_observation_to_board
 from policy_networks import GridCNNFeaturesExtractor  # noqa: F401
 
 
+def board_for_display(observation: np.ndarray, observation_mode: str) -> np.ndarray:
+    """Get one 64x64 board from either observation format for display."""
+    if observation_mode == "grid":
+        return grid_observation_to_board(observation)
+    return observation[0]
+
+
 def save_annotated_frame(observation: np.ndarray, path: Path, step: int,
-                         total_reward: float, state: str) -> None:
-    """Save the grayscale observation enlarged with nearest-neighbour pixels."""
-    image = Image.fromarray(observation[0], mode="L").convert("RGB")
+                         total_reward: float, state: str,
+                         observation_mode: str) -> None:
+    """Save the board enlarged with nearest-neighbour pixels."""
+    board = board_for_display(observation, observation_mode)
+    image = Image.fromarray(board, mode="L").convert("RGB")
     image = image.resize((512, 512), resample=Image.Resampling.NEAREST)
     draw = ImageDraw.Draw(image)
     label = f"Step {step} | return {total_reward:.2f} | {state}"
@@ -34,6 +44,10 @@ def main():
     parser.add_argument("--game-id", default="ls20")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--max-steps", type=int, default=500)
+    parser.add_argument(
+        "--observation-mode", choices=["standard", "grid"], default="standard",
+        help="Use standard observations, or the one-hot grid encoding required by grid_ppo.py.",
+    )
     parser.add_argument("--stochastic", action="store_true",
                         help="Sample PPO actions; default is deterministic.")
     parser.add_argument("--output-dir", default="outputs/replays/episode_0")
@@ -57,6 +71,8 @@ def main():
     frames_dir.mkdir(parents=True, exist_ok=True)
 
     env = ArcEnv(args.game_id, max_steps=args.max_steps, seed=args.seed)
+    if args.observation_mode == "grid":
+        env = OneHotGridObservation(env)
     trajectory = []
     total_reward = 0.0
 
@@ -64,7 +80,7 @@ def main():
         observation, info = env.reset(seed=args.seed)
         save_annotated_frame(
             observation, frames_dir / "step_000.png", 0, 0.0,
-            info.get("game_state", "RESET"),
+            info.get("game_state", "RESET"), args.observation_mode,
         )
 
         terminated = False
@@ -80,18 +96,19 @@ def main():
                 )
                 action = int(np.asarray(predicted).item())
 
-            previous_observation = observation.copy()
+            previous_board = board_for_display(observation, args.observation_mode)
             observation, reward, terminated, truncated, info = env.step(action)
             step_number += 1
             total_reward += float(reward)
-            changed_pixels = int(np.count_nonzero(previous_observation != observation))
+            current_board = board_for_display(observation, args.observation_mode)
+            changed_pixels = int(np.count_nonzero(previous_board != current_board))
 
             save_annotated_frame(
                 observation,
                 frames_dir / f"step_{step_number:03d}.png",
                 step_number,
                 total_reward,
-                info.get("game_state", "UNKNOWN"),
+                info.get("game_state", "UNKNOWN"), args.observation_mode,
             )
             trajectory.append({
                 "step": step_number,
