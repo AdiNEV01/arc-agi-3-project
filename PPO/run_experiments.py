@@ -1,16 +1,15 @@
-# run_experiments.py
 import argparse
 import os
 import numpy as np
+import time, json, platform, torch
 from stable_baselines3.common.vec_env import DummyVecEnv, VecMonitor
+from stable_baselines3.common.callbacks import CheckpointCallback
 from sb3_contrib import MaskablePPO
 from sb3_contrib.common.maskable.callbacks import MaskableEvalCallback
 from sb3_contrib.common.wrappers import ActionMasker
 from arc_env import ARCEnv
 from arc_env_memory import ARCEnvMemory
 from curiosity_wrapper import CuriosityWrapper
-import time, json, platform, torch
-from stable_baselines3.common.callbacks import CheckpointCallback
 
 def make_env(game_id, use_curiosity, use_memory, is_training=True):
     def _init():
@@ -25,12 +24,11 @@ def make_env(game_id, use_curiosity, use_memory, is_training=True):
         return env
     return _init
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--exp", type=str, required=True, choices=["baseline", "curiosity", "memory_only", "memory_curiosity"])
     parser.add_argument("--seed", type=int, default=0)
-    parser.add_argument("--steps", type=int, default=250_000)
+    parser.add_argument("--steps", type=int, default=500_000)
     args = parser.parse_args()
 
     TRAIN_GAMES = ["ls20", "ar25", "bp35"]
@@ -43,9 +41,9 @@ if __name__ == "__main__":
     os.makedirs(LOG_DIR, exist_ok=True)
 
     checkpoint_cb = CheckpointCallback(
-    save_freq=25_000,
-    save_path=os.path.join(LOG_DIR, "checkpoints"),
-    name_prefix="ppo"
+        save_freq=25_000,
+        save_path=os.path.join(LOG_DIR, "checkpoints"),
+        name_prefix="ppo"
     )
 
     train_env = DummyVecEnv([make_env(g, use_curiosity, use_memory, True) for g in TRAIN_GAMES])
@@ -54,8 +52,7 @@ if __name__ == "__main__":
     val_env = DummyVecEnv([make_env(g, False, use_memory, False) for g in VAL_GAMES])
     val_env = VecMonitor(val_env)
 
-    # Save the evaluation results to a .npz file in the log directory
-    eval_callback = MaskableEvalCallback(
+    eval_cb = MaskableEvalCallback(
         val_env,
         best_model_save_path=os.path.join(LOG_DIR, "best_model"),
         log_path=LOG_DIR,
@@ -72,45 +69,25 @@ if __name__ == "__main__":
     )
 
     print(f"Starting {args.exp} with seed {args.seed} for {args.steps} steps...")
-    model.learn(total_timesteps=args.steps, callback=eval_callback)
+    
+    t0 = time.time()
+    # SINGLE LEARN CALL
+    model.learn(total_timesteps=args.steps, callback=[eval_cb, checkpoint_cb])
+    elapsed = time.time() - t0
+    
     model.save(os.path.join(LOG_DIR, f"final_model"))
+
+    resources = {
+        "experiment": args.exp,
+        "seed": args.seed,
+        "steps": args.steps,
+        "wall_clock_sec": elapsed,
+        "fps": args.steps / elapsed,
+        "host": platform.node(),
+        "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "cpu",
+        "peak_gpu_mem_mb": (torch.cuda.max_memory_allocated() / 1e6 if torch.cuda.is_available() else 0),
+    }
+    with open(os.path.join(LOG_DIR, "resources.json"), "w") as f:
+        json.dump(resources, f, indent=2)
+
     print(f"Finished {args.exp} seed {args.seed}.")
-
-class CombinedCallback(MaskableEvalCallback):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.wall_clock = []
-
-    def _on_step(self):
-        cont = super()._on_step()
-        self.wall_clock.append(self.num_timesteps)
-        return cont
-
-eval_cb = MaskableEvalCallback(
-    val_env,
-    best_model_save_path=os.path.join(LOG_DIR, "best_model"),
-    log_path=LOG_DIR,
-    eval_freq=25_000,
-    deterministic=True,
-)
-
-t0 = time.time()
-model.learn(total_timesteps=args.steps, callback=[eval_cb, checkpoint_cb])
-elapsed = time.time() - t0
-
-resources = {
-    "experiment": args.exp,
-    "seed": args.seed,
-    "steps": args.steps,
-    "wall_clock_sec": elapsed,
-    "fps": args.steps / elapsed,
-    "host": platform.node(),
-    "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "cpu",
-    "peak_gpu_mem_mb": (
-        torch.cuda.max_memory_allocated() / 1e6 if torch.cuda.is_available() else 0
-    ),
-}
-with open(os.path.join(LOG_DIR, "resources.json"), "w") as f:
-    json.dump(resources, f, indent=2)
-
-model.save(os.path.join(LOG_DIR, "final_model"))

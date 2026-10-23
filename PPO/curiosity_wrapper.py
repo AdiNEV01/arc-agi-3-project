@@ -33,15 +33,7 @@ class CuriosityWrapper(gym.Wrapper):
         return self.env.action_masks()
 
     def _update_visits(self, obs):
-        """Hash the 64x64 grid to count visits."""
-        # obs is (16, 64, 64) one-hot. Convert back to (64,64) integer grid
-        grid = np.argmax(obs, axis=0) 
-        
-        # Create a hashable key from the grid bytes
-        state_hash = hash(grid.tobytes())
-        
-        # Increment visit count
+        """Hash the observation directly (works for both 16ch and 64ch)."""
+        state_hash = hash(obs.tobytes())
         self.visits[state_hash] = self.visits.get(state_hash, 0) + 1
-        
-        # Novelty bonus: 1 / sqrt(N)
         return 1.0 / np.sqrt(self.visits[state_hash])

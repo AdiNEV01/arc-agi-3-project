@@ -26,7 +26,7 @@ class ARCEnvMemory(ARCEnv):
         return np.concatenate(self.frames, axis=0)
 
     def reset(self, **kwargs):
-        obs, info = self.env.reset(**kwargs) if hasattr(self, 'env') else super().reset(**kwargs)
+        obs, info = super().reset(**kwargs)
         single_frame = self._encode_obs(self.current_obs)
         self.frames.clear()
         stacked_obs = self._get_stacked_obs(single_frame)
