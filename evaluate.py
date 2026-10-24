@@ -158,6 +158,8 @@ def run_game(arcade, policy, game_id: str, seed: int, game_seed: int, budget: in
             break
         a = policy.act(obs, info)
         nobs, r, term, trunc, ninfo = env.step(a)
+        if ninfo["illegal_action"]:
+            raise RuntimeError(f"Policy returned illegal action {a} for {game_id}; evaluation aborted")
         policy.observe(obs, a, r, nobs, term, trunc, ninfo)
         illegal += int(ninfo["illegal_action"])
         while len(level_end_actions) < ninfo["levels_completed"]:

@@ -1,0 +1,10 @@
+# Development smoke only. Not a new untouched-heldout split or report experiment.
+games:
+  dev: [ls20-9607627b]
+eval:
+  seeds: [0]
+  game_seed: same_as_run
+  max_actions_per_game: 140
+  max_seconds_per_game: 60
+  click_grid: 64  # preserve DQN's 4,102 actions and PPO's original random pixels
+  operation_mode: offline

@@ -27,5 +27,8 @@ class Policy:
         """Return a Discrete action index. info['action_mask'] lists legal indices."""
         raise NotImplementedError
 
+    def reset_episode(self) -> None:
+        """Clear temporal history after GAME_OVER; preserve game RNG and weights."""
+
     def observe(self, obs, action, reward, next_obs, terminated, truncated, info) -> None:
         """Optional online update. Default: no learning during evaluation."""

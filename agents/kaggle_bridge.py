@@ -29,11 +29,12 @@ class PolicyBridge:
         self._game = None
 
     def choose_action(self, latest_frame) -> GameAction:
-        if latest_frame.state in (GameState.NOT_PLAYED, GameState.GAME_OVER):
-            return GameAction.RESET          # becomes a level reset in competition mode
         if latest_frame.game_id != self._game:
             self._game = latest_frame.game_id
             self.policy.reset_game(self._game, seed=0)
+        if latest_frame.state in (GameState.NOT_PLAYED, GameState.GAME_OVER):
+            self.policy.reset_episode()
+            return GameAction.RESET          # becomes a level reset in competition mode
         obs = frame_to_grid(latest_frame.frame)
         info = {"action_mask": self.amap.mask(latest_frame.available_actions),
                 "levels_completed": latest_frame.levels_completed,

@@ -280,3 +280,9 @@ PPO_ToDo_List.md
 outputs/
 environment_files/
 logs/
+
+.pytest-integration*/
+
+results/integration_audit/*console_local.txt
+
+results/integration_smoke_20261024/

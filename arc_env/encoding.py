@@ -77,6 +77,8 @@ class ActionMap:
         return len(self.specs)
 
     def decode(self, index: int) -> ActionSpec:
+        if int(index) != index or not 0 <= int(index) < len(self.specs):
+            raise ValueError(f"Invalid shared action index: {index}")
         return self.specs[int(index)]
 
     def mask(self, available_actions: Sequence[int]) -> np.ndarray:
