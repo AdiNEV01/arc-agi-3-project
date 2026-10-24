@@ -1,0 +1,10 @@
+{
+  "experiment": "memory_only",
+  "seed": 1,
+  "steps": 500000,
+  "wall_clock_sec": 4764.249148607254,
+  "fps": 104.94833171060468,
+  "host": "Lenny",
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "peak_gpu_mem_mb": 171.995648
+}
