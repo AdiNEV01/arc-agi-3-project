@@ -1,0 +1,13 @@
+{
+  "preservation": {
+    "artifacts_checked": 60,
+    "unchanged": true
+  },
+  "main_runs": 12,
+  "matched_configs": true,
+  "checkpoint_metadata_verified": true,
+  "all_intrinsic_history_only_exactly_zero": true,
+  "all_gradient_updates": 588,
+  "cross_game_runs": 12,
+  "figures": 6
+}

@@ -1,0 +1,25 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "torch": "2.14.1",
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2",
+    "arc-agi": "0.9.9",
+    "arcengine": "0.9.3",
+    "pillow": "13.0.0"
+  },
+  "source_sha256": {
+    "DQN/action_codec.py": "65f68dfb3fe74f3fbcdf21922035f0d5dc7d0e9205b9dac9d85e12f09b8cd54c",
+    "DQN/dqn_agent.py": "0240f63d0b7c12357c15f6289152fdecfb0053422dce8e07cbf41250f9efe1fd",
+    "DQN/dqn_improvement_1.py": "f68edb25d7947a17722ad7a6e15414e266fe2fc30cf7c1f726660d1e476d9e14",
+    "DQN/dqn_improvement_2.py": "5c0eb36262c573794d76a51173653b8c51d5166519dccc9bb5bd3d5c3ad33a4a",
+    "DQN/evaluate.py": "bc9160522f4f87c47a84ce3bb1c3d238139d690ea25e45c88c8dd612cde27ced",
+    "DQN/q_network.py": "7c97b85c01a13262c12c248ae074664463941523a878390da6047de0bf3f1d6b",
+    "DQN/replay_buffer.py": "3bf221942ae9238adf9e2e979f506df92221b6367d98d02300f41e293d91dc5a",
+    "DQN/test_task1.py": "d9b9a38284e1134ba82ef9592a201d58495f9e7c4980d2f7635e92a286e0adcb",
+    "DQN/train.py": "196d2abd4dd061a893d812ae11ac2a142468c09f5f61e315abb5fccaacb18245",
+    "environment_files/ls20/9607627b/ls20.py": "67cc85888eeef68f125cbb5f5fb158e9ca455d6bca46b171790f556fcabf934e",
+    "environment_files/vc33/5430563c/vc33.py": "2226ed7e10bb0f37586963c9332842c4cae6d5bc7aeeb41c67a78ea18a9a12eb"
+  }
+}

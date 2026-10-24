@@ -1,0 +1,157 @@
+[
+  {
+    "variant": "v0",
+    "label": "V0 baseline",
+    "n_training_seeds": 3,
+    "train_max_levels_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "eval_levels_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "successes": 0,
+    "success_rate": 0.0,
+    "final_state_counts": {
+      "NOT_FINISHED": 2,
+      "GAME_OVER": 1
+    },
+    "training_max_levels_mean": 0.0,
+    "training_max_levels_sd": 0.0,
+    "evaluation_levels_mean": 0.0,
+    "evaluation_levels_sd": 0.0,
+    "evaluation_actions_mean": 176.33333333333334,
+    "evaluation_actions_sd": 40.99186911246343,
+    "local_scorecard_score_mean": 0.0,
+    "local_scorecard_score_sd": 0.0,
+    "task_reward_sum_mean": 0.0,
+    "task_reward_sum_sd": 0.0,
+    "intrinsic_reward_sum_mean": 0.0,
+    "intrinsic_reward_sum_sd": 0.0,
+    "loss_last50_mean_mean": 1.6367088353857658e-05,
+    "loss_last50_mean_sd": 1.9631118842567198e-05,
+    "gradient_updates_mean": 588.0,
+    "gradient_updates_sd": 0.0,
+    "dominant_action_share_mean": 0.9583333333333334,
+    "dominant_action_share_sd": 0.07216878364870322
+  },
+  {
+    "variant": "v1",
+    "label": "V1 novelty",
+    "n_training_seeds": 3,
+    "train_max_levels_per_seed": [
+      0,
+      1,
+      0
+    ],
+    "eval_levels_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "successes": 0,
+    "success_rate": 0.0,
+    "final_state_counts": {
+      "GAME_OVER": 2,
+      "NOT_FINISHED": 1
+    },
+    "training_max_levels_mean": 0.3333333333333333,
+    "training_max_levels_sd": 0.5773502691896257,
+    "evaluation_levels_mean": 0.0,
+    "evaluation_levels_sd": 0.0,
+    "evaluation_actions_mean": 152.66666666666666,
+    "evaluation_actions_sd": 40.99186911246343,
+    "local_scorecard_score_mean": 0.0,
+    "local_scorecard_score_sd": 0.0,
+    "task_reward_sum_mean": 0.3333333333333333,
+    "task_reward_sum_sd": 0.5773502691896257,
+    "intrinsic_reward_sum_mean": 23.075110821055535,
+    "intrinsic_reward_sum_sd": 3.1112075021330097,
+    "loss_last50_mean_mean": 3.9156356458155035e-05,
+    "loss_last50_mean_sd": 1.1147313140399077e-05,
+    "gradient_updates_mean": 588.0,
+    "gradient_updates_sd": 0.0,
+    "dominant_action_share_mean": 1.0,
+    "dominant_action_share_sd": 0.0
+  },
+  {
+    "variant": "v2_history_only",
+    "label": "History only",
+    "n_training_seeds": 3,
+    "train_max_levels_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "eval_levels_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "successes": 0,
+    "success_rate": 0.0,
+    "final_state_counts": {
+      "GAME_OVER": 2,
+      "NOT_FINISHED": 1
+    },
+    "training_max_levels_mean": 0.0,
+    "training_max_levels_sd": 0.0,
+    "evaluation_levels_mean": 0.0,
+    "evaluation_levels_sd": 0.0,
+    "evaluation_actions_mean": 152.66666666666666,
+    "evaluation_actions_sd": 40.99186911246343,
+    "local_scorecard_score_mean": 0.0,
+    "local_scorecard_score_sd": 0.0,
+    "task_reward_sum_mean": 0.0,
+    "task_reward_sum_sd": 0.0,
+    "intrinsic_reward_sum_mean": 0.0,
+    "intrinsic_reward_sum_sd": 0.0,
+    "loss_last50_mean_mean": 7.928835409156677e-06,
+    "loss_last50_mean_sd": 1.011448374594472e-05,
+    "gradient_updates_mean": 588.0,
+    "gradient_updates_sd": 0.0,
+    "dominant_action_share_mean": 0.8449612403100775,
+    "dominant_action_share_sd": 0.15905646921459837
+  },
+  {
+    "variant": "v2",
+    "label": "V2 novelty + history",
+    "n_training_seeds": 3,
+    "train_max_levels_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "eval_levels_per_seed": [
+      0,
+      0,
+      0
+    ],
+    "successes": 0,
+    "success_rate": 0.0,
+    "final_state_counts": {
+      "GAME_OVER": 3
+    },
+    "training_max_levels_mean": 0.0,
+    "training_max_levels_sd": 0.0,
+    "evaluation_levels_mean": 0.0,
+    "evaluation_levels_sd": 0.0,
+    "evaluation_actions_mean": 129.0,
+    "evaluation_actions_sd": 0.0,
+    "local_scorecard_score_mean": 0.0,
+    "local_scorecard_score_sd": 0.0,
+    "task_reward_sum_mean": 0.0,
+    "task_reward_sum_sd": 0.0,
+    "intrinsic_reward_sum_mean": 24.896667530281864,
+    "intrinsic_reward_sum_sd": 0.043383977409445336,
+    "loss_last50_mean_mean": 9.676166862391256e-06,
+    "loss_last50_mean_sd": 3.120783728615429e-06,
+    "gradient_updates_mean": 588.0,
+    "gradient_updates_sd": 0.0,
+    "dominant_action_share_mean": 0.9018087855297158,
+    "dominant_action_share_sd": 0.17007217231942462
+  }
+]

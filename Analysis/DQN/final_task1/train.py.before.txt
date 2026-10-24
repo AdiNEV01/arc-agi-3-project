@@ -1,0 +1,285 @@
+
+"""Train the baseline ARC-AGI-3 DQN."""
+
+import argparse
+import csv
+import json
+import random
+import time
+from pathlib import Path
+
+import arc_agi
+import numpy as np
+import torch
+from arcengine import GameState
+
+from DQN.action_codec import decode_action
+from DQN.dqn_agent import DQNAgent
+from DQN.dqn_improvement_1 import StateNoveltyReward
+from DQN.dqn_improvement_2 import FrameHistory
+
+def get_args():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--game", default="ls20")
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--steps", type=int, default=60)
+    parser.add_argument("--episode-limit", type=int, default=30)
+    parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument("--warmup", type=int, default=10)
+    parser.add_argument("--train-every", type=int, default=5)
+    parser.add_argument("--lr", type=float, default=1e-4)
+    parser.add_argument("--gamma", type=float, default=0.99)
+    parser.add_argument("--epsilon-start", type=float, default=1.0)
+    parser.add_argument("--epsilon-end", type=float, default=0.1)
+    parser.add_argument("--epsilon-decay", type=int, default=500)
+    parser.add_argument("--variant", choices=["v0", "v1", "v2"], default="v0")
+    parser.add_argument("--novelty-beta", type=float, default=0.01)
+
+    parser.add_argument("--num-frames", type=int, default=None)
+    parser.add_argument("--run-suffix", default="")
+    args = parser.parse_args()
+    if args.num_frames is None:
+        args.num_frames = 4 if args.variant == "v2" else 1
+    if args.num_frames < 1:
+        parser.error("num-frames must be positive")
+    return args
+
+
+def epsilon_at(step, args):
+    fraction = min(1.0, step / args.epsilon_decay)
+
+    return args.epsilon_start + fraction * (
+        args.epsilon_end - args.epsilon_start
+    )
+
+
+def main():
+    args = get_args()
+
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+
+    log_dir = Path("Logs/DQN") # Logs tell us what happened during training: rewards, losses, actions, runtime and progress.
+    checkpoint_dir = Path("DQN/checkpoints") # Checkpoints contain the model weights and related training state, allowing us to use the trained model later.
+
+    log_dir.mkdir(parents=True, exist_ok=True)
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
+
+    run_name = f"dqn_{args.variant}_{args.game}_seed{args.seed}"
+
+    if args.run_suffix:
+        run_name += "_" + args.run_suffix
+
+    csv_path = log_dir / f"{run_name}.csv"
+    config_path = log_dir / f"{run_name}_config.json"
+    checkpoint_path = checkpoint_dir / f"{run_name}.pt"
+
+    for path in (csv_path, config_path, checkpoint_path):
+        if path.exists():
+            raise FileExistsError(f"Refusing to overwrite {path}; use --run-suffix")
+
+    config_path.write_text(
+        json.dumps(vars(args), indent=2),
+        encoding="utf-8",
+    )
+
+    arc = arc_agi.Arcade()
+    env = arc.make(args.game, seed=args.seed)
+
+    if env is None:
+        raise RuntimeError("Failed to create ARC environment")
+
+    obs = env.reset()
+    if obs is None:
+        raise RuntimeError("Initial reset failed")
+
+    novelty = (StateNoveltyReward(beta=args.novelty_beta)
+        if args.variant in ("v1", "v2") else None)
+
+    if novelty is not None:
+        novelty.register_reset(obs)
+
+    agent = DQNAgent(
+        seed=args.seed,
+        lr=args.lr,
+        gamma=args.gamma,
+        batch_size=args.batch_size,
+        device="cpu",
+        num_frames=args.num_frames,
+    )
+
+    history = FrameHistory(args.num_frames)
+    state = history.reset(obs)
+
+    episode = 1
+    episode_step = 0
+    episode_reward = 0.0
+    completed_levels = 0
+
+    started = time.perf_counter()
+
+    columns = [
+        "global_step", "episode", "episode_step",
+        "action", "x", "y", "epsilon",
+        "reward", "loss", "levels_completed",
+        "game_state", "elapsed_seconds", "task_reward", "novelty_reward", "unique_states",
+    ]
+
+    print(f"\nTraining DQN {args.variant.upper()} on {args.game}")
+    print(f"Seed: {args.seed}")
+    print(f"Interaction budget: {args.steps}")
+
+    with csv_path.open("w", newline="") as file:
+        writer = csv.DictWriter(
+            file, fieldnames=columns
+        )
+        writer.writeheader()
+
+        for step in range(1, args.steps + 1):
+            epsilon = epsilon_at(step - 1, args)
+
+            action_index = agent.select_action(
+                state,
+                env.action_space,
+                epsilon=epsilon,
+            )
+
+            action, data = decode_action(action_index)
+            next_obs = env.step(action, data=data)
+
+            if next_obs is None:
+                raise RuntimeError(
+                    f"Environment step {step} failed"
+                )
+
+            task_reward = float(max(
+                0,
+                next_obs.levels_completed - obs.levels_completed
+            ))
+
+            novelty_reward = (
+                novelty.bonus(obs, next_obs)
+                if novelty is not None
+                else 0.0
+            )
+
+            reward = task_reward + novelty_reward
+
+            terminated = next_obs.state in (
+                GameState.WIN,
+                GameState.GAME_OVER,
+            )
+
+            next_state = history.advance(next_obs)
+
+            agent.remember(
+                obs=state,
+                action_index=action_index,
+                reward=reward,
+                next_obs=next_state,
+                terminated=terminated,
+                next_available_actions=env.action_space,
+            )
+
+            loss = None
+
+            if (
+                step >= args.warmup
+                and step % args.train_every == 0
+            ):
+                loss = agent.learn()
+
+            episode_step += 1
+            episode_reward += reward
+
+            completed_levels = max(
+                completed_levels,
+                next_obs.levels_completed,
+            )
+
+            elapsed = time.perf_counter() - started
+
+            writer.writerow({
+                "global_step": step,
+                "episode": episode,
+                "episode_step": episode_step,
+                "action": action.name,
+                "x": data["x"] if data else "",
+                "y": data["y"] if data else "",
+                "epsilon": epsilon,
+                "reward": reward,
+                "loss": loss if loss is not None else "",
+                "levels_completed": next_obs.levels_completed,
+                "game_state": next_obs.state.name,
+                "elapsed_seconds": round(elapsed, 3),
+                "task_reward": task_reward,
+                "novelty_reward": novelty_reward,
+                "unique_states": (
+                    novelty.unique_states
+                    if novelty is not None else 0
+                ),
+            })
+            file.flush()
+
+            if step % 10 == 0 or terminated:
+                print(
+                    f"Step {step}/{args.steps} | "
+                    f"episode={episode} | "
+                    f"epsilon={epsilon:.3f} | "
+                    f"loss={loss} | "
+                    f"levels={next_obs.levels_completed} | "
+                    f"time={elapsed:.1f}s"
+                )
+
+            if (
+                terminated
+                or episode_step >= args.episode_limit
+            ):
+                print(
+                    f"Episode {episode} ended: "
+                    f"return={episode_reward:.2f}, "
+                    f"actions={episode_step}, "
+                    f"terminated={terminated}"
+                )
+
+                episode += 1
+                episode_step = 0
+                episode_reward = 0.0
+
+                obs = env.reset()
+
+                if obs is None:
+                    raise RuntimeError("Reset failed")
+
+                state = history.reset(obs)
+                if novelty is not None:
+                    novelty.register_reset(obs)
+            else:
+                obs = next_obs
+                state = next_state
+
+    torch.save({
+        "online_state_dict": agent.online.state_dict(),
+        "target_state_dict": agent.target.state_dict(),
+        "optimizer_state_dict": agent.optimizer.state_dict(),
+        "seed": args.seed,
+        "global_step": args.steps,
+        "gradient_steps": agent.gradient_steps,
+        "config": vars(args),
+    }, checkpoint_path)
+
+    total_time = time.perf_counter() - started
+
+    print("\n=== TRAINING SUMMARY ===")
+    print("Interactions:", args.steps)
+    print("Gradient updates:", agent.gradient_steps)
+    print("Max levels completed:", completed_levels)
+    print("Runtime:", round(total_time, 2), "seconds")
+    print("Log:", csv_path)
+    print("Checkpoint:", checkpoint_path)
+
+
+if __name__ == "__main__":
+    main()

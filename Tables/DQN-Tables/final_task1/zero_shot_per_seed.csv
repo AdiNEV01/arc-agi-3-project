@@ -1,0 +1,13 @@
+variant,training_seed,training_game,evaluation_game,evaluation_seed,levels,actions,success,final_state,local_scorecard_score,action_counts,unique_actions,dominant_action,dominant_action_share,action_entropy_bits,longest_identical_action_run,repeat_adjacent_fraction
+v0,123,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(39,33)"": 49, ""ACTION6(29,2)"": 1}",2,"ACTION6(39,33)",0.98,0.14144054254182067,25,0.9591836734693877
+v0,42,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(33,28)"": 50}",1,"ACTION6(33,28)",1.0,-0.0,50,1.0
+v0,456,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(39,28)"": 50}",1,"ACTION6(39,28)",1.0,-0.0,50,1.0
+v1,123,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(29,2)"": 26, ""ACTION6(48,42)"": 3, ""ACTION6(29,1)"": 1, ""ACTION6(29,3)"": 20}",4,"ACTION6(29,2)",0.52,1.3757585483431425,26,0.9183673469387755
+v1,42,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(33,28)"": 50}",1,"ACTION6(33,28)",1.0,-0.0,50,1.0
+v1,456,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(51,47)"": 50}",1,"ACTION6(51,47)",1.0,-0.0,50,1.0
+v2_history_only,123,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(0,63)"": 50}",1,"ACTION6(0,63)",1.0,-0.0,50,1.0
+v2_history_only,42,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(39,26)"": 50}",1,"ACTION6(39,26)",1.0,-0.0,50,1.0
+v2_history_only,456,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(53,30)"": 50}",1,"ACTION6(53,30)",1.0,-0.0,50,1.0
+v2,123,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(0,63)"": 50}",1,"ACTION6(0,63)",1.0,-0.0,50,1.0
+v2,42,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(38,25)"": 50}",1,"ACTION6(38,25)",1.0,-0.0,50,1.0
+v2,456,ls20-9607627b,vc33-5430563c,1001,0,50,False,GAME_OVER,0.0,"{""ACTION6(53,30)"": 50}",1,"ACTION6(53,30)",1.0,-0.0,50,1.0

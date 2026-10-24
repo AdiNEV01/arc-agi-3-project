@@ -1,0 +1,9 @@
+PASS: existing evaluation refused before environment creation.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\okwuk\OneDrive\Desktop\MASTERS COURSEWORK\SEMESTER 2\Reinforcement Learning\arc-agi-3-project\DQN\evaluate.py", line 187, in <module>
+    main()
+  File "C:\Users\okwuk\OneDrive\Desktop\MASTERS COURSEWORK\SEMESTER 2\Reinforcement Learning\arc-agi-3-project\DQN\evaluate.py", line 44, in main
+    raise FileExistsError(f"Refusing to overwrite {path}; use --output-dir")
+FileExistsError: Refusing to overwrite Evaluations\DQN\dqn_v0_ls20_seed42_eval_ls20_seed1001.csv; use --output-dir

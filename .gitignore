@@ -231,3 +231,47 @@ __pycache__/
 .ipynb_checkpoints/
 .env
 .kaggle/
+
+
+# Task 1: local environment and raw execution consoles stay on this machine.
+.venv*/
+Logs/DQN/*_console.txt
+Evaluations/DQN/**/*_console.txt
+Analysis/DQN/final_task1/*console.txt
+
+
+# Local credentials (keep example environment templates shareable).
+.env.*
+!.env.example
+!.env.sample
+credentials.json
+credentials/
+secrets/
+*.pem
+*.key
+
+scorecards/
+.arc-agi/
+.arc_agi/
+.arc_cache/
+recordings/
+
+# DQN model binaries and disposable smoke/pilot logs; retain configs and results.
+/DQN/checkpoints/*.pt
+/DQN/checkpoints/*.pth
+/Logs/DQN/*_smoke*.csv
+/Logs/DQN/*_pilot*.csv
+
+# Machine-specific editor and OS artifacts.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+.integration-deps/
+PPO/Report/*.aux
+PPO/Report/*.fdb_latexmk
+PPO/Report/*.fls
+PPO/Report/*.out
+PPO/Report/*.synctex.gz

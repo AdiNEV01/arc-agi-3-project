@@ -1,0 +1,258 @@
+[
+  {
+    "variant": "v0",
+    "training_seed": 123,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(39,33)": 49,
+      "ACTION6(29,2)": 1
+    },
+    "unique_actions": 2,
+    "dominant_action": "ACTION6(39,33)",
+    "dominant_action_share": 0.98,
+    "action_entropy_bits": 0.14144054254182067,
+    "longest_identical_action_run": 25,
+    "repeat_adjacent_fraction": 0.9591836734693877
+  },
+  {
+    "variant": "v0",
+    "training_seed": 42,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(33,28)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(33,28)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  },
+  {
+    "variant": "v0",
+    "training_seed": 456,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(39,28)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(39,28)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  },
+  {
+    "variant": "v1",
+    "training_seed": 123,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(29,2)": 26,
+      "ACTION6(48,42)": 3,
+      "ACTION6(29,1)": 1,
+      "ACTION6(29,3)": 20
+    },
+    "unique_actions": 4,
+    "dominant_action": "ACTION6(29,2)",
+    "dominant_action_share": 0.52,
+    "action_entropy_bits": 1.3757585483431425,
+    "longest_identical_action_run": 26,
+    "repeat_adjacent_fraction": 0.9183673469387755
+  },
+  {
+    "variant": "v1",
+    "training_seed": 42,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(33,28)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(33,28)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  },
+  {
+    "variant": "v1",
+    "training_seed": 456,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(51,47)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(51,47)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  },
+  {
+    "variant": "v2_history_only",
+    "training_seed": 123,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(0,63)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(0,63)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  },
+  {
+    "variant": "v2_history_only",
+    "training_seed": 42,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(39,26)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(39,26)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  },
+  {
+    "variant": "v2_history_only",
+    "training_seed": 456,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(53,30)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(53,30)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  },
+  {
+    "variant": "v2",
+    "training_seed": 123,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(0,63)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(0,63)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  },
+  {
+    "variant": "v2",
+    "training_seed": 42,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(38,25)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(38,25)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  },
+  {
+    "variant": "v2",
+    "training_seed": 456,
+    "training_game": "ls20-9607627b",
+    "evaluation_game": "vc33-5430563c",
+    "evaluation_seed": 1001,
+    "levels": 0,
+    "actions": 50,
+    "success": false,
+    "final_state": "GAME_OVER",
+    "local_scorecard_score": 0.0,
+    "action_counts": {
+      "ACTION6(53,30)": 50
+    },
+    "unique_actions": 1,
+    "dominant_action": "ACTION6(53,30)",
+    "dominant_action_share": 1.0,
+    "action_entropy_bits": -0.0,
+    "longest_identical_action_run": 50,
+    "repeat_adjacent_fraction": 1.0
+  }
+]

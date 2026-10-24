@@ -1,0 +1,14 @@
+{
+  "checkpoint": "DQN\\checkpoints\\dqn_v0_ls20_seed123.pt",
+  "game": "ls20-9607627b",
+  "evaluation_seed": 1001,
+  "actions_used": 129,
+  "max_actions": 200,
+  "levels_completed": 0,
+  "total_levels": 7,
+  "success": false,
+  "final_state": "GAME_OVER",
+  "runtime_seconds": 0.726,
+  "local_scorecard_score": 0.0,
+  "gradient_updates_during_eval": 0
+}
