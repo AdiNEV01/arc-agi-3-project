@@ -1,5 +1,6 @@
-import os, csv, glob
+import os, csv, glob, time
 import numpy as np
+import pandas as pd
 from stable_baselines3.common.vec_env import DummyVecEnv
 from sb3_contrib import MaskablePPO
 from sb3_contrib.common.wrappers import ActionMasker
@@ -36,6 +37,8 @@ def run_episode(model, env, max_steps=MAX_STEPS):
     return levels, steps, failure_mode
 
 rows = []
+print(f"Starting evaluation across {len(EXPERIMENTS)} experiments...")
+
 for exp in EXPERIMENTS:
     use_memory = exp in ["memory_only", "memory_curiosity"]
     for seed in SEEDS:
@@ -43,9 +46,16 @@ for exp in EXPERIMENTS:
         ckpts = sorted(glob.glob(os.path.join(ckpt_dir, "*.zip")))
         if not ckpts:
             continue
+        
+        print(f"Evaluating {exp} seed {seed} ({len(ckpts)} checkpoints)...")
+        
         for ckpt in ckpts:
             # parse timestep from filename like ppo_25000_steps.zip
-            ts = int(os.path.basename(ckpt).split("_")[1])
+            try:
+                ts = int(os.path.basename(ckpt).split("_")[1])
+            except IndexError:
+                continue
+                
             for game in TEST_GAMES:
                 env = DummyVecEnv([make_eval_env(game, use_memory)])
                 model = MaskablePPO.load(ckpt, env=env)
@@ -56,8 +66,9 @@ for exp in EXPERIMENTS:
                     "game": game, "levels": levels, "steps": steps,
                     "rhae": rhae, "failure_mode": fail,
                 })
+                # Prevent API rate-limiting if arcade.make() needs to reach the server
+                time.sleep(0.1) 
 
-import pandas as pd
 df = pd.DataFrame(rows)
 df.to_csv("evaluation_results.csv", index=False)
-print(f"Wrote {len(df)} rows to evaluation_results.csv")
+print(f"\nWrote {len(df)} rows to evaluation_results.csv")

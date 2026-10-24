@@ -6,11 +6,18 @@ from arcengine import GameAction, GameState
 
 class ARCEnv(gym.Env):
     metadata = {"render_modes": ["human"]}
+    
+    # Class-level cache so we only authenticate with the API ONCE
+    _shared_arcade = None
 
     def __init__(self, game_id: str = "ls20"):
         super().__init__()
         self.game_id = game_id
-        self.arcade = arc_agi.Arcade()
+        
+        if ARCEnv._shared_arcade is None:
+            ARCEnv._shared_arcade = arc_agi.Arcade()
+            
+        self.arcade = ARCEnv._shared_arcade
         self.raw_env = self.arcade.make(game_id)
         
         # 16 colors, 64x64 grid -> one-hot encoded image (C, H, W)
@@ -19,7 +26,6 @@ class ARCEnv(gym.Env):
         )
         
         # Maximum 7 actions (ACTION1-ACTION7). RESET is handled internally.
-        # For the baseline, ACTION6 coordinates are sampled randomly.
         self.action_space = spaces.Discrete(7)
         
         self.current_obs = None
@@ -35,9 +41,8 @@ class ARCEnv(gym.Env):
 
     def _encode_obs(self, frame_data) -> np.ndarray:
         """Convert FrameDataRaw grid to one-hot (16,64,64) float32."""
-        grid = np.array(frame_data.frame, dtype=np.int32)  # Could be (64,64) or (6,64,64)
+        grid = np.array(frame_data.frame, dtype=np.int32)
         
-        # If it's a sequence of frames, grab the most recent one (the last frame)
         if grid.ndim == 3:
             grid = grid[-1]
             
@@ -50,12 +55,11 @@ class ARCEnv(gym.Env):
         """Boolean mask of available actions from the last response."""
         mask = np.zeros(7, dtype=bool)
         
-        # Safely extract integer values from available_actions
         available_ints = set()
         for a in self.current_obs.available_actions:
-            if hasattr(a, 'value'):  # If it's an Enum
+            if hasattr(a, 'value'):
                 available_ints.add(a.value)
-            else:                    # If it's already an int
+            else:
                 available_ints.add(int(a))
                 
         for i, act in self._action_map.items():
@@ -66,7 +70,6 @@ class ARCEnv(gym.Env):
         return mask
 
     def action_masks(self) -> np.ndarray:
-        """Required by sb3-contrib MaskablePPO."""
         return self._get_action_mask()
 
     def reset(self, seed=None, options=None):
@@ -74,7 +77,6 @@ class ARCEnv(gym.Env):
         self.current_obs = self.raw_env.reset()
         obs = self._encode_obs(self.current_obs)
         
-        # Updated info dict to match step()
         info = {
             "available_actions": self.current_obs.available_actions,
             "state": self.current_obs.state,
@@ -85,20 +87,16 @@ class ARCEnv(gym.Env):
     def step(self, action: int):
         game_action = self._action_map[action]
         
-        # Handle ACTION6 coordinates (random baseline)
         data = None
         if game_action == GameAction.ACTION6:
             data = {"x": np.random.randint(0, 64), "y": np.random.randint(0, 64)}
         
         self.current_obs = self.raw_env.step(game_action, data=data)
-        
         obs = self._encode_obs(self.current_obs)
         
-        # Sparse reward: only on WIN (or you can use levels_completed delta)
         reward = 1.0 if self.current_obs.state == GameState.WIN else 0.0
-        
         terminated = self.current_obs.state in (GameState.WIN, GameState.GAME_OVER)
-        truncated = False  # no time limit in baseline; add if needed
+        truncated = False
         
         info = {
             "available_actions": self.current_obs.available_actions,
