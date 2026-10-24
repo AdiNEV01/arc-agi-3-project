@@ -1,0 +1,11 @@
+{
+  "torch": "2.14.1",
+  "arc-agi": "0.9.9",
+  "arcengine": "0.9.3",
+  "numpy": "2.5.4",
+  "gymnasium": "1.4.0",
+  "stable-baselines3": "2.9.0",
+  "sb3-contrib": "2.9.0",
+  "pytest": "9.1.1",
+  "pyyaml": "6.0.3"
+}

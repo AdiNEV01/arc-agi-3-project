@@ -1,0 +1,25 @@
+{
+  "agent_version": "dqn_v2",
+  "split": "dev",
+  "budget": 140,
+  "per_game": {
+    "ls20-9607627b": {
+      "score_mean": 0.0,
+      "score_std": 0.0,
+      "levels_mean": 0.0,
+      "levels_std": 0.0,
+      "win_rate": 0.0,
+      "n": 1
+    }
+  },
+  "overall": {
+    "score_mean_over_seeds": 0.0,
+    "score_std_over_seeds": 0.0,
+    "per_seed_scores": [
+      0.0
+    ],
+    "total_levels_completed": 0,
+    "total_official_actions": 140,
+    "total_runtime_s": 1.04
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "agent_version": "ppo_curiosity",
+  "split": "dev",
+  "budget": 30,
+  "per_game": {
+    "tt01-v1": {
+      "score_mean": 100.0,
+      "score_std": 0.0,
+      "levels_mean": 2.0,
+      "levels_std": 0.0,
+      "win_rate": 1.0,
+      "n": 1
+    }
+  },
+  "overall": {
+    "score_mean_over_seeds": 100.0,
+    "score_std_over_seeds": 0.0,
+    "per_seed_scores": [
+      100.0
+    ],
+    "total_levels_completed": 2,
+    "total_official_actions": 6,
+    "total_runtime_s": 0.02
+  }
+}

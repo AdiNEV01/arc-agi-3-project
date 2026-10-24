@@ -1,0 +1,182 @@
+{
+  "purpose": "compatibility smoke only; one evaluation seed, unequal training budgets",
+  "checkpoint_sha256_before_and_after": {
+    "DQN/checkpoints/dqn_v0_ls20_seed42.pt": "3d5274e104df3b9b1803d8d280b5b45a8db268b2a4aa8b21969ead2a7d8aa33c",
+    "DQN/checkpoints/dqn_v1_ls20_seed42.pt": "ab0ccb2ae1ce3aa8c3915a0fcde4520650e6ff3dedbfe45a90a5d4567f30c03a",
+    "DQN/checkpoints/dqn_v2_ls20_seed42.pt": "ea3bcacc67ce6a2576205374ef9344a94a8f5f16cc9f5f9de41d5f690cd5b458",
+    "PPO/logs/baseline/ppo_baseline_seed1.zip": "9dc7b360de4d98be3c14106b80d768d49c3c30657a3bdf380511b45a75e9c8b5",
+    "PPO/logs/improvement1_curiosity/ppo_curiosity_seed0.zip": "62283c6a719fd67c256c6530ccebd094aef2fb1307f128e613c91af9ec77e91c",
+    "PPO/logs/improvement2_memory_curiosity/ppo_memory_seed0.zip": "dad344ea02f0923942079ddbb79e5aa75a28d3b263a655be4400904f705b9fb8"
+  },
+  "checkpoint_files_unchanged": true,
+  "records": [
+    {
+      "case": "fixture",
+      "policy": "random",
+      "checkpoint": null,
+      "levels_completed": 2,
+      "score_official": 70.37037037037037,
+      "official_actions": 9,
+      "level_resets": 3,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.007
+    },
+    {
+      "case": "fixture",
+      "policy": "dqn_v0",
+      "checkpoint": "DQN/checkpoints/dqn_v0_ls20_seed42.pt",
+      "levels_completed": 2,
+      "score_official": 100.0,
+      "official_actions": 6,
+      "level_resets": 0,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.094
+    },
+    {
+      "case": "fixture",
+      "policy": "dqn_v1",
+      "checkpoint": "DQN/checkpoints/dqn_v1_ls20_seed42.pt",
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 30,
+      "level_resets": 30,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.15
+    },
+    {
+      "case": "fixture",
+      "policy": "dqn_v2",
+      "checkpoint": "DQN/checkpoints/dqn_v2_ls20_seed42.pt",
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 30,
+      "level_resets": 30,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.207
+    },
+    {
+      "case": "fixture",
+      "policy": "ppo_baseline",
+      "checkpoint": "PPO/logs/baseline/ppo_baseline_seed1.zip",
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 30,
+      "level_resets": 30,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.164
+    },
+    {
+      "case": "fixture",
+      "policy": "ppo_curiosity",
+      "checkpoint": "PPO/logs/improvement1_curiosity/ppo_curiosity_seed0.zip",
+      "levels_completed": 2,
+      "score_official": 100.0,
+      "official_actions": 6,
+      "level_resets": 0,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.018
+    },
+    {
+      "case": "fixture",
+      "policy": "ppo_memory_curiosity",
+      "checkpoint": "PPO/logs/improvement2_memory_curiosity/ppo_memory_seed0.zip",
+      "levels_completed": 2,
+      "score_official": 100.0,
+      "official_actions": 6,
+      "level_resets": 0,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.034
+    },
+    {
+      "case": "ls20",
+      "policy": "random",
+      "checkpoint": null,
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 140,
+      "level_resets": 1,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.204
+    },
+    {
+      "case": "ls20",
+      "policy": "dqn_v0",
+      "checkpoint": "DQN/checkpoints/dqn_v0_ls20_seed42.pt",
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 140,
+      "level_resets": 0,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 1.284
+    },
+    {
+      "case": "ls20",
+      "policy": "dqn_v1",
+      "checkpoint": "DQN/checkpoints/dqn_v1_ls20_seed42.pt",
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 140,
+      "level_resets": 1,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.719
+    },
+    {
+      "case": "ls20",
+      "policy": "dqn_v2",
+      "checkpoint": "DQN/checkpoints/dqn_v2_ls20_seed42.pt",
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 140,
+      "level_resets": 1,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 1.043
+    },
+    {
+      "case": "ls20",
+      "policy": "ppo_baseline",
+      "checkpoint": "PPO/logs/baseline/ppo_baseline_seed1.zip",
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 140,
+      "level_resets": 1,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.618
+    },
+    {
+      "case": "ls20",
+      "policy": "ppo_curiosity",
+      "checkpoint": "PPO/logs/improvement1_curiosity/ppo_curiosity_seed0.zip",
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 140,
+      "level_resets": 1,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 0.673
+    },
+    {
+      "case": "ls20",
+      "policy": "ppo_memory_curiosity",
+      "checkpoint": "PPO/logs/improvement2_memory_curiosity/ppo_memory_seed0.zip",
+      "levels_completed": 0,
+      "score_official": 0.0,
+      "official_actions": 140,
+      "level_resets": 0,
+      "scorecard_runs": 1,
+      "full_resets_after_start": 0,
+      "runtime_s": 1.371
+    }
+  ]
+}

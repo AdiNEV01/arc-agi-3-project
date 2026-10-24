@@ -1,0 +1,26 @@
+[
+  {
+    "path": "PPO\\logs\\baseline\\ppo_baseline_seed1.zip",
+    "num_timesteps": 12288,
+    "n_steps": 2048,
+    "seed": 1,
+    "n_updates": 20,
+    "algorithm_version": "2.9.0"
+  },
+  {
+    "path": "PPO\\logs\\improvement1_curiosity\\ppo_curiosity_seed0.zip",
+    "num_timesteps": 12288,
+    "n_steps": 2048,
+    "seed": 0,
+    "n_updates": 20,
+    "algorithm_version": "2.9.0"
+  },
+  {
+    "path": "PPO\\logs\\improvement2_memory_curiosity\\ppo_memory_seed0.zip",
+    "num_timesteps": 12288,
+    "n_steps": 2048,
+    "seed": 0,
+    "n_updates": 20,
+    "algorithm_version": "2.9.0"
+  }
+]

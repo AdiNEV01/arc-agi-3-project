@@ -1,0 +1,104 @@
+{
+  "original_checkout_files_not_edited": true,
+  "dqn_tracked_artifact_diff_vs_task1": "",
+  "original_dqn_checkpoints": [
+    {
+      "path": "DQN/checkpoints/dqn_v0_ls20_seed123.pt",
+      "sha256": "a14dc37a42229bdde6e426cfe276dee18a7e57bcb0efa7ee8fbc43473cdbb437",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v0_ls20_seed42.pt",
+      "sha256": "3d5274e104df3b9b1803d8d280b5b45a8db268b2a4aa8b21969ead2a7d8aa33c",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v0_ls20_seed42_pilot60.pt",
+      "sha256": "cad3f17e3d0ba1ad69e411b08b3d780ae67dc4699c53615e985b30247279e0d4",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v0_ls20_seed456.pt",
+      "sha256": "c41d8e3a483a093a4a6a90f1b0646e0dfa425762f282a69f3d7a4d70283cb47d",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v1_ls20_seed123.pt",
+      "sha256": "2fc7784f1250c2165d11c9b04c97a7ec7534fcf55b3afa549a0172896ed0dafd",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v1_ls20_seed42.pt",
+      "sha256": "ab0ccb2ae1ce3aa8c3915a0fcde4520650e6ff3dedbfe45a90a5d4567f30c03a",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v1_ls20_seed456.pt",
+      "sha256": "062fd19dc8cbec4557392ce39a632a926a0a20ceec70e6ad76515aa2c57a8a3f",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v2_history_only_ls20_seed123.pt",
+      "sha256": "dce55d4c70dd26ebb40159989c2adfe94c72852b8e268478f0fbc4d21c047e24",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v2_history_only_ls20_seed42.pt",
+      "sha256": "26f640e5b2deb1064f9bd757c1de723fee0a03cb2003302b2d4b805e9bfcce64",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v2_history_only_ls20_seed42_smoke60.pt",
+      "sha256": "003e352f751c9fa881037598e68942e209577b43e0c09a083b11f626853f9341",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v2_history_only_ls20_seed456.pt",
+      "sha256": "b6547fbf4092841f6aab516d979a66957654d139a3f389ed241b88f8c8b09016",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v2_ls20_seed123.pt",
+      "sha256": "ef151127feb380233d5141a2c0594bd02c160db54b891a6d982da4f96a6d2661",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v2_ls20_seed42.pt",
+      "sha256": "ea3bcacc67ce6a2576205374ef9344a94a8f5f16cc9f5f9de41d5f690cd5b458",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v2_ls20_seed42_smoke60.pt",
+      "sha256": "4fa4f507eaf7fdecd672cd50b57e90fe1874f4508258f431c950ea2179aebaca",
+      "copy_matches_original": true
+    },
+    {
+      "path": "DQN/checkpoints/dqn_v2_ls20_seed456.pt",
+      "sha256": "86b2e9964a56eddab103ba43fcc49dca50205162d939566329b4325761607768",
+      "copy_matches_original": true
+    }
+  ],
+  "remote_refs_integrated": {
+    "main": "af5811f1324b88ebb88838ce92b3769237e9965b",
+    "feature/dqn-task1": "6e79be60cb2a7cbdc04ab2fe061ffe9223f88b78",
+    "PPO": "cf7f39f38dd5b72cf3392bcad91537db7a2c698f",
+    "task3-interface": "ead3f207c05971c179b3afee53f4d4f902fc07b5"
+  },
+  "integration_source_sha256": {
+    "agents/base.py": "0241a538f8705ccb06f70bcb4d4c5a72970f02d43bfc434459e2c028bf17866c",
+    "agents/kaggle_bridge.py": "f199312c67b222d24ba708876c791f99789fec67e7877aa55743fe6a559f3d81",
+    "agents/checkpoint_encoding.py": "03a57713fd3ef791243e8ad2c12c3ae0463cc0988c56aaf5bfe7e0aba322da1b",
+    "agents/dqn_agent.py": "8cdb99f4738caedd63dad2d994289a57b28beb1a5ff88eac58d4999db0cdfcd2",
+    "agents/ppo_agent.py": "0bcec7db78ad20242b016333c58c6c0b0d0a05719867829b19ec2896f440e394",
+    "arc_env/encoding.py": "082636059b38dc2b12cd7b85773be5ca0e1d5cc9f60027d608b939c4d4c62ad2",
+    "arc_env/gym_adapter.py": "aea5eeab660d40bd97316aa051aa526905310c4c658839f6e28c7c8bff8d5700",
+    "evaluate.py": "d076fa03ee52972427b1010d3daa9420413a18a46b1dcd5ebb0b6d5bae6526e7",
+    "Configs/integration_smoke.yaml": "f48d347fbf5b01b1259d4c25b45dbf009d3b67eea44ce699f1a60d14d4d752af",
+    "Experiments/integration_smoke.py": "0947ecf592a139490d2cff824024091589b6bc5952a6644f19e2bf4b57cc3126",
+    "tests/test_integration.py": "0663254246ba89088d9fda16d0af684060265ee3def8efae434985982b992ea6",
+    "requirements.txt": "c477c348d8dfc6aa59f1f81326bd8d7d8504dce4b268ff96f334fa0dbe2f7fd9"
+  },
+  "final_smoke": "results/integration_smoke_verified_20261024/verification.json",
+  "source_commit_verified_after_execution": "e98f9b6ec60620e5cf1d139ab44825730f943871",
+  "source_verification_note": "Smoke ran before committing the implementation; source hashes and Git blob identities match this implementation commit."
+}

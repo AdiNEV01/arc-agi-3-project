@@ -1,0 +1,54 @@
+{
+  "timestamp_utc": "20261024T131858Z",
+  "agent": "random",
+  "agent_version": "random",
+  "agent_kwargs": {},
+  "checkpoint_step": null,
+  "split": "dev",
+  "games": [
+    "ls20-9607627b"
+  ],
+  "seeds": [
+    0
+  ],
+  "budget": 140,
+  "click_grid": 64,
+  "only_reset_levels_env": null,
+  "git_commit": "7bbe1c4",
+  "versions": {
+    "python": "3.12.10",
+    "arc-agi": "0.9.9",
+    "arcengine": "0.9.3",
+    "gymnasium": "1.4.0",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "stable-baselines3": "2.9.0",
+    "sb3-contrib": "2.9.0"
+  },
+  "hardware": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_count": 8,
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "cuda": false
+  },
+  "config": {
+    "games": {
+      "dev": [
+        "ls20-9607627b"
+      ]
+    },
+    "eval": {
+      "seeds": [
+        0
+      ],
+      "game_seed": "same_as_run",
+      "max_actions_per_game": 140,
+      "max_seconds_per_game": 60,
+      "click_grid": 64,
+      "operation_mode": "offline"
+    }
+  },
+  "verified_source_commit": "e98f9b6ec60620e5cf1d139ab44825730f943871",
+  "source_inventory": "results/integration_audit/preservation_and_source_inventory.json",
+  "source_verification_note": "Smoke ran before committing the implementation; source hashes and Git blob identities match this implementation commit."
+}
