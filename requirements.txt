@@ -1,10 +1,14 @@
-# Python 3.12 is required by arc-agi
+# Python 3.12; original PPO machine freeze: requirements-ppo-original.txt
 arc-agi==0.9.9
 arcengine==0.9.3
 gymnasium==1.4.0
-numpy==2.4.4
-pyyaml==6.0.3
-# Tasks 1/2 add their own, e.g.:
-# torch
-# stable-baselines3
-# sb3-contrib   # MaskablePPO uses ArcGymEnv.action_masks()
+numpy==2.5.4
+PyYAML==6.0.3
+torch>=2.8,<3
+stable-baselines3==2.9.0
+sb3-contrib==2.9.0
+pytest>=8,<10
+# Original analysis and training scripts:
+matplotlib>=3.9,<4
+pandas>=2.2,<4
+tensorboard>=2.9,<3

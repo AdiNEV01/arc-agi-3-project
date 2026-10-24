@@ -275,3 +275,8 @@ PPO/Report/*.fdb_latexmk
 PPO/Report/*.fls
 PPO/Report/*.out
 PPO/Report/*.synctex.gz
+
+PPO_ToDo_List.md
+outputs/
+environment_files/
+logs/

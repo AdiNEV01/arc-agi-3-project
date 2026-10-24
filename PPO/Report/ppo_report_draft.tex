@@ -1,0 +1,262 @@
+\documentclass[11pt,a4paper]{article}
+
+% Page layout and typography
+\usepackage[a4paper,margin=25mm,headheight=14pt,footskip=12mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{float}
+\usepackage{titlesec}
+
+% Restrained academic styling
+\definecolor{headingblue}{HTML}{17365D}
+\definecolor{linkblue}{HTML}{245A85}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=headingblue,
+  citecolor=headingblue,
+  urlcolor=linkblue,
+  pdftitle={Proximal Policy Optimisation on ARC-AGI-3},
+  pdfsubject={PPO report draft}
+}
+\titleformat{\section}
+  {\Large\bfseries\color{headingblue}}
+  {\thesection}{0.75em}{}
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{headingblue}}
+  {\thesubsection}{0.75em}{}
+\titlespacing*{\section}{0pt}{2.0ex plus 0.5ex minus 0.2ex}{0.8ex}
+\titlespacing*{\subsection}{0pt}{1.5ex plus 0.3ex minus 0.2ex}{0.5ex}
+\setlist[enumerate]{leftmargin=*,itemsep=0.45em,topsep=0.35em}
+\setlist[itemize]{leftmargin=*,itemsep=0.35em,topsep=0.3em}
+\renewcommand{\arraystretch}{1.16}
+\setlength{\emergencystretch}{2em}
+
+% Running header and page number
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textit{Proximal Policy Optimisation on ARC-AGI-3}}
+\fancyhead[R]{\small\textit{Report draft}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\metriclabel}[1]{\textbf{#1}}
+
+\title{\vspace{-1.2em}\Huge\bfseries\color{headingblue} Proximal Policy Optimisation on ARC-AGI-3}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2.2em}
+\hrule
+\vspace{1.4em}
+
+\section{Proximal Policy Optimisation}
+
+PPO (Schulman et al., 2017) is an on-policy actor--critic method. A shared CNN trunk feeds two heads: an actor $\pi_\theta(a\mid s)$ that outputs action probabilities, and a critic $V_\phi(s)$ that estimates the expected discounted return. Learning happens after every rollout: the agent collects $n_{\text{steps}}$ transitions with the current policy, computes advantages, runs several epochs of minibatch gradient ascent on that data, and then discards it. At decision time only the actor is used (sampling during training, $\arg\max$ at evaluation); the critic exists only to reduce gradient variance.
+
+Advantages use GAE (Schulman et al., 2016),
+\begin{equation}
+  \hat A_t = \sum_{\ell\geq 0}(\gamma\lambda)^\ell\,\delta_{t+\ell},
+  \qquad
+  \delta_t = r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t).
+\end{equation}
+With $\rho_t(\theta)=\pi_\theta(a_t\mid s_t)/\pi_{\theta_{\mathrm{old}}}(a_t\mid s_t)$, PPO maximises
+\begin{equation}
+\begin{aligned}
+  \mathcal{L}(\theta,\phi) = \mathbb{E}_t\Big[\min\big\{&\rho_t(\theta)\hat A_t,\\
+    &\operatorname{clip}(\rho_t(\theta),1-\epsilon,1+\epsilon)\hat A_t\big\}\\[-0.1em]
+    &-c_1\big(V_\phi(s_t)-V_t^{\mathrm{target}}\big)^2
+      +c_2\,\mathcal{S}[\pi_\theta](s_t)\Big].
+\end{aligned}
+\end{equation}
+
+The clip removes the incentive to move $\rho_t$ outside $[1-\epsilon,1+\epsilon]$, so a single batch cannot change the policy drastically. This gives stable updates without TRPO's second-order machinery. The entropy bonus $\mathcal{S}$ is the only built-in exploration pressure.
+
+\section{PPO Baseline}
+
+\subsection*{Formulation}
+State: the last frame of the game, one-hot encoded as a $16\times64\times64$ tensor (no history). Actions: ACTION1--ACTION7 as a 7-way discrete choice; ACTION6 (click) takes coordinates drawn uniformly at random, so the policy decides whether to click but not where. Reward: $+1$ only when the game state is WIN; level completions that do not end the game give no reward. Termination: WIN or GAME OVER (no step cap in training; 1000 actions at evaluation). Built on the ARC-AGI toolkit (ARC Prize Foundation, 2026) through a Gymnasium adapter.
+
+\subsection*{Agent}
+MaskablePPO from sb3-contrib (Raffin et al., 2021b,a) with the default SB3 CnnPolicy (normalize images=False because inputs are already 0/1). Hyper-parameters are in Table~\ref{tab:config} and are identical across all four conditions.
+
+\begin{table}[H]
+\centering
+\caption{Training configuration (shared by all conditions). $\dagger$ SB3 default; [verify].}
+\label{tab:config}
+\small
+\begin{tabularx}{\linewidth}{@{}l l !{\hspace{1.2em}\vrule\hspace{1.2em}} l l@{}}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Parameter} & \textbf{Value} \\
+\midrule
+Learning rate & $3\times10^{-4}$ & $\gamma$, GAE $\lambda$ & 0.99, 0.95 \\
+Rollout & 2048 steps $\times$ 3 envs & Clip $\epsilon$ & 0.2 \\
+Minibatch & 64 & Entropy $c_2$ & 0.01 \\
+Epochs per rollout & $10^\dagger$ & Value coef. $c_1$ & $0.5^\dagger$ \\
+Budget & 500K steps/seed & Hardware & [GPU, train time/run] \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection*{Why masking}
+Each game exposes only a subset of the seven actions (e.g. ls20 allows ACTION1--4). Without masking, the policy wastes interactions on invalid actions, and ARC-AGI-3 scores efficiency in actions. MaskablePPO sets the logits of unavailable actions to $-\infty$ before the softmax (Huang and Ontañón, 2022). The objective, GAE and update rule are unchanged, so we treat masking as an interface constraint rather than an algorithmic change. We did not run an unmasked PPO, so the benefit of masking is argued here, not measured.
+
+\subsection*{Protocol}
+Train on ls20, ar25, bp35 (500K steps, seeds 0--2, checkpoint every 25K). cd82 is used only for monitoring during training. Held-out games: dc22, ft09, g50t, ka59, never trained on. Weights are frozen at evaluation, so the test measures zero-shot transfer with no within-game adaptation. Each checkpoint (75K, 150K, $\ldots$, 450K) plays one deterministic episode per held-out game, giving 72 evaluations per condition (3 seeds $\times$ 6 checkpoints $\times$ 4 games). These are not independent episodes. We report levels completed and episode length. The RHAE we report is a local proxy, $\min(1,(100/n)^2)$ for $n$ actions with a fixed 100-action reference, and is not the official ARC-AGI-3 score.
+
+\section{Why the Baseline Failed}
+
+Held-out results were almost uniformly zero: 71 of 72 baseline evaluations completed no level (Table~\ref{tab:ablation}), and training reward was exactly 0 for every seed and checkpoint [from training logs]. The failure has a precise mechanism. When every reward in a rollout is 0, every advantage is 0 and the policy-gradient term vanishes. Only the entropy bonus and the value loss still produce gradients, so the policy drifts toward uniform over valid actions while the critic learns $V\approx0$. The pipeline is not broken: training was stable (approx. KL $\approx0.01$, clip fraction $\approx0.07$ [from logs]) and a dense signal later changed behaviour immediately. There was simply nothing to learn from. Four limitations explain why:
+
+\begin{enumerate}
+  \item \textbf{Reward too sparse, and even sparser than needed.} Reward arrives only on WIN, which in multi-level games requires finishing every level. Completing level 1 returns nothing. A random-action diagnostic on ls20 (20 episodes, 2586 steps) found no level and zero reward.
+  \item \textbf{No directed exploration.} Entropy regularisation gives near-uniform action sampling and no preference for informative actions.
+  \item \textbf{Held-out behaviour looks game-determined, not policy-determined.} Failure signatures are almost identical across all conditions (Table~\ref{tab:heldout}): every g50t evaluation ends at exactly 130 steps and every dc22 evaluation at 124--128 steps. This is consistent with near state-independent policies that hit the same deterministic game-over. We did not log action histograms, so this remains a hypothesis.
+  \item \textbf{Single frame, random clicks.} One frame cannot reveal motion or action history, and the agent cannot choose click locations.
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{Held-out episode length (actions) and ending, all 18 evaluations per cell. Only ka59 differs between conditions; ft09 is the only game with any success.}
+\label{tab:heldout}
+\small
+\begin{tabularx}{\linewidth}{@{}lYYYY@{}}
+\toprule
+\textbf{Game} & \textbf{Baseline} & \textbf{Curiosity} & \textbf{Memory only} & \textbf{Memory+Cur.} \\
+\midrule
+ dc22 & 124--128, over & 125--128, over & 127--128, over & 125--128, over \\
+ g50t & 130, over & 130, over & 130, over & 130, over \\
+ ka59 & mean 650 (7 over/11 timeout) & 650 (7/11) & 400 (12/6) & 650 (7/11) \\
+ ft09 & mean 74 (32--437) & 84 (32--547) & 76 (32--547) & 69 (32--437) \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Improvement 1: Count-Based Curiosity}
+
+\textbf{Limitation addressed:} sparse reward and undirected exploration (Section 3, points 1--2). \textbf{Hypothesis:} a bonus for unfamiliar states yields nonzero advantages early in training and pushes the policy toward actions that change the screen, raising the chance of stumbling into a win. \textbf{Intervention:} a training-only wrapper adds $\beta/\sqrt{N(s_t)}$ with $\beta=0.1$, where $N$ counts visits to a hash of the full observation tensor, with counts kept across episodes within each training environment (Bellemare et al., 2016; Tang et al., 2017). Evaluation uses $\beta=0$, so reported results reflect only the unmodified game.
+
+\textbf{Results.} Training reward rose from 0 to 6.9 (seed 0) and 6.5 (seed 1) within about 12K steps, and mean episode length rose slightly (77 to 82) [from logs]. On held-out games there were 0 completions in 72 evaluations. Two cautions apply to the training result. First, nearly every frame is new (99.9\% of steps changed the frame in our random-agent diagnostic), so the bonus is close to $\beta$ on almost every step and the return is roughly $\beta\times$ episode length ($0.1\times\sim70\approx7$). The reward ``jump'' is therefore largely arithmetic and is not evidence of better exploration. The small increase in episode length is the only behavioural signal. Second, hashing the raw frame is a weak state abstraction: tiny irrelevant changes count as new states. This is a clean negative result for transfer: the intervention made the training signal dense, but it did not produce held-out goal-seeking.
+
+\section{Improvement 2: Frame-Stacked Memory}
+
+\textbf{Limitation addressed:} a single frame hides motion and history (Section 3, point 4). \textbf{Hypothesis:} stacking the last four frames lets the CNN infer movement direction and recent action effects, so a policy that has found a win can reach it in fewer actions. \textbf{Intervention:} ARCEnvMemory concatenates the last 4 one-hot frames into a $64\times64\times64$ observation (first frame repeated at reset). Built on top of Improvement 1 (memory+curiosity), with a memory-only ablation.
+
+\textbf{Results.} Training throughput fell from about 350 to 90--127 steps/s because the input is 4$\times$ larger, while training reward stayed close to curiosity-only (6.4--6.7) [from logs]. Held-out, memory+curiosity completed one level (ft09, seed 0, 450K checkpoint) and memory-only completed none. See Section 6 for what this can and cannot show.
+
+\section{Ablations}
+
+Across all 288 evaluations only two succeeded, both on ft09 with seed 0 (baseline at 375K, memory+curiosity at 450K). With counts this small no pair of conditions differs (e.g. 1/72 vs 0/72, Fisher exact $p=1.0$). The ablation therefore cannot attribute any effect to curiosity, memory or their combination. Three further points limit interpretation. (i) Both successful episodes ended in GAME OVER, so the recorded lengths (356 baseline, 276 memory+curiosity) are total episode lengths, not actions to complete the level, and the apparent efficiency gain (RHAE proxy 0.078 vs 0.131) is not a valid comparison. (ii) The two successes come from different checkpoints of one seed. (iii) The successes occur on the one game where episodes were long enough to explore, and ACTION6 coordinates are random, so luck cannot be excluded. What the ablation does show is that none of the changes produced a consistent held-out effect.
+
+\begin{table}[H]
+\centering
+\caption{Held-out ablation. ``Successes'' = evaluations with $\geq1$ level completed. Last checkpoint = 450K (12 evaluations).}
+\label{tab:ablation}
+\small
+\begin{tabularx}{\linewidth}{@{}l c c c c Y@{}}
+\toprule
+\textbf{Condition} & \textbf{Mem.} & \textbf{Cur.} & \textbf{Succ./72} & \textbf{Succ. at 450K/12} & \textbf{Mean length at 450K} \\
+\midrule
+Baseline & -- & -- & 1 & 0 & 247.5 \\
+Curiosity & -- & $\checkmark$ & 0 & 0 & 248.4 \\
+Memory only & $\checkmark$ & -- & 0 & 0 & 172.5 \\
+Memory+Curiosity & $\checkmark$ & $\checkmark$ & 1 & 1 & 342.8 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{PPO as a Learning Algorithm for ARC-AGI-3}
+
+\textbf{Where it fits poorly.} (i) PPO's learning signal is the advantage, which is identically zero without reward, and ARC-AGI-3 supplies none until a game is won. (ii) It is on-policy, discarding every rollout, which is costly when interactions are the scarce resource. (iii) Our weights are frozen at test time, whereas ARC-AGI-3 is about discovering rules within a game from a few interactions; our protocol tests zero-shot transfer from three games, which PPO has no mechanism to do. (iv) Default policies are memoryless. \textbf{Where it fits well.} Training was stable under zero reward and under the curiosity signal, and masking, a reward wrapper and frame stacking all attached without touching the PPO update, which made a clean four-way comparison possible. Our evidence therefore supports a limited verdict: PPO is a sound, stable baseline but, without a better reward and state representation, learns nothing that transfers.
+
+\section{Making PPO Better for Generalisation}
+
+Ordered by how directly our evidence motivates them:
+\begin{enumerate}
+  \item Reward every level, not only WIN ($r_t=\Delta$ levels completed). This is the cheapest fix for the sparsity we diagnosed.
+  \item Better novelty signal. Replace raw-frame hash counts with a coarse or learned state (random network distillation (Burda et al., 2019)) so the bonus is not $\approx\beta$ on every step.
+  \item Let the policy choose click coordinates (a second head over the $64\times64$ grid for ACTION6).
+  \item Recurrent policy (RecurrentPPO, GRU/LSTM) instead of 4-frame stacking, for unbounded history.
+  \item Within-game adaptation. Keep learning online during evaluation, or train across many games with a recurrent meta-RL objective, since the benchmark rewards fast adaptation, not fixed policies.
+  \item Object-centric or auxiliary-loss representations (e.g. a forward-dynamics head) so the CNN does not have to discover objects from sparse reward.
+\end{enumerate}
+
+\section{Summary of Findings}
+
+\begin{itemize}
+  \item Standard-reward MaskablePPO achieved essentially no held-out level completions (2 of 288 evaluations, both ft09).
+  \item Count-based curiosity densified the training reward but produced no measurable held-out gain; most of the reward rise is attributable to nearly every frame counting as novel.
+  \item Frame stacking did not change held-out outcomes either, and the single apparent efficiency gain is not supported by the data.
+  \item Failure signatures were nearly identical across all conditions, which points to game-determined behaviour from weakly trained policies.
+\end{itemize}
+
+\section{Conclusion}
+
+The optimiser is not the bottleneck: PPO trained stably in every condition. What limited performance was the signal it was given (reward only on a full WIN) and the setting it was tested in (frozen weights, zero-shot, memoryless). Our main contribution is a reproducible masked-PPO pipeline for ARC-AGI-3 and a diagnosis of why two standard additions did not help, including a reward-accounting artefact in the curiosity result.
+
+\textbf{Threats to validity.} One deterministic episode per checkpoint and game; only 2 successes, so results are inconclusive; checkpoints 75K--450K were tested (final 500K model not scored); RHAE is a local proxy; no random-policy reference under the held-out protocol [to add]; no unmasked baseline. \textbf{Reused vs. ours:} SB3 and sb3-contrib supply PPO and masking; the ARC adapter, curiosity wrapper, memory environment, experiment and evaluation pipeline were written by us.
+
+[1] ARC-AGI-3 Docs. "ARC-AGI Toolkit Quickstart."
+    [Online]. Available: \url{https://docs.arcprize.org/toolkit/overview}.
+    [Accessed: Oct. 24, 2026].
+
+[2] Marc G. Bellemare, Sriram Srinivasan, Georg Ostrovski, Tom Schaul,
+    David Saxton, and Rémi Munos. "Unifying Count-Based Exploration
+    and Intrinsic Motivation." In Advances in Neural Information
+    Processing Systems 29 (NeurIPS 2016), 2016.
+
+[3] Yuri Burda, Harrison Edwards, Amos Storkey, and Oleg Klimov.
+    "Exploration by Random Network Distillation."
+    In International Conference on Learning Representations (ICLR),
+    2019. Available: \url{https://openreview.net/forum?id=H1JJnR5Ym}.
+
+[4] Shengyi Huang and Santiago Ontañón.
+    "A Closer Look at Invalid Action Masking in Policy Gradient
+    Algorithms." The International FLAIRS Conference Proceedings,
+    vol. 35, 2022. doi: 10.32473/flairs.v35i.130584.
+
+[5] Antonin Raffin, Ashley Hill, Adam Gleave, Anssi Kanervisto,
+    Maximilian Ernestus, and Noah Dormann.
+    "Stable-Baselines3: Reliable Reinforcement Learning Implementations."
+    Journal of Machine Learning Research, vol. 22, no. 268,
+    pp. 1–8, 2021.
+
+[6] Stable-Baselines-Team. "SB3-Contrib: Contrib Package for
+    Stable-Baselines3 — Experimental Reinforcement Learning Code."
+    GitHub repository. [Online]. Available:
+    \url{https://github.com/Stable-Baselines-Team/stable-baselines3-contrib}.
+    [Accessed: Oct. 24, 2026].
+
+[7] John Schulman, Philipp Moritz, Sergey Levine, Michael Jordan,
+    and Pieter Abbeel. "High-Dimensional Continuous Control Using
+    Generalized Advantage Estimation."
+    In International Conference on Learning Representations (ICLR),
+    2016. Available: \url{https://arxiv.org/abs/1506.02438}.
+
+[8] John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford,
+    and Oleg Klimov. "Proximal Policy Optimization Algorithms."
+    arXiv preprint arXiv:1707.06347, 2017.
+    Available: \url{https://arxiv.org/abs/1707.06347}.
+
+[9] Haoran Tang, Rein Houthooft, Davis Foote, Adam Stooke, Xi Chen,
+    Yan Duan, John Schulman, Filip De Turck, and Pieter Abbeel.
+    "\#Exploration: A Study of Count-Based Exploration for Deep
+    Reinforcement Learning."
+    In Advances in Neural Information Processing Systems 30
+    (NeurIPS 2017), 2017.
+
+\end{document}
