@@ -1,0 +1,29 @@
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+2026-10-20 06:07:28 | INFO | Got anonymous API key: b20114c5-357e-46a2-b236-b40de16b0f90
+2026-10-20 06:07:28 | INFO | You can register for an API key at https://three.arcprize.org
+2026-10-20 06:07:30 | INFO | Successfully fetched 25 environment(s) from API
+2026-10-20 06:07:30 | INFO | Created new scorecard: 04ad903a-9976-4b14-955e-134cc09e83dd
+2026-10-20 06:07:31 | INFO | Successfully fetched metadata for game ls20
+2026-10-20 06:07:31 | INFO | Successfully loaded game class Ls20 from environment_files\ls20\9607627b\ls20.py
+
+=== FROZEN DQN EVALUATION ===
+Checkpoint: DQN\checkpoints\dqn_v2_ls20_seed123.pt
+Game: ls20
+Evaluation seed: 1001
+
+=== EVALUATION SUMMARY ===
+checkpoint: DQN\checkpoints\dqn_v2_ls20_seed123.pt
+game: ls20-9607627b
+evaluation_seed: 1001
+actions_used: 129
+max_actions: 200
+levels_completed: 0
+total_levels: 7
+success: False
+final_state: GAME_OVER
+runtime_seconds: 1.693
+local_scorecard_score: 0.0
+gradient_updates_during_eval: 0
+
+Trajectory: Evaluations\DQN\dqn_v2_ls20_seed123_eval_ls20_seed1001.csv
+Summary: Evaluations\DQN\dqn_v2_ls20_seed123_eval_ls20_seed1001.json

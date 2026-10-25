@@ -1,0 +1,29 @@
+COMMAND: "C:\Users\okwuk\OneDrive\Desktop\MASTERS COURSEWORK\SEMESTER 2\Reinforcement Learning\arc-agi-3-project\.venv312\Scripts\python.exe" -m DQN.train --variant v2_history_only --game ls20 --episode-limit 300 --batch-size 8 --warmup 64 --train-every 5 --lr 0.0001 --gamma 0.99 --epsilon-start 1.0 --epsilon-end 0.1 --epsilon-decay 2000 --buffer-capacity 3000 --target-update-interval 250 --num-frames 4 --novelty-beta 0.0 --seed 42 --steps 60 --run-suffix smoke60 --warmup 10 --episode-limit 30
+
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+2026-10-20 06:27:22 | INFO | Got anonymous API key: 4fb8318d-9311-412a-81d5-d61871370101
+2026-10-20 06:27:22 | INFO | You can register for an API key at https://three.arcprize.org
+2026-10-20 06:27:23 | INFO | Successfully fetched 25 environment(s) from API
+2026-10-20 06:27:23 | INFO | Created new scorecard: 5d2cc91d-1b2a-4b50-bcaa-f855d3ba9a59
+2026-10-20 06:27:24 | INFO | Successfully fetched metadata for game ls20
+2026-10-20 06:27:24 | INFO | Successfully loaded game class Ls20 from environment_files\ls20\9607627b\ls20.py
+
+Training DQN V2_HISTORY_ONLY on ls20
+Seed: 42
+Interaction budget: 60
+Step 10/60 | episode=1 | epsilon=0.996 | loss=0.0017189610516652465 | levels=0 | time=0.6s
+Step 20/60 | episode=1 | epsilon=0.991 | loss=0.0007553736213594675 | levels=0 | time=1.4s
+Step 30/60 | episode=1 | epsilon=0.987 | loss=0.0006375878001563251 | levels=0 | time=2.3s
+Episode 1 ended: return=0.00, actions=30, terminated=False
+Step 40/60 | episode=2 | epsilon=0.982 | loss=0.0006986606167629361 | levels=0 | time=3.0s
+Step 50/60 | episode=2 | epsilon=0.978 | loss=0.0007911144057288766 | levels=0 | time=4.0s
+Step 60/60 | episode=2 | epsilon=0.973 | loss=0.00014605544856749475 | levels=0 | time=5.3s
+Episode 2 ended: return=0.00, actions=30, terminated=False
+
+=== TRAINING SUMMARY ===
+Interactions: 60
+Gradient updates: 11
+Max levels completed: 0
+Runtime: 5.47 seconds
+Log: Logs\DQN\dqn_v2_history_only_ls20_seed42_smoke60.csv
+Checkpoint: DQN\checkpoints\dqn_v2_history_only_ls20_seed42_smoke60.pt

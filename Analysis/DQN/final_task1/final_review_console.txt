@@ -1,0 +1,9 @@
+{
+  "existing_artifact_hashes_unchanged": 60,
+  "main_artifacts_present": 12,
+  "evaluation_overwrite_guard": true,
+  "report_figure_links": true,
+  "six_high_resolution_figures": true,
+  "git_diff_check": "passed",
+  "no_push_or_merge": true
+}

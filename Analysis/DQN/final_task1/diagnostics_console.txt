@@ -1,0 +1,11 @@
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+2026-10-20 06:27:18 | INFO | Created new scorecard: f3b5f8f7-367b-408f-b6dd-7022110669b4
+2026-10-20 06:27:18 | INFO | Successfully loaded game class Ls20 from environment_files\ls20\9607627b\ls20.py
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+2026-10-20 06:27:19 | INFO | Created new scorecard: e8fef081-c77e-441b-a724-f650b6bb40cf
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+2026-10-20 06:27:19 | INFO | Created new scorecard: 663eac81-f784-4927-a569-886e248e6a70
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+2026-10-20 06:27:19 | INFO | Created new scorecard: e4331590-e9fd-489b-8bf2-620a5ac6c602
+2026-10-20 06:27:19 | INFO | Found latest version of ls20: ls20-9607627b (downloaded: 2026-10-20 04:07:51.260272+00:00)
+Seed and reset diagnostics passed

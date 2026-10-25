@@ -1,0 +1,359 @@
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+2026-10-20 05:57:44 | INFO | Got anonymous API key: f9fb64f2-44c1-482d-a4f8-c58721878da6
+2026-10-20 05:57:44 | INFO | You can register for an API key at https://three.arcprize.org
+2026-10-20 05:57:46 | INFO | Successfully fetched 25 environment(s) from API
+2026-10-20 05:57:46 | INFO | Created new scorecard: 762056cb-08f4-4ec5-a7bb-02a416e12e0f
+2026-10-20 05:57:47 | INFO | Successfully fetched metadata for game ls20
+2026-10-20 05:57:47 | INFO | Successfully loaded game class Ls20 from environment_files\ls20\9607627b\ls20.py
+
+Training DQN V2 on ls20
+Seed: 123
+Interaction budget: 3000
+Step 10/3000 | episode=1 | epsilon=0.996 | loss=None | levels=0 | time=0.1s
+Step 20/3000 | episode=1 | epsilon=0.991 | loss=None | levels=0 | time=0.1s
+Step 30/3000 | episode=1 | epsilon=0.987 | loss=None | levels=0 | time=0.2s
+Step 40/3000 | episode=1 | epsilon=0.982 | loss=None | levels=0 | time=0.4s
+Step 50/3000 | episode=1 | epsilon=0.978 | loss=None | levels=0 | time=0.4s
+Step 60/3000 | episode=1 | epsilon=0.973 | loss=None | levels=0 | time=0.5s
+Step 70/3000 | episode=1 | epsilon=0.969 | loss=0.0020288811065256596 | levels=0 | time=2.2s
+Step 80/3000 | episode=1 | epsilon=0.964 | loss=0.0013524561654776335 | levels=0 | time=4.0s
+Step 90/3000 | episode=1 | epsilon=0.960 | loss=0.0012988699600100517 | levels=0 | time=6.5s
+Step 100/3000 | episode=1 | epsilon=0.955 | loss=0.0009321271209046245 | levels=0 | time=8.6s
+Step 110/3000 | episode=1 | epsilon=0.951 | loss=0.0006198890041559935 | levels=0 | time=10.8s
+Step 120/3000 | episode=1 | epsilon=0.946 | loss=0.0004606882866937667 | levels=0 | time=12.4s
+Step 129/3000 | episode=1 | epsilon=0.942 | loss=None | levels=0 | time=13.2s
+Episode 1 ended: return=1.29, actions=129, terminated=True
+Step 130/3000 | episode=2 | epsilon=0.942 | loss=0.00020933890482410789 | levels=0 | time=14.0s
+Step 140/3000 | episode=2 | epsilon=0.937 | loss=0.00013609799498226494 | levels=0 | time=15.1s
+Step 150/3000 | episode=2 | epsilon=0.933 | loss=8.729840919841081e-05 | levels=0 | time=16.3s
+Step 160/3000 | episode=2 | epsilon=0.928 | loss=8.746450475882739e-05 | levels=0 | time=17.5s
+Step 170/3000 | episode=2 | epsilon=0.924 | loss=6.111202674219385e-05 | levels=0 | time=19.0s
+Step 180/3000 | episode=2 | epsilon=0.919 | loss=5.34820428583771e-05 | levels=0 | time=20.2s
+Step 190/3000 | episode=2 | epsilon=0.915 | loss=4.1038510971702635e-05 | levels=0 | time=21.9s
+Step 200/3000 | episode=2 | epsilon=0.910 | loss=3.943748015444726e-05 | levels=0 | time=23.2s
+Step 210/3000 | episode=2 | epsilon=0.906 | loss=2.667461012606509e-05 | levels=0 | time=24.6s
+Step 220/3000 | episode=2 | epsilon=0.901 | loss=2.4402339477092028e-05 | levels=0 | time=25.8s
+Step 230/3000 | episode=2 | epsilon=0.897 | loss=2.118967859132681e-05 | levels=0 | time=26.9s
+Step 240/3000 | episode=2 | epsilon=0.892 | loss=4.91063929075608e-06 | levels=0 | time=28.1s
+Step 250/3000 | episode=2 | epsilon=0.888 | loss=3.846542767860228e-06 | levels=0 | time=29.1s
+Step 258/3000 | episode=2 | epsilon=0.884 | loss=None | levels=0 | time=29.5s
+Episode 2 ended: return=1.25, actions=129, terminated=True
+Step 260/3000 | episode=3 | epsilon=0.883 | loss=4.750128027808387e-06 | levels=0 | time=30.0s
+Step 270/3000 | episode=3 | epsilon=0.879 | loss=6.526156539621297e-06 | levels=0 | time=31.2s
+Step 280/3000 | episode=3 | epsilon=0.874 | loss=2.5812671538005816e-06 | levels=0 | time=32.9s
+Step 290/3000 | episode=3 | epsilon=0.870 | loss=4.1341954784002155e-06 | levels=0 | time=35.2s
+Step 300/3000 | episode=3 | epsilon=0.865 | loss=8.87404212335241e-07 | levels=0 | time=36.5s
+Step 310/3000 | episode=3 | epsilon=0.861 | loss=4.050678853673162e-06 | levels=0 | time=37.5s
+Step 320/3000 | episode=3 | epsilon=0.856 | loss=2.248251576020266e-06 | levels=0 | time=38.3s
+Step 330/3000 | episode=3 | epsilon=0.852 | loss=1.3851670246367576e-06 | levels=0 | time=39.0s
+Step 340/3000 | episode=3 | epsilon=0.847 | loss=3.208553494005173e-07 | levels=0 | time=39.9s
+Step 350/3000 | episode=3 | epsilon=0.843 | loss=7.024568162705691e-07 | levels=0 | time=40.7s
+Step 360/3000 | episode=3 | epsilon=0.838 | loss=7.44943633890216e-07 | levels=0 | time=41.5s
+Step 370/3000 | episode=3 | epsilon=0.834 | loss=1.0020696663559647e-06 | levels=0 | time=42.3s
+Step 380/3000 | episode=3 | epsilon=0.829 | loss=9.762883479425e-08 | levels=0 | time=43.1s
+Step 387/3000 | episode=3 | epsilon=0.826 | loss=None | levels=0 | time=43.6s
+Episode 3 ended: return=1.25, actions=129, terminated=True
+Step 390/3000 | episode=4 | epsilon=0.825 | loss=1.1118676468413469e-07 | levels=0 | time=44.2s
+Step 400/3000 | episode=4 | epsilon=0.820 | loss=1.699696099421999e-07 | levels=0 | time=45.1s
+Step 410/3000 | episode=4 | epsilon=0.816 | loss=7.357988920375647e-07 | levels=0 | time=46.0s
+Step 420/3000 | episode=4 | epsilon=0.811 | loss=4.4462467485573143e-07 | levels=0 | time=46.8s
+Step 430/3000 | episode=4 | epsilon=0.807 | loss=2.129584260046613e-07 | levels=0 | time=47.5s
+Step 440/3000 | episode=4 | epsilon=0.802 | loss=9.515243277746777e-07 | levels=0 | time=48.3s
+Step 450/3000 | episode=4 | epsilon=0.798 | loss=2.7858948214998236e-07 | levels=0 | time=49.6s
+Step 460/3000 | episode=4 | epsilon=0.793 | loss=4.4985579705780765e-08 | levels=0 | time=50.9s
+Step 470/3000 | episode=4 | epsilon=0.789 | loss=2.472833138256192e-08 | levels=0 | time=52.1s
+Step 480/3000 | episode=4 | epsilon=0.784 | loss=5.415355417426326e-07 | levels=0 | time=53.1s
+Step 490/3000 | episode=4 | epsilon=0.780 | loss=1.5021188914943195e-07 | levels=0 | time=54.0s
+Step 500/3000 | episode=4 | epsilon=0.775 | loss=5.247456556389807e-06 | levels=0 | time=54.9s
+Step 510/3000 | episode=4 | epsilon=0.771 | loss=9.631962427647522e-08 | levels=0 | time=55.9s
+Step 520/3000 | episode=4 | epsilon=0.766 | loss=6.923643809386704e-07 | levels=0 | time=56.9s
+Episode 4 ended: return=1.25, actions=133, terminated=True
+Step 530/3000 | episode=5 | epsilon=0.762 | loss=4.548062406684039e-06 | levels=0 | time=57.7s
+Step 540/3000 | episode=5 | epsilon=0.757 | loss=9.97039137473621e-07 | levels=0 | time=58.6s
+Step 550/3000 | episode=5 | epsilon=0.753 | loss=1.7077911252272315e-05 | levels=0 | time=59.7s
+Step 560/3000 | episode=5 | epsilon=0.748 | loss=1.5723707065262715e-06 | levels=0 | time=61.0s
+Step 570/3000 | episode=5 | epsilon=0.744 | loss=5.8093719417229295e-06 | levels=0 | time=62.0s
+Step 580/3000 | episode=5 | epsilon=0.739 | loss=1.0895706736846478e-06 | levels=0 | time=62.9s
+Step 590/3000 | episode=5 | epsilon=0.735 | loss=8.115569585243065e-07 | levels=0 | time=63.7s
+Step 600/3000 | episode=5 | epsilon=0.730 | loss=4.1901270719790773e-07 | levels=0 | time=64.6s
+Step 610/3000 | episode=5 | epsilon=0.726 | loss=2.010146272368729e-05 | levels=0 | time=65.6s
+Step 620/3000 | episode=5 | epsilon=0.721 | loss=9.872288728729472e-07 | levels=0 | time=66.8s
+Step 630/3000 | episode=5 | epsilon=0.717 | loss=6.219736974344414e-07 | levels=0 | time=68.0s
+Step 640/3000 | episode=5 | epsilon=0.712 | loss=2.6127366936634644e-07 | levels=0 | time=69.1s
+Step 650/3000 | episode=5 | epsilon=0.708 | loss=5.960168437013635e-06 | levels=0 | time=70.2s
+Step 652/3000 | episode=5 | epsilon=0.707 | loss=None | levels=0 | time=70.2s
+Episode 5 ended: return=1.27, actions=132, terminated=True
+Step 660/3000 | episode=6 | epsilon=0.703 | loss=1.0935128784694825e-06 | levels=0 | time=71.1s
+Step 670/3000 | episode=6 | epsilon=0.699 | loss=6.924703939148458e-07 | levels=0 | time=72.0s
+Step 680/3000 | episode=6 | epsilon=0.694 | loss=4.778369202540489e-07 | levels=0 | time=73.1s
+Step 690/3000 | episode=6 | epsilon=0.690 | loss=1.1563521411517286e-06 | levels=0 | time=74.1s
+Step 700/3000 | episode=6 | epsilon=0.685 | loss=5.595522338808223e-07 | levels=0 | time=75.1s
+Step 710/3000 | episode=6 | epsilon=0.681 | loss=2.4774908524705097e-07 | levels=0 | time=75.9s
+Step 720/3000 | episode=6 | epsilon=0.676 | loss=2.1829157503816532e-07 | levels=0 | time=76.8s
+Step 730/3000 | episode=6 | epsilon=0.672 | loss=4.6282619337034703e-07 | levels=0 | time=77.7s
+Step 740/3000 | episode=6 | epsilon=0.667 | loss=1.4517049748974387e-06 | levels=0 | time=78.6s
+Step 750/3000 | episode=6 | epsilon=0.663 | loss=1.700285139349944e-07 | levels=0 | time=79.5s
+Step 760/3000 | episode=6 | epsilon=0.658 | loss=1.3358898343085457e-07 | levels=0 | time=80.2s
+Step 770/3000 | episode=6 | epsilon=0.654 | loss=2.0439543391148618e-07 | levels=0 | time=81.1s
+Step 780/3000 | episode=6 | epsilon=0.649 | loss=5.95082880749942e-08 | levels=0 | time=81.9s
+Step 782/3000 | episode=6 | epsilon=0.649 | loss=None | levels=0 | time=81.9s
+Episode 6 ended: return=1.23, actions=130, terminated=True
+Step 790/3000 | episode=7 | epsilon=0.645 | loss=6.667525553893938e-08 | levels=0 | time=82.7s
+Step 800/3000 | episode=7 | epsilon=0.640 | loss=7.666123025273919e-08 | levels=0 | time=83.6s
+Step 810/3000 | episode=7 | epsilon=0.636 | loss=6.82985216826637e-07 | levels=0 | time=84.4s
+Step 820/3000 | episode=7 | epsilon=0.631 | loss=6.66511539293424e-07 | levels=0 | time=85.3s
+Step 830/3000 | episode=7 | epsilon=0.627 | loss=1.8258033378515393e-05 | levels=0 | time=87.0s
+Step 840/3000 | episode=7 | epsilon=0.622 | loss=1.8667680024009314e-06 | levels=0 | time=88.2s
+Step 850/3000 | episode=7 | epsilon=0.618 | loss=1.1337689329593559e-06 | levels=0 | time=89.4s
+Step 860/3000 | episode=7 | epsilon=0.613 | loss=3.921428231024038e-07 | levels=0 | time=90.6s
+Step 870/3000 | episode=7 | epsilon=0.609 | loss=5.783008418802638e-07 | levels=0 | time=91.6s
+Step 880/3000 | episode=7 | epsilon=0.604 | loss=4.27183294959832e-07 | levels=0 | time=92.6s
+Step 890/3000 | episode=7 | epsilon=0.600 | loss=8.805814672996348e-07 | levels=0 | time=93.6s
+Step 900/3000 | episode=7 | epsilon=0.595 | loss=1.704295300442027e-07 | levels=0 | time=94.5s
+Step 910/3000 | episode=7 | epsilon=0.591 | loss=1.7096118654080783e-07 | levels=0 | time=95.6s
+Step 920/3000 | episode=7 | epsilon=0.586 | loss=7.434243798343232e-08 | levels=0 | time=96.5s
+Step 922/3000 | episode=7 | epsilon=0.586 | loss=None | levels=0 | time=96.5s
+Episode 7 ended: return=1.20, actions=140, terminated=True
+Step 930/3000 | episode=8 | epsilon=0.582 | loss=6.706135309286765e-07 | levels=0 | time=97.5s
+Step 940/3000 | episode=8 | epsilon=0.577 | loss=1.4557148233507178e-06 | levels=0 | time=98.2s
+Step 950/3000 | episode=8 | epsilon=0.573 | loss=1.0743571010607411e-06 | levels=0 | time=99.0s
+Step 960/3000 | episode=8 | epsilon=0.568 | loss=1.7925439976806956e-07 | levels=0 | time=100.0s
+Step 970/3000 | episode=8 | epsilon=0.564 | loss=8.613259296907927e-07 | levels=0 | time=100.8s
+Step 980/3000 | episode=8 | epsilon=0.559 | loss=3.5574674939198303e-07 | levels=0 | time=101.6s
+Step 990/3000 | episode=8 | epsilon=0.555 | loss=9.06152195057075e-07 | levels=0 | time=102.4s
+Step 1000/3000 | episode=8 | epsilon=0.550 | loss=1.1392201031412696e-06 | levels=0 | time=103.2s
+Step 1010/3000 | episode=8 | epsilon=0.546 | loss=1.9054848507948918e-06 | levels=0 | time=104.0s
+Step 1020/3000 | episode=8 | epsilon=0.541 | loss=5.072814701634343e-07 | levels=0 | time=104.6s
+Step 1030/3000 | episode=8 | epsilon=0.537 | loss=5.729960435019166e-07 | levels=0 | time=105.4s
+Step 1040/3000 | episode=8 | epsilon=0.532 | loss=7.482938713110343e-08 | levels=0 | time=106.2s
+Step 1050/3000 | episode=8 | epsilon=0.528 | loss=6.499446953966981e-06 | levels=0 | time=106.9s
+Step 1053/3000 | episode=8 | epsilon=0.527 | loss=None | levels=0 | time=106.9s
+Episode 8 ended: return=1.22, actions=131, terminated=True
+Step 1060/3000 | episode=9 | epsilon=0.523 | loss=1.1817826361948391e-06 | levels=0 | time=107.6s
+Step 1070/3000 | episode=9 | epsilon=0.519 | loss=2.8904270266139065e-07 | levels=0 | time=108.4s
+Step 1080/3000 | episode=9 | epsilon=0.514 | loss=1.0745015970314853e-06 | levels=0 | time=109.1s
+Step 1090/3000 | episode=9 | epsilon=0.510 | loss=2.27501118388318e-06 | levels=0 | time=109.9s
+Step 1100/3000 | episode=9 | epsilon=0.505 | loss=4.417586580984789e-07 | levels=0 | time=110.9s
+Step 1110/3000 | episode=9 | epsilon=0.501 | loss=2.5281008220190415e-07 | levels=0 | time=111.6s
+Step 1120/3000 | episode=9 | epsilon=0.496 | loss=1.0651357342794654e-06 | levels=0 | time=112.5s
+Step 1130/3000 | episode=9 | epsilon=0.492 | loss=9.205875528550678e-08 | levels=0 | time=113.3s
+Step 1140/3000 | episode=9 | epsilon=0.487 | loss=6.681772447336698e-06 | levels=0 | time=114.0s
+Step 1150/3000 | episode=9 | epsilon=0.483 | loss=9.272767442780605e-07 | levels=0 | time=114.6s
+Step 1160/3000 | episode=9 | epsilon=0.478 | loss=5.528840119950473e-06 | levels=0 | time=115.2s
+Step 1170/3000 | episode=9 | epsilon=0.474 | loss=1.3330477486306336e-06 | levels=0 | time=115.8s
+Step 1180/3000 | episode=9 | epsilon=0.469 | loss=1.0831563486135565e-06 | levels=0 | time=116.4s
+Step 1182/3000 | episode=9 | epsilon=0.469 | loss=None | levels=0 | time=116.4s
+Episode 9 ended: return=1.13, actions=129, terminated=True
+Step 1190/3000 | episode=10 | epsilon=0.465 | loss=2.600674861241714e-06 | levels=0 | time=117.0s
+Step 1200/3000 | episode=10 | epsilon=0.460 | loss=5.177438424652792e-07 | levels=0 | time=117.5s
+Step 1210/3000 | episode=10 | epsilon=0.456 | loss=1.877016075013671e-06 | levels=0 | time=118.1s
+Step 1220/3000 | episode=10 | epsilon=0.451 | loss=1.6008345937734703e-06 | levels=0 | time=118.8s
+Step 1230/3000 | episode=10 | epsilon=0.447 | loss=6.532224688271526e-06 | levels=0 | time=119.6s
+Step 1240/3000 | episode=10 | epsilon=0.442 | loss=1.6074081941042095e-06 | levels=0 | time=120.5s
+Step 1250/3000 | episode=10 | epsilon=0.438 | loss=5.027960696679656e-07 | levels=0 | time=121.3s
+Step 1260/3000 | episode=10 | epsilon=0.433 | loss=1.8194256199421943e-06 | levels=0 | time=122.5s
+Step 1270/3000 | episode=10 | epsilon=0.429 | loss=1.2746099855576176e-06 | levels=0 | time=124.7s
+Step 1280/3000 | episode=10 | epsilon=0.424 | loss=4.6047517798797344e-07 | levels=0 | time=126.0s
+Step 1290/3000 | episode=10 | epsilon=0.420 | loss=8.149310133376275e-07 | levels=0 | time=127.5s
+Step 1300/3000 | episode=10 | epsilon=0.415 | loss=9.361307320432388e-07 | levels=0 | time=128.8s
+Step 1310/3000 | episode=10 | epsilon=0.411 | loss=1.1193817499588476e-06 | levels=0 | time=130.2s
+Step 1311/3000 | episode=10 | epsilon=0.410 | loss=None | levels=0 | time=130.3s
+Episode 10 ended: return=1.11, actions=129, terminated=True
+Step 1320/3000 | episode=11 | epsilon=0.406 | loss=3.685856790980324e-05 | levels=0 | time=131.2s
+Step 1330/3000 | episode=11 | epsilon=0.402 | loss=1.1138307854707818e-05 | levels=0 | time=132.0s
+Step 1340/3000 | episode=11 | epsilon=0.397 | loss=5.333613898983458e-06 | levels=0 | time=132.7s
+Step 1350/3000 | episode=11 | epsilon=0.393 | loss=2.0892004613415338e-05 | levels=0 | time=133.4s
+Step 1360/3000 | episode=11 | epsilon=0.388 | loss=1.399985467287479e-05 | levels=0 | time=134.1s
+Step 1370/3000 | episode=11 | epsilon=0.384 | loss=5.140334906172939e-06 | levels=0 | time=134.7s
+Step 1380/3000 | episode=11 | epsilon=0.379 | loss=1.7089266748371301e-06 | levels=0 | time=135.8s
+Step 1390/3000 | episode=11 | epsilon=0.375 | loss=7.7695431173197e-06 | levels=0 | time=136.7s
+Step 1400/3000 | episode=11 | epsilon=0.370 | loss=3.565511360648088e-05 | levels=0 | time=137.6s
+Step 1410/3000 | episode=11 | epsilon=0.366 | loss=9.941557436832227e-06 | levels=0 | time=138.7s
+Step 1420/3000 | episode=11 | epsilon=0.361 | loss=5.251994480204303e-06 | levels=0 | time=140.0s
+Step 1430/3000 | episode=11 | epsilon=0.357 | loss=2.7179062271898147e-06 | levels=0 | time=141.0s
+Step 1440/3000 | episode=11 | epsilon=0.352 | loss=5.653972948493902e-06 | levels=0 | time=142.0s
+Step 1450/3000 | episode=11 | epsilon=0.348 | loss=4.107629592908779e-06 | levels=0 | time=143.0s
+Step 1457/3000 | episode=11 | epsilon=0.345 | loss=None | levels=0 | time=143.5s
+Episode 11 ended: return=1.17, actions=146, terminated=True
+Step 1460/3000 | episode=12 | epsilon=0.343 | loss=6.139254651316151e-07 | levels=0 | time=144.0s
+Step 1470/3000 | episode=12 | epsilon=0.339 | loss=9.616809393264703e-07 | levels=0 | time=144.9s
+Step 1480/3000 | episode=12 | epsilon=0.334 | loss=2.3001505269348854e-06 | levels=0 | time=145.9s
+Step 1490/3000 | episode=12 | epsilon=0.330 | loss=1.1772679044952383e-06 | levels=0 | time=147.1s
+Step 1500/3000 | episode=12 | epsilon=0.325 | loss=2.5732813355716644e-06 | levels=0 | time=148.2s
+Step 1510/3000 | episode=12 | epsilon=0.321 | loss=1.9357876226422377e-06 | levels=0 | time=149.4s
+Step 1520/3000 | episode=12 | epsilon=0.316 | loss=1.5052670505610877e-06 | levels=0 | time=150.2s
+Step 1530/3000 | episode=12 | epsilon=0.312 | loss=5.909665787839913e-07 | levels=0 | time=151.1s
+Step 1540/3000 | episode=12 | epsilon=0.307 | loss=7.924668352643494e-06 | levels=0 | time=152.1s
+Step 1550/3000 | episode=12 | epsilon=0.303 | loss=1.5978579313014052e-06 | levels=0 | time=153.0s
+Step 1560/3000 | episode=12 | epsilon=0.298 | loss=2.638093292262056e-06 | levels=0 | time=153.9s
+Step 1570/3000 | episode=12 | epsilon=0.294 | loss=1.2407160738803213e-06 | levels=0 | time=154.8s
+Step 1580/3000 | episode=12 | epsilon=0.289 | loss=1.457442976970924e-06 | levels=0 | time=155.9s
+Step 1590/3000 | episode=12 | epsilon=0.285 | loss=2.1039968487457372e-06 | levels=0 | time=157.1s
+Step 1591/3000 | episode=12 | epsilon=0.284 | loss=None | levels=0 | time=157.1s
+Episode 12 ended: return=1.09, actions=134, terminated=True
+Step 1600/3000 | episode=13 | epsilon=0.280 | loss=1.8801961232384201e-06 | levels=0 | time=158.0s
+Step 1610/3000 | episode=13 | epsilon=0.276 | loss=2.0435868464119267e-06 | levels=0 | time=159.0s
+Step 1620/3000 | episode=13 | epsilon=0.271 | loss=2.5486249342066003e-06 | levels=0 | time=159.9s
+Step 1630/3000 | episode=13 | epsilon=0.267 | loss=5.719953719562909e-07 | levels=0 | time=160.7s
+Step 1640/3000 | episode=13 | epsilon=0.262 | loss=6.031623343005776e-06 | levels=0 | time=161.5s
+Step 1650/3000 | episode=13 | epsilon=0.258 | loss=4.783379154105205e-06 | levels=0 | time=162.6s
+Step 1660/3000 | episode=13 | epsilon=0.253 | loss=2.1542059585044626e-06 | levels=0 | time=163.8s
+Step 1670/3000 | episode=13 | epsilon=0.249 | loss=2.4492383090546355e-06 | levels=0 | time=164.8s
+Step 1680/3000 | episode=13 | epsilon=0.244 | loss=5.7995907809527125e-06 | levels=0 | time=166.0s
+Step 1690/3000 | episode=13 | epsilon=0.240 | loss=1.1930817436223151e-06 | levels=0 | time=167.2s
+Step 1700/3000 | episode=13 | epsilon=0.235 | loss=2.577598479547305e-06 | levels=0 | time=168.2s
+Step 1710/3000 | episode=13 | epsilon=0.231 | loss=2.528024197090417e-06 | levels=0 | time=169.2s
+Step 1720/3000 | episode=13 | epsilon=0.226 | loss=4.522468771028798e-06 | levels=0 | time=170.0s
+Step 1721/3000 | episode=13 | epsilon=0.226 | loss=None | levels=0 | time=170.0s
+Episode 13 ended: return=1.17, actions=130, terminated=True
+Step 1730/3000 | episode=14 | epsilon=0.222 | loss=2.3999302811716916e-06 | levels=0 | time=170.6s
+Step 1740/3000 | episode=14 | epsilon=0.217 | loss=2.7149308152729645e-06 | levels=0 | time=171.3s
+Step 1750/3000 | episode=14 | epsilon=0.213 | loss=4.0414843169855885e-06 | levels=0 | time=172.0s
+Step 1760/3000 | episode=14 | epsilon=0.208 | loss=2.7061662422056543e-06 | levels=0 | time=172.9s
+Step 1770/3000 | episode=14 | epsilon=0.204 | loss=3.650435246527195e-06 | levels=0 | time=173.7s
+Step 1780/3000 | episode=14 | epsilon=0.199 | loss=2.827949401762453e-06 | levels=0 | time=174.4s
+Step 1790/3000 | episode=14 | epsilon=0.195 | loss=9.233368132299802e-07 | levels=0 | time=175.1s
+Step 1800/3000 | episode=14 | epsilon=0.190 | loss=1.9203525880584493e-06 | levels=0 | time=175.8s
+Step 1810/3000 | episode=14 | epsilon=0.186 | loss=2.9375212307058973e-07 | levels=0 | time=176.5s
+Step 1820/3000 | episode=14 | epsilon=0.181 | loss=1.021285424940288e-05 | levels=0 | time=177.1s
+Step 1830/3000 | episode=14 | epsilon=0.177 | loss=3.006702854690957e-06 | levels=0 | time=177.8s
+Step 1840/3000 | episode=14 | epsilon=0.172 | loss=3.141379238513764e-06 | levels=0 | time=178.5s
+Step 1850/3000 | episode=14 | epsilon=0.168 | loss=1.6857819673532504e-06 | levels=0 | time=179.2s
+Step 1860/3000 | episode=14 | epsilon=0.163 | loss=4.2372844291094225e-06 | levels=0 | time=179.8s
+Step 1870/3000 | episode=14 | epsilon=0.159 | loss=4.244752744853031e-06 | levels=0 | time=180.5s
+Step 1880/3000 | episode=14 | epsilon=0.154 | loss=1.7974388129005092e-06 | levels=0 | time=181.1s
+Step 1881/3000 | episode=14 | epsilon=0.154 | loss=None | levels=0 | time=181.1s
+Episode 14 ended: return=1.02, actions=160, terminated=True
+Step 1890/3000 | episode=15 | epsilon=0.150 | loss=2.4622022465337068e-06 | levels=0 | time=182.2s
+Step 1900/3000 | episode=15 | epsilon=0.145 | loss=7.333238045248436e-06 | levels=0 | time=183.2s
+Step 1910/3000 | episode=15 | epsilon=0.141 | loss=9.199569603879354e-07 | levels=0 | time=183.9s
+Step 1920/3000 | episode=15 | epsilon=0.136 | loss=1.1333019756420981e-05 | levels=0 | time=184.5s
+Step 1930/3000 | episode=15 | epsilon=0.132 | loss=6.5808721956273075e-06 | levels=0 | time=185.1s
+Step 1940/3000 | episode=15 | epsilon=0.127 | loss=1.0472100257175043e-05 | levels=0 | time=185.7s
+Step 1950/3000 | episode=15 | epsilon=0.123 | loss=4.741477368952474e-06 | levels=0 | time=186.3s
+Step 1960/3000 | episode=15 | epsilon=0.118 | loss=3.722361725522205e-05 | levels=0 | time=186.9s
+Step 1970/3000 | episode=15 | epsilon=0.114 | loss=1.1102769349236041e-05 | levels=0 | time=187.6s
+Step 1980/3000 | episode=15 | epsilon=0.109 | loss=3.0982519092503935e-06 | levels=0 | time=188.3s
+Step 1990/3000 | episode=15 | epsilon=0.105 | loss=1.1792870282079093e-05 | levels=0 | time=189.2s
+Step 2000/3000 | episode=15 | epsilon=0.100 | loss=6.684208528895397e-06 | levels=0 | time=189.8s
+Step 2010/3000 | episode=15 | epsilon=0.100 | loss=1.4914112398400903e-06 | levels=0 | time=190.5s
+Episode 15 ended: return=1.09, actions=129, terminated=True
+Step 2020/3000 | episode=16 | epsilon=0.100 | loss=3.747357595784706e-06 | levels=0 | time=191.2s
+Step 2030/3000 | episode=16 | epsilon=0.100 | loss=7.093696240190184e-06 | levels=0 | time=191.8s
+Step 2040/3000 | episode=16 | epsilon=0.100 | loss=4.0897378994486644e-07 | levels=0 | time=192.4s
+Step 2050/3000 | episode=16 | epsilon=0.100 | loss=2.1842531623406103e-06 | levels=0 | time=193.0s
+Step 2060/3000 | episode=16 | epsilon=0.100 | loss=2.485125378370867e-06 | levels=0 | time=193.6s
+Step 2070/3000 | episode=16 | epsilon=0.100 | loss=2.8628437576116994e-06 | levels=0 | time=194.2s
+Step 2080/3000 | episode=16 | epsilon=0.100 | loss=3.495277269394137e-06 | levels=0 | time=194.8s
+Step 2090/3000 | episode=16 | epsilon=0.100 | loss=6.492333795904415e-06 | levels=0 | time=195.4s
+Step 2100/3000 | episode=16 | epsilon=0.100 | loss=4.801609065907542e-06 | levels=0 | time=196.0s
+Step 2110/3000 | episode=16 | epsilon=0.100 | loss=1.2248717666807352e-06 | levels=0 | time=196.7s
+Step 2120/3000 | episode=16 | epsilon=0.100 | loss=2.715410801101825e-06 | levels=0 | time=197.7s
+Step 2130/3000 | episode=16 | epsilon=0.100 | loss=1.020817535390961e-06 | levels=0 | time=198.5s
+Step 2140/3000 | episode=16 | epsilon=0.100 | loss=1.2815592072001891e-06 | levels=0 | time=199.2s
+Episode 16 ended: return=1.03, actions=130, terminated=True
+Step 2150/3000 | episode=17 | epsilon=0.100 | loss=7.78620506025618e-06 | levels=0 | time=199.8s
+Step 2160/3000 | episode=17 | epsilon=0.100 | loss=2.12449731407105e-06 | levels=0 | time=200.4s
+Step 2170/3000 | episode=17 | epsilon=0.100 | loss=5.437903382699005e-06 | levels=0 | time=201.1s
+Step 2180/3000 | episode=17 | epsilon=0.100 | loss=4.3602994992397726e-06 | levels=0 | time=201.7s
+Step 2190/3000 | episode=17 | epsilon=0.100 | loss=2.265006969537353e-06 | levels=0 | time=202.3s
+Step 2200/3000 | episode=17 | epsilon=0.100 | loss=8.563119422433374e-07 | levels=0 | time=203.0s
+Step 2210/3000 | episode=17 | epsilon=0.100 | loss=4.609927600540686e-06 | levels=0 | time=203.6s
+Step 2220/3000 | episode=17 | epsilon=0.100 | loss=2.5446386189287296e-06 | levels=0 | time=204.2s
+Step 2230/3000 | episode=17 | epsilon=0.100 | loss=4.3770854972535744e-05 | levels=0 | time=204.8s
+Step 2240/3000 | episode=17 | epsilon=0.100 | loss=5.437162599264411e-06 | levels=0 | time=205.5s
+Step 2250/3000 | episode=17 | epsilon=0.100 | loss=2.740683612501016e-06 | levels=0 | time=206.1s
+Step 2260/3000 | episode=17 | epsilon=0.100 | loss=2.7626804239844205e-06 | levels=0 | time=206.7s
+Step 2270/3000 | episode=17 | epsilon=0.100 | loss=1.709337993816007e-06 | levels=0 | time=207.3s
+Step 2278/3000 | episode=17 | epsilon=0.100 | loss=None | levels=0 | time=207.6s
+Episode 17 ended: return=1.03, actions=138, terminated=True
+Step 2280/3000 | episode=18 | epsilon=0.100 | loss=2.194838998548221e-06 | levels=0 | time=207.9s
+Step 2290/3000 | episode=18 | epsilon=0.100 | loss=7.016600420683972e-07 | levels=0 | time=208.6s
+Step 2300/3000 | episode=18 | epsilon=0.100 | loss=6.130621272859571e-07 | levels=0 | time=209.3s
+Step 2310/3000 | episode=18 | epsilon=0.100 | loss=5.164469257579185e-06 | levels=0 | time=210.0s
+Step 2320/3000 | episode=18 | epsilon=0.100 | loss=1.829028406064026e-06 | levels=0 | time=210.6s
+Step 2330/3000 | episode=18 | epsilon=0.100 | loss=5.779959337814944e-06 | levels=0 | time=211.2s
+Step 2340/3000 | episode=18 | epsilon=0.100 | loss=1.5982938066372299e-06 | levels=0 | time=211.8s
+Step 2350/3000 | episode=18 | epsilon=0.100 | loss=3.6198096040607197e-06 | levels=0 | time=212.4s
+Step 2360/3000 | episode=18 | epsilon=0.100 | loss=3.2043619739852147e-06 | levels=0 | time=213.1s
+Step 2370/3000 | episode=18 | epsilon=0.100 | loss=1.01469709079538e-06 | levels=0 | time=213.7s
+Step 2380/3000 | episode=18 | epsilon=0.100 | loss=1.015156954053964e-06 | levels=0 | time=214.3s
+Step 2390/3000 | episode=18 | epsilon=0.100 | loss=1.1841041214211145e-06 | levels=0 | time=214.9s
+Step 2400/3000 | episode=18 | epsilon=0.100 | loss=1.5223036825773306e-05 | levels=0 | time=215.4s
+Step 2410/3000 | episode=18 | epsilon=0.100 | loss=1.9636383967736037e-06 | levels=0 | time=216.0s
+Step 2417/3000 | episode=18 | epsilon=0.100 | loss=None | levels=0 | time=216.3s
+Episode 18 ended: return=1.10, actions=139, terminated=True
+Step 2420/3000 | episode=19 | epsilon=0.100 | loss=7.885602144597215e-07 | levels=0 | time=216.5s
+Step 2430/3000 | episode=19 | epsilon=0.100 | loss=2.0524039427982643e-06 | levels=0 | time=217.1s
+Step 2440/3000 | episode=19 | epsilon=0.100 | loss=4.060642822878435e-06 | levels=0 | time=217.7s
+Step 2450/3000 | episode=19 | epsilon=0.100 | loss=1.1174261089763604e-06 | levels=0 | time=218.3s
+Step 2460/3000 | episode=19 | epsilon=0.100 | loss=1.3612260545414756e-06 | levels=0 | time=218.9s
+Step 2470/3000 | episode=19 | epsilon=0.100 | loss=4.33418199463631e-06 | levels=0 | time=219.4s
+Step 2480/3000 | episode=19 | epsilon=0.100 | loss=1.8680514131119708e-06 | levels=0 | time=220.1s
+Step 2490/3000 | episode=19 | epsilon=0.100 | loss=2.742553988355212e-06 | levels=0 | time=220.7s
+Step 2500/3000 | episode=19 | epsilon=0.100 | loss=4.752097993332427e-06 | levels=0 | time=221.3s
+Step 2510/3000 | episode=19 | epsilon=0.100 | loss=1.185413475468522e-05 | levels=0 | time=221.8s
+Step 2520/3000 | episode=19 | epsilon=0.100 | loss=1.7438034774386324e-05 | levels=0 | time=222.4s
+Step 2530/3000 | episode=19 | epsilon=0.100 | loss=6.310957360255998e-06 | levels=0 | time=223.0s
+Step 2540/3000 | episode=19 | epsilon=0.100 | loss=8.29998043627711e-06 | levels=0 | time=223.6s
+Step 2546/3000 | episode=19 | epsilon=0.100 | loss=None | levels=0 | time=223.9s
+Episode 19 ended: return=0.89, actions=129, terminated=True
+Step 2550/3000 | episode=20 | epsilon=0.100 | loss=2.744375706242863e-06 | levels=0 | time=224.2s
+Step 2560/3000 | episode=20 | epsilon=0.100 | loss=3.4655984109122073e-06 | levels=0 | time=224.8s
+Step 2570/3000 | episode=20 | epsilon=0.100 | loss=3.277498035458848e-05 | levels=0 | time=225.4s
+Step 2580/3000 | episode=20 | epsilon=0.100 | loss=8.424582119914703e-06 | levels=0 | time=226.0s
+Step 2590/3000 | episode=20 | epsilon=0.100 | loss=3.2326056498277467e-06 | levels=0 | time=226.5s
+Step 2600/3000 | episode=20 | epsilon=0.100 | loss=6.968563684495166e-05 | levels=0 | time=227.2s
+Step 2610/3000 | episode=20 | epsilon=0.100 | loss=1.6673982827342115e-05 | levels=0 | time=227.8s
+Step 2620/3000 | episode=20 | epsilon=0.100 | loss=2.6843031264434103e-06 | levels=0 | time=228.5s
+Step 2630/3000 | episode=20 | epsilon=0.100 | loss=1.6087717085611075e-05 | levels=0 | time=229.3s
+Step 2640/3000 | episode=20 | epsilon=0.100 | loss=9.912302630254999e-06 | levels=0 | time=230.1s
+Step 2650/3000 | episode=20 | epsilon=0.100 | loss=1.1595939213293605e-05 | levels=0 | time=230.8s
+Step 2660/3000 | episode=20 | epsilon=0.100 | loss=2.9288830774021335e-06 | levels=0 | time=231.4s
+Step 2670/3000 | episode=20 | epsilon=0.100 | loss=3.968326382164378e-06 | levels=0 | time=231.9s
+Step 2680/3000 | episode=20 | epsilon=0.100 | loss=1.2206591236463282e-05 | levels=0 | time=232.5s
+Step 2687/3000 | episode=20 | epsilon=0.100 | loss=None | levels=0 | time=232.9s
+Episode 20 ended: return=0.94, actions=141, terminated=True
+Step 2690/3000 | episode=21 | epsilon=0.100 | loss=0.00011165219621034339 | levels=0 | time=233.3s
+Step 2700/3000 | episode=21 | epsilon=0.100 | loss=1.2849928680225275e-05 | levels=0 | time=234.1s
+Step 2710/3000 | episode=21 | epsilon=0.100 | loss=1.846407940320205e-06 | levels=0 | time=234.9s
+Step 2720/3000 | episode=21 | epsilon=0.100 | loss=1.083018651115708e-05 | levels=0 | time=235.6s
+Step 2730/3000 | episode=21 | epsilon=0.100 | loss=1.152608274423983e-05 | levels=0 | time=236.3s
+Step 2740/3000 | episode=21 | epsilon=0.100 | loss=2.5536246539559215e-06 | levels=0 | time=236.9s
+Step 2750/3000 | episode=21 | epsilon=0.100 | loss=8.303127833642066e-05 | levels=0 | time=237.5s
+Step 2760/3000 | episode=21 | epsilon=0.100 | loss=3.4226295611006208e-06 | levels=0 | time=238.1s
+Step 2770/3000 | episode=21 | epsilon=0.100 | loss=3.6602541513275355e-06 | levels=0 | time=238.7s
+Step 2780/3000 | episode=21 | epsilon=0.100 | loss=1.3059757293376606e-05 | levels=0 | time=239.2s
+Step 2790/3000 | episode=21 | epsilon=0.100 | loss=8.846127457218245e-06 | levels=0 | time=239.7s
+Step 2800/3000 | episode=21 | epsilon=0.100 | loss=6.009158369124634e-06 | levels=0 | time=240.3s
+Step 2810/3000 | episode=21 | epsilon=0.100 | loss=4.6359937186934985e-06 | levels=0 | time=240.8s
+Step 2816/3000 | episode=21 | epsilon=0.100 | loss=None | levels=0 | time=241.1s
+Episode 21 ended: return=1.11, actions=129, terminated=True
+Step 2820/3000 | episode=22 | epsilon=0.100 | loss=6.6491188590589445e-06 | levels=0 | time=241.4s
+Step 2830/3000 | episode=22 | epsilon=0.100 | loss=5.452820005302783e-06 | levels=0 | time=241.9s
+Step 2840/3000 | episode=22 | epsilon=0.100 | loss=9.146406955551356e-05 | levels=0 | time=242.4s
+Step 2850/3000 | episode=22 | epsilon=0.100 | loss=1.8290844309376553e-05 | levels=0 | time=243.0s
+Step 2860/3000 | episode=22 | epsilon=0.100 | loss=2.2363490188581636e-06 | levels=0 | time=243.5s
+Step 2870/3000 | episode=22 | epsilon=0.100 | loss=3.991216544818599e-06 | levels=0 | time=244.0s
+Step 2880/3000 | episode=22 | epsilon=0.100 | loss=6.8023064159206115e-06 | levels=0 | time=244.6s
+Step 2890/3000 | episode=22 | epsilon=0.100 | loss=4.0987406464410014e-06 | levels=0 | time=245.1s
+Step 2900/3000 | episode=22 | epsilon=0.100 | loss=6.179095180414151e-06 | levels=0 | time=245.8s
+Step 2910/3000 | episode=22 | epsilon=0.100 | loss=6.0326965467538685e-06 | levels=0 | time=246.4s
+Step 2920/3000 | episode=22 | epsilon=0.100 | loss=5.1809092838084325e-06 | levels=0 | time=247.0s
+Step 2930/3000 | episode=22 | epsilon=0.100 | loss=4.7973321670724545e-06 | levels=0 | time=247.5s
+Step 2940/3000 | episode=22 | epsilon=0.100 | loss=5.229492217040388e-06 | levels=0 | time=248.2s
+Step 2950/3000 | episode=22 | epsilon=0.100 | loss=3.3324693049507914e-06 | levels=0 | time=249.1s
+Step 2960/3000 | episode=22 | epsilon=0.100 | loss=5.703828719560988e-06 | levels=0 | time=250.8s
+Step 2970/3000 | episode=22 | epsilon=0.100 | loss=1.1698852176778018e-05 | levels=0 | time=252.1s
+Step 2980/3000 | episode=22 | epsilon=0.100 | loss=4.857923613599269e-06 | levels=0 | time=252.9s
+Episode 22 ended: return=0.88, actions=164, terminated=True
+Step 2990/3000 | episode=23 | epsilon=0.100 | loss=7.808620466676075e-06 | levels=0 | time=253.5s
+Step 3000/3000 | episode=23 | epsilon=0.100 | loss=6.0259158090048e-06 | levels=0 | time=254.0s
+
+=== TRAINING SUMMARY ===
+Interactions: 3000
+Gradient updates: 588
+Max levels completed: 0
+Runtime: 254.15 seconds
+Log: Logs\DQN\dqn_v2_ls20_seed123.csv
+Checkpoint: DQN\checkpoints\dqn_v2_ls20_seed123.pt

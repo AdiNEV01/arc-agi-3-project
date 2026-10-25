@@ -1,0 +1,12 @@
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v0_ls20_seed42_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v0_ls20_seed123_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v0_ls20_seed456_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v1_ls20_seed42_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v1_ls20_seed123_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v1_ls20_seed456_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v2_history_only_ls20_seed42_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v2_history_only_ls20_seed123_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v2_history_only_ls20_seed456_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v2_ls20_seed42_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v2_ls20_seed123_console.txt
+Completed: Evaluations/DQN/zero_shot_final_task1/dqn_v2_ls20_seed456_console.txt

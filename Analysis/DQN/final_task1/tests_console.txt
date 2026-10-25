@@ -1,0 +1,13 @@
+COMMAND: "C:\Users\okwuk\OneDrive\Desktop\MASTERS COURSEWORK\SEMESTER 2\Reinforcement Learning\arc-agi-3-project\.venv312\Scripts\python.exe" -m DQN.test_task1
+
+test_greedy_masks_illegal_actions (__main__.Task1Tests.test_greedy_masks_illegal_actions) ... ok
+test_history_channel_order_and_reset (__main__.Task1Tests.test_history_channel_order_and_reset) ... ok
+test_legacy_encoding_and_checkpoint_shapes (__main__.Task1Tests.test_legacy_encoding_and_checkpoint_shapes) ... ok
+test_terminal_replay_is_independent_and_learns (__main__.Task1Tests.test_terminal_replay_is_independent_and_learns) ... ok
+test_variant_contract_and_defaults (__main__.Task1Tests.test_variant_contract_and_defaults) ... ok
+test_zero_beta_still_counts_but_never_rewards (__main__.Task1Tests.test_zero_beta_still_counts_but_never_rewards) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 11.648s
+
+OK

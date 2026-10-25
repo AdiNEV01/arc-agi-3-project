@@ -1,0 +1,29 @@
+COMMAND: "C:\Users\okwuk\OneDrive\Desktop\MASTERS COURSEWORK\SEMESTER 2\Reinforcement Learning\arc-agi-3-project\.venv312\Scripts\python.exe" -m DQN.evaluate --checkpoint DQN/checkpoints/dqn_v0_ls20_seed456.pt --game vc33-5430563c --seed 1001 --max-actions 200 --output-dir "C:\Users\okwuk\OneDrive\Desktop\MASTERS COURSEWORK\SEMESTER 2\Reinforcement Learning\arc-agi-3-project\Evaluations\DQN\zero_shot_final_task1"
+
+INFO:arc_agi.scorecard:Initialized ScorecardManager with idle_for=0:15:00 and max_open_for=3 days, 0:00:00
+2026-10-20 06:45:24 | INFO | Created new scorecard: c870529d-0f79-4bed-9f17-6986b369280d
+2026-10-20 06:45:24 | INFO | Successfully loaded game class Vc33 from environment_files\vc33\5430563c\vc33.py
+
+=== FROZEN DQN EVALUATION ===
+Checkpoint: DQN\checkpoints\dqn_v0_ls20_seed456.pt
+Game: vc33-5430563c
+Evaluation seed: 1001
+
+=== EVALUATION SUMMARY ===
+checkpoint: DQN\checkpoints\dqn_v0_ls20_seed456.pt
+game: vc33-5430563c
+evaluation_seed: 1001
+actions_used: 50
+max_actions: 200
+levels_completed: 0
+total_levels: 7
+success: False
+final_state: GAME_OVER
+runtime_seconds: 0.714
+local_scorecard_score: 0.0
+gradient_updates_during_eval: 0
+num_frames: 1
+policy_parameters_unchanged: True
+
+Trajectory: C:\Users\okwuk\OneDrive\Desktop\MASTERS COURSEWORK\SEMESTER 2\Reinforcement Learning\arc-agi-3-project\Evaluations\DQN\zero_shot_final_task1\dqn_v0_ls20_seed456_eval_vc33-5430563c_seed1001.csv
+Summary: C:\Users\okwuk\OneDrive\Desktop\MASTERS COURSEWORK\SEMESTER 2\Reinforcement Learning\arc-agi-3-project\Evaluations\DQN\zero_shot_final_task1\dqn_v0_ls20_seed456_eval_vc33-5430563c_seed1001.json
