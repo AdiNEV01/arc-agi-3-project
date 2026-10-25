@@ -1,0 +1,4 @@
+tag,policy,game_id,game_seed,episode_index,action_seed,levels_completed,success,steps,end_state,terminated,truncated,extrinsic_return,model_path,ppo_stochastic,elapsed_seconds
+random_s0_s1_s2,random,ls20,0,0,1,0,0,129,GAME_OVER,1,0,0.0,,,0.11363159993197769
+random_s0_s1_s2,random,ls20,1,0,100001,0,0,131,GAME_OVER,1,0,0.0,,,0.11415260005742311
+random_s0_s1_s2,random,ls20,2,0,200001,0,0,129,GAME_OVER,1,0,0.0,,,0.10872270003892481

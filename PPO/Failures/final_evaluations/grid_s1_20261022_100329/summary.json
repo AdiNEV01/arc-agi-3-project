@@ -1,0 +1,27 @@
+{
+  "tag": "grid_s1",
+  "policy": "ppo",
+  "game_id": "ls20",
+  "seeds": [
+    10,
+    11,
+    12
+  ],
+  "episodes_per_seed": 1,
+  "observation_mode": "grid",
+  "episodes": 3,
+  "successful_episodes": 0,
+  "success_rate": 0.0,
+  "mean_levels_completed": 0.0,
+  "mean_steps": 500.0,
+  "mean_extrinsic_return": 0.0,
+  "ending_states": {
+    "STEP_LIMIT": 3
+  },
+  "stochastic_ppo": false,
+  "model_path": "outputs\\grid_s1\\ppo_final.zip",
+  "model_training_timesteps": 500224,
+  "elapsed_seconds": 27.89455420000013,
+  "local_levels_completed_are_official_arc_score": false,
+  "episode_results_csv": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\final_evaluations\\grid_s1_20261022_100329\\episodes.csv"
+}

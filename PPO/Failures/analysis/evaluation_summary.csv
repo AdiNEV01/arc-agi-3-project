@@ -1,0 +1,3 @@
+tag,episodes,unique_game_seeds,successful_episodes,success_rate,success_rate_95ci_low,success_rate_95ci_high,mean_levels_completed,std_levels_completed,mean_steps,std_steps,mean_extrinsic_return,game_over_count,step_limit_count,win_count
+ppo_2m_baseline_s0,3,3,0,0.0,0.0,0.5615060804490177,0.0,0.0,129.0,0.0,0.0,3,0,0
+random_s0_s1_s2,3,3,0,0.0,0.0,0.5615060804490177,0.0,0.0,129.66666666666666,1.1547005383792515,0.0,3,0,0

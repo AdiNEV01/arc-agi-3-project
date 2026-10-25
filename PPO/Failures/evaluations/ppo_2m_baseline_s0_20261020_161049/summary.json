@@ -1,0 +1,26 @@
+{
+  "tag": "ppo_2m_baseline_s0",
+  "policy": "ppo",
+  "game_id": "ls20",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "episodes_per_seed": 1,
+  "episodes": 3,
+  "successful_episodes": 0,
+  "success_rate": 0.0,
+  "mean_levels_completed": 0.0,
+  "mean_steps": 129.0,
+  "mean_extrinsic_return": 0.0,
+  "ending_states": {
+    "GAME_OVER": 3
+  },
+  "stochastic_ppo": false,
+  "model_path": "outputs/ppo_2m_baseline_s0/ppo_final.zip",
+  "model_training_timesteps": 2000128,
+  "elapsed_seconds": 11.945656799944118,
+  "local_levels_completed_are_official_arc_score": false,
+  "episode_results_csv": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\evaluations\\ppo_2m_baseline_s0_20261020_161049\\episodes.csv"
+}

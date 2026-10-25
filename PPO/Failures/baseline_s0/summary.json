@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "version": "baseline",
+  "game_id": "ls20",
+  "seed": 0,
+  "requested_timesteps": 500000,
+  "actual_interactions_this_run": 500224,
+  "actual_total_timesteps_in_model": 500224,
+  "elapsed_seconds": 1840.0835637999699,
+  "average_steps_per_second": 271.8485235349768,
+  "model_path": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\baseline_s0\\ppo_final.zip",
+  "run_config_path": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\baseline_s0\\run_config.json",
+  "monitor_path": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\baseline_s0\\monitor.csv",
+  "sb3_progress_path": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\baseline_s0\\sb3_logs\\progress.csv",
+  "training_reward_is_official_arc_score": false
+}

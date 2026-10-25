@@ -1,0 +1,7 @@
+tag,game_seed,episodes,successful_episodes,success_rate,mean_levels_completed,mean_steps,mean_extrinsic_return
+ppo_2m_baseline_s0,0,1,0,0.0,0.0,129.0,0.0
+ppo_2m_baseline_s0,1,1,0,0.0,0.0,129.0,0.0
+ppo_2m_baseline_s0,2,1,0,0.0,0.0,129.0,0.0
+random_s0_s1_s2,0,1,0,0.0,0.0,129.0,0.0
+random_s0_s1_s2,1,1,0,0.0,0.0,131.0,0.0
+random_s0_s1_s2,2,1,0,0.0,0.0,129.0,0.0

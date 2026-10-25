@@ -1,0 +1,27 @@
+{
+  "tag": "random_reference",
+  "policy": "random",
+  "game_id": "ls20",
+  "seeds": [
+    10,
+    11,
+    12
+  ],
+  "episodes_per_seed": 1,
+  "observation_mode": "standard",
+  "episodes": 3,
+  "successful_episodes": 0,
+  "success_rate": 0.0,
+  "mean_levels_completed": 0.0,
+  "mean_steps": 129.0,
+  "mean_extrinsic_return": 0.0,
+  "ending_states": {
+    "GAME_OVER": 3
+  },
+  "stochastic_ppo": null,
+  "model_path": null,
+  "model_training_timesteps": null,
+  "elapsed_seconds": 14.579038699994271,
+  "local_levels_completed_are_official_arc_score": false,
+  "episode_results_csv": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\final_evaluations\\random_reference_20261022_100118\\episodes.csv"
+}

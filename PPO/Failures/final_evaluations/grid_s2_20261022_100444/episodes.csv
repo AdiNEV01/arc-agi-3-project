@@ -1,0 +1,4 @@
+tag,policy,game_id,game_seed,episode_index,observation_mode,action_seed,levels_completed,success,steps,end_state,terminated,truncated,extrinsic_return,model_path,ppo_stochastic,elapsed_seconds
+grid_s2,ppo,ls20,10,0,grid,1000001,0,0,129,GAME_OVER,1,0,0.0,outputs\grid_s2\ppo_final.zip,0,0.5653386999983923
+grid_s2,ppo,ls20,11,0,grid,1100001,0,0,129,GAME_OVER,1,0,0.0,outputs\grid_s2\ppo_final.zip,0,0.5964460000031977
+grid_s2,ppo,ls20,12,0,grid,1200001,0,0,129,GAME_OVER,1,0,0.0,outputs\grid_s2\ppo_final.zip,0,0.5717880000011064

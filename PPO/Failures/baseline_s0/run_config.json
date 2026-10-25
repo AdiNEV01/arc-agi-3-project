@@ -1,0 +1,36 @@
+{
+  "version": "baseline",
+  "game_id": "ls20",
+  "seed": 0,
+  "requested_timesteps": 500000,
+  "max_steps_per_episode": 500,
+  "device": "cuda",
+  "n_steps": 256,
+  "batch_size": 64,
+  "n_epochs": 10,
+  "learning_rate": 0.00025,
+  "gamma": 0.99,
+  "gae_lambda": 0.95,
+  "clip_range": 0.2,
+  "entropy_coefficient": 0.01,
+  "novelty_scale": 0.005,
+  "resume_checkpoint": null,
+  "policy": "ActorCriticCnnPolicy",
+  "reward_definition": "level-completion reward only",
+  "system": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.13.0+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "device_requested": "cuda",
+    "packages": {
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.4.0",
+      "numpy": "2.5.4",
+      "arc-agi": "0.9.9",
+      "arcengine": "0.9.3"
+    }
+  }
+}

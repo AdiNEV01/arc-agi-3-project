@@ -1,0 +1,4 @@
+tag,policy,game_id,game_seed,episode_index,action_seed,levels_completed,success,steps,end_state,terminated,truncated,extrinsic_return,model_path,ppo_stochastic,elapsed_seconds
+ppo_2m_baseline_s0,ppo,ls20,0,0,1,0,0,129,GAME_OVER,1,0,0.0,outputs/ppo_2m_baseline_s0/ppo_final.zip,0,0.32106089999433607
+ppo_2m_baseline_s0,ppo,ls20,1,0,100001,0,0,129,GAME_OVER,1,0,0.0,outputs/ppo_2m_baseline_s0/ppo_final.zip,0,0.33107240009121597
+ppo_2m_baseline_s0,ppo,ls20,2,0,200001,0,0,129,GAME_OVER,1,0,0.0,outputs/ppo_2m_baseline_s0/ppo_final.zip,0,0.22425079997628927

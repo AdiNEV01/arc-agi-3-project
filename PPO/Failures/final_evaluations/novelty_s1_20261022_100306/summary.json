@@ -1,0 +1,27 @@
+{
+  "tag": "novelty_s1",
+  "policy": "ppo",
+  "game_id": "ls20",
+  "seeds": [
+    10,
+    11,
+    12
+  ],
+  "episodes_per_seed": 1,
+  "observation_mode": "standard",
+  "episodes": 3,
+  "successful_episodes": 0,
+  "success_rate": 0.0,
+  "mean_levels_completed": 0.0,
+  "mean_steps": 129.0,
+  "mean_extrinsic_return": 0.0,
+  "ending_states": {
+    "GAME_OVER": 3
+  },
+  "stochastic_ppo": false,
+  "model_path": "outputs\\novelty_s1\\ppo_final.zip",
+  "model_training_timesteps": 500224,
+  "elapsed_seconds": 16.053097000003618,
+  "local_levels_completed_are_official_arc_score": false,
+  "episode_results_csv": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\final_evaluations\\novelty_s1_20261022_100306\\episodes.csv"
+}
