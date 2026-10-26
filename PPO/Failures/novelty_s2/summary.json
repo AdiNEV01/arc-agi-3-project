@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "experiment": "novelty_ppo",
+  "requested_timesteps": 500000,
+  "actual_timesteps": 500224,
+  "elapsed_seconds": 1876.7825151999714,
+  "steps_per_second": 266.5327473741416,
+  "model_path": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\novelty_s2\\ppo_final.zip",
+  "official_arc_score": "Not measured by training reward; use evaluation script."
+}

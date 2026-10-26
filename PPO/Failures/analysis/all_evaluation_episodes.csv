@@ -1,0 +1,7 @@
+tag,policy,game_id,game_seed,episode_index,action_seed,levels_completed,success,steps,end_state,terminated,truncated,extrinsic_return,model_path,ppo_stochastic,elapsed_seconds,source_file
+ppo_2m_baseline_s0,ppo,ls20,0,0,1,0,0,129,GAME_OVER,1,0,0.0,outputs/ppo_2m_baseline_s0/ppo_final.zip,0.0,0.321060899994336,outputs\evaluations\ppo_2m_baseline_s0_20261020_161049\episodes.csv
+ppo_2m_baseline_s0,ppo,ls20,1,0,100001,0,0,129,GAME_OVER,1,0,0.0,outputs/ppo_2m_baseline_s0/ppo_final.zip,0.0,0.3310724000912159,outputs\evaluations\ppo_2m_baseline_s0_20261020_161049\episodes.csv
+ppo_2m_baseline_s0,ppo,ls20,2,0,200001,0,0,129,GAME_OVER,1,0,0.0,outputs/ppo_2m_baseline_s0/ppo_final.zip,0.0,0.2242507999762892,outputs\evaluations\ppo_2m_baseline_s0_20261020_161049\episodes.csv
+random_s0_s1_s2,random,ls20,0,0,1,0,0,129,GAME_OVER,1,0,0.0,,,0.1136315999319776,outputs\evaluations\random_s0_s1_s2_20261020_160924\episodes.csv
+random_s0_s1_s2,random,ls20,1,0,100001,0,0,131,GAME_OVER,1,0,0.0,,,0.1141526000574231,outputs\evaluations\random_s0_s1_s2_20261020_160924\episodes.csv
+random_s0_s1_s2,random,ls20,2,0,200001,0,0,129,GAME_OVER,1,0,0.0,,,0.1087227000389248,outputs\evaluations\random_s0_s1_s2_20261020_160924\episodes.csv

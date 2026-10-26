@@ -1,0 +1,10 @@
+# Authorized V0 pilot diagnostics only. No untouched game is included.
+games:
+  dev: [ls20-9607627b, ft09-0d8bbf25]
+eval:
+  seeds: [0, 1, 2]
+  game_seed: same_as_run
+  max_actions_per_game: 1000
+  max_seconds_per_game: null
+  click_grid: 64
+  operation_mode: offline

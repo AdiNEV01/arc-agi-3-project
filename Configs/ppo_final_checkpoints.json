@@ -1,0 +1,199 @@
+{
+  "source_commit": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+  "checkpoint_selection": "all final models; no development-score cherry picking",
+  "training_budget_per_model": 503808,
+  "models": [
+    {
+      "experiment": "baseline",
+      "training_seed": 0,
+      "path": "PPO/logs/baseline_seed0/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "661a71d1063b065b701d9d2178df88fb998428ca",
+      "bytes": 9540660,
+      "sha256": "8496b151efef886a2e1ded1c4474b1e89a022a2c26a35d64963d65950556b9cf",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        16,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "baseline",
+      "training_seed": 1,
+      "path": "PPO/logs/baseline_seed1/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "6da596c574dd873ee95abdadcdf5b1fa5f97a777",
+      "bytes": 9540660,
+      "sha256": "64416e06ad6d63830bac523fce0d27729677546d853d67e7282686457d6454ac",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        16,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "baseline",
+      "training_seed": 2,
+      "path": "PPO/logs/baseline_seed2/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "3ff5fa8d251bc14399674a7521ac6432d96c522f",
+      "bytes": 9540660,
+      "sha256": "6ec0098774276594cad7a2a725f69a304b3619eadb9db246258c8eded5303e0a",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        16,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "curiosity",
+      "training_seed": 0,
+      "path": "PPO/logs/curiosity_seed0/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "65336f176b820fb6bd982d179ae5da83a93cc3b7",
+      "bytes": 9540661,
+      "sha256": "fddf7939fff04df504e15c2e01ca1f56caeb955a94631d1d821985aeea61f9d7",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        16,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "curiosity",
+      "training_seed": 1,
+      "path": "PPO/logs/curiosity_seed1/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "a875f84e45317e1fa849eabd9eb7b935d8d7ba17",
+      "bytes": 9540661,
+      "sha256": "42ff09296e4cc4945879049bc162c967b422c43dd91026d3d3728cb8e004ebe1",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        16,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "curiosity",
+      "training_seed": 2,
+      "path": "PPO/logs/curiosity_seed2/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "b8ac4c9497fc483580965a05d444c792fc361da1",
+      "bytes": 9540661,
+      "sha256": "97f0b19df9e9e22a5ab7b698bf802b6b26f88b7ceb7246c18b1c9b58853a359c",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        16,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "memory_only",
+      "training_seed": 0,
+      "path": "PPO/logs/memory_only_seed0/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "51ac1f3e48e958d187c5f9e007f701d631325d3d",
+      "bytes": 16487479,
+      "sha256": "91d0043e157882046533fea4a53843fdb95fec9132d8bc099c76af3d92098069",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        64,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "memory_only",
+      "training_seed": 1,
+      "path": "PPO/logs/memory_only_seed1/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "139055cce98940703eb594fd5c2ea0813605a0e9",
+      "bytes": 16487479,
+      "sha256": "ebb00a3a1ab72e00190c9b65f5019ebdd4d4b52f887658fa74ef5688db2f6636",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        64,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "memory_only",
+      "training_seed": 2,
+      "path": "PPO/logs/memory_only_seed2/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "166701d5c90317cff565adfc2d9ed8e93a3540f7",
+      "bytes": 16487475,
+      "sha256": "ae6e427926c3c2771550f4811560e311c0fa52fc9e667f7b2b5f914271159bc0",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        64,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "memory_curiosity",
+      "training_seed": 0,
+      "path": "PPO/logs/memory_curiosity_seed0/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "0c777fc54bb17c4d814c3c47c4a76bc8b644fb98",
+      "bytes": 16487484,
+      "sha256": "48ca0259e5d102425b1dc597f484ab94d4eba303dfede8896aaa35774eb9a322",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        64,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "memory_curiosity",
+      "training_seed": 1,
+      "path": "PPO/logs/memory_curiosity_seed1/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "6b0496a3a020f548f2eba5c4dfc691adfe16187d",
+      "bytes": 16487484,
+      "sha256": "0cb44348b17a2a0806081805a79436d3e0e655043494a3c09d044b2cb9666a3b",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        64,
+        64,
+        64
+      ],
+      "action_count": 7
+    },
+    {
+      "experiment": "memory_curiosity",
+      "training_seed": 2,
+      "path": "PPO/logs/memory_curiosity_seed2/final_model.zip",
+      "source_ref": "7d15ec69dd9e619344fa2f37092dbb4bca2f2957",
+      "git_blob": "dabb9cfe2b11cff2eb72b2ac6071b6c6ab014ac9",
+      "bytes": 16487484,
+      "sha256": "34644906f5a213ca8e8ab7de27bcb2f7f0b44d996bdeaea43bb1028de183ac05",
+      "actual_timesteps": 503808,
+      "observation_shape": [
+        64,
+        64,
+        64
+      ],
+      "action_count": 7
+    }
+  ]
+}

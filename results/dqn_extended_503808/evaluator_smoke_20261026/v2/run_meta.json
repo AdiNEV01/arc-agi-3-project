@@ -1,0 +1,65 @@
+{
+  "timestamp_utc": "20261026T095713Z",
+  "agent": "agents.dqn_agent:DQNPolicy",
+  "agent_version": "v2_503808_contract_smoke",
+  "agent_kwargs": {
+    "checkpoint": "C:\\Users\\okwuk\\.codex\\.chatgpt-projects\\g-p-6ad3b9687b188191b825bb0d18c8ed9b\\arc-integration\\artifacts\\dqn_extended\\52756cb244b7\\evaluation_stage\\v2_seed42\\frozen\\step503808.pt",
+    "device": "cpu"
+  },
+  "checkpoint_step": 503808,
+  "split": "dev",
+  "games": [
+    "ft09-0d8bbf25",
+    "vc33-5430563c",
+    "cd82-fb555c5d"
+  ],
+  "seeds": [
+    0
+  ],
+  "budget": 10,
+  "click_grid": 64,
+  "only_reset_levels_env": null,
+  "git_commit": "151f3d3",
+  "versions": {
+    "python": "3.12.10",
+    "arc-agi": "0.9.9",
+    "arcengine": "0.9.3",
+    "gymnasium": "1.4.0",
+    "numpy": "2.5.4",
+    "torch": "2.14.1+cpu",
+    "stable-baselines3": "2.9.0",
+    "sb3-contrib": "2.9.0"
+  },
+  "hardware": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu_count": 8,
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "cuda": false
+  },
+  "config": {
+    "games": {
+      "dev": [
+        "ft09-0d8bbf25",
+        "vc33-5430563c",
+        "cd82-fb555c5d"
+      ],
+      "training_diagnostic": [
+        "ls20-9607627b",
+        "ar25-0c556536",
+        "bp35-0a0ad940"
+      ]
+    },
+    "eval": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "game_seed": "same_as_run",
+      "max_actions_per_game": 1000,
+      "max_seconds_per_game": null,
+      "click_grid": 64,
+      "operation_mode": "offline"
+    }
+  }
+}

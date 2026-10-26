@@ -286,3 +286,31 @@ logs/
 results/integration_audit/*console_local.txt
 
 results/integration_smoke_20261024/
+
+# Extended DQN binary handoffs and complete recovery trees stay in artifact storage.
+/artifacts/dqn_extended/
+/DQN_503808_CONTINUED_*/
+/CU126_450K_RESULTS_*/
+/DQN_503808_HANDOFF_*.zip
+/DQN/checkpoints/extended_503808/
+
+# Local preparation, historical delivery bundles and recovery working trees.
+/.e503/
+/.e503build/
+/.handoff26/
+/.n26/
+/.pt/
+/Notebooks/*.zip
+/Notebooks/*.partial
+/Evidence/*.zip
+/FULL_450K*/
+/CU126_450K_RESULTS*/
+/cu126_imports/
+/cu126_work/
+/cu126_audits/
+/cu126_checks/
+/numerical_work/
+/extension_503808_work/
+/EXTENSION_503808_ACTIVE.json
+/NUMERICAL_ACTIVE_RESULTS.json
+/LINUX_CHECKPOINT_LOCATION.json

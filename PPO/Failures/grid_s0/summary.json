@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "experiment": "grid_ppo",
+  "requested_timesteps": 500000,
+  "actual_timesteps": 500224,
+  "elapsed_seconds": 2697.615141200018,
+  "steps_per_second": 185.43193666146104,
+  "model_path": "C:\\Users\\adivh\\arc-agi-3-project\\PPO\\outputs\\grid_s0\\ppo_final.zip",
+  "official_arc_score": "Use the separate evaluation script."
+}

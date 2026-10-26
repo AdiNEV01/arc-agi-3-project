@@ -21,6 +21,10 @@ from DQN.dqn_improvement_2 import FrameHistory
 def get_args():
     parser = argparse.ArgumentParser()
 
+    parser.add_argument("--device", default="cpu", help="cpu, cuda, or cuda:0; no silent fallback")
+    parser.add_argument("--torch-threads", type=int, default=None)
+    parser.add_argument("--output-root", type=Path, default=Path("."))
+    parser.add_argument("--profile", action="store_true", help="Synchronized stage wall times; adds overhead")
     parser.add_argument("--game", default="ls20")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--steps", type=int, default=60)
@@ -40,6 +44,10 @@ def get_args():
 
     parser.add_argument("--num-frames", type=int, default=None)
     parser.add_argument("--run-suffix", default="")
+    parser.add_argument("--backend", choices=["native", "shared"], default="native")
+    parser.add_argument("--operation-mode", choices=["normal", "offline"], default="normal")
+    parser.add_argument("--reset-mode", choices=["level", "full"], default="level")
+    parser.add_argument("--checkpoint-steps", nargs="*", type=int, default=[])
     args = parser.parse_args()
     if args.num_frames is None:
         args.num_frames = 4 if args.variant in ("v2", "v2_history_only") else 1
@@ -51,6 +59,12 @@ def get_args():
         parser.error("novelty-beta must be non-negative")
     if args.num_frames < 1:
         parser.error("num-frames must be positive")
+    if args.episode_limit < 0:
+        parser.error("episode-limit must be nonnegative; 0 disables artificial truncation")
+    if args.steps < 1 or args.train_every < 1 or args.epsilon_decay < 1:
+        parser.error("steps, train-every and epsilon-decay must be positive")
+    if any(step < 1 or step >= args.steps for step in args.checkpoint_steps):
+        parser.error("checkpoint-steps must lie before the final step")
     return args
 
 
@@ -69,8 +83,16 @@ def main():
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
 
-    log_dir = Path("Logs/DQN") # Logs tell us what happened during training: rewards, losses, actions, runtime and progress.
-    checkpoint_dir = Path("DQN/checkpoints") # Checkpoints contain the model weights and related training state, allowing us to use the trained model later.
+    device = torch.device(args.device)
+    if device.type == "cuda" and not torch.cuda.is_available():
+        raise RuntimeError("CUDA requested but unavailable")
+    if args.torch_threads is not None:
+        torch.set_num_threads(args.torch_threads)
+    from DQN.timing import StageTimer
+    timer = StageTimer(device, args.profile)
+
+    log_dir = args.output_root / Path("Logs/DQN") # Logs tell us what happened during training: rewards, losses, actions, runtime and progress.
+    checkpoint_dir = args.output_root / Path("DQN/checkpoints") # Checkpoints contain the model weights and related training state, allowing us to use the trained model later.
 
     log_dir.mkdir(parents=True, exist_ok=True)
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
@@ -84,17 +106,22 @@ def main():
     config_path = log_dir / f"{run_name}_config.json"
     checkpoint_path = checkpoint_dir / f"{run_name}.pt"
 
-    for path in (csv_path, config_path, checkpoint_path):
+    intermediate_paths = {step: checkpoint_dir / f"{run_name}_step{step}.pt" for step in args.checkpoint_steps}
+    for path in (csv_path, config_path, checkpoint_path, log_dir / f"{run_name}_timing.json", *intermediate_paths.values()):
         if path.exists():
             raise FileExistsError(f"Refusing to overwrite {path}; use --run-suffix")
 
     config_path.write_text(
-        json.dumps(vars(args), indent=2),
+        json.dumps(vars(args), indent=2, default=str),
         encoding="utf-8",
     )
 
-    arc = arc_agi.Arcade()
-    env = arc.make(args.game, seed=args.seed)
+    arc = arc_agi.Arcade(operation_mode=arc_agi.OperationMode(args.operation_mode))
+    if args.backend == "shared":
+        from DQN.shared_environment import SharedDQNEnvironment
+        env = SharedDQNEnvironment(args.game, arc, args.seed, args.episode_limit, args.reset_mode)
+    else:
+        env = arc.make(args.game, seed=args.seed)
 
     if env is None:
         raise RuntimeError("Failed to create ARC environment")
@@ -114,11 +141,13 @@ def main():
         lr=args.lr,
         gamma=args.gamma,
         batch_size=args.batch_size,
-        device="cpu",
+        device=args.device,
         num_frames=args.num_frames,
         buffer_capacity=args.buffer_capacity,
         target_update_interval=args.target_update_interval,
     )
+
+    agent.profiler = timer
 
     history = FrameHistory(args.num_frames)
     state = history.reset(obs)
@@ -130,11 +159,24 @@ def main():
 
     started = time.perf_counter()
 
+    def save_checkpoint(path, step):
+        torch.save({
+            "online_state_dict": agent.online.state_dict(),
+            "target_state_dict": agent.target.state_dict(),
+            "optimizer_state_dict": agent.optimizer.state_dict(),
+            "seed": args.seed, "global_step": step,
+            "gradient_steps": agent.gradient_steps, "config": {**vars(args), "output_root": str(args.output_root)},
+            "training_backend": args.backend,
+            "training_seconds": time.perf_counter() - started,
+            "checkpoint_kind": "frozen evaluation snapshot; replay/RNG state not saved for exact resume",
+        }, path)
+
     columns = [
         "global_step", "episode", "episode_step",
         "action", "x", "y", "epsilon",
         "reward", "loss", "levels_completed",
         "game_state", "elapsed_seconds", "task_reward", "novelty_reward", "unique_states",
+        "official_actions", "controller_resets", "terminated", "truncated",
     ]
 
     print(f"\nTraining DQN {args.variant.upper()} on {args.game}")
@@ -150,14 +192,15 @@ def main():
         for step in range(1, args.steps + 1):
             epsilon = epsilon_at(step - 1, args)
 
-            action_index = agent.select_action(
-                state,
-                env.action_space,
-                epsilon=epsilon,
-            )
-
+            with timer.measure("action_selection"):
+                action_index = agent.select_action(
+                    state,
+                    env.action_space,
+                    epsilon=epsilon,
+                )
             action, data = decode_action(action_index)
-            next_obs = env.step(action, data=data)
+            with timer.measure("environment_step"):
+                next_obs = env.step(action, data=data)
 
             if next_obs is None:
                 raise RuntimeError(
@@ -168,6 +211,10 @@ def main():
                 0,
                 next_obs.levels_completed - obs.levels_completed
             ))
+            if args.backend == "shared":
+                if task_reward != next_obs.task_reward:
+                    raise RuntimeError("Shared reward differs from documented level-delta reward")
+                task_reward = next_obs.task_reward
 
             novelty_reward = (
                 novelty.bonus(obs, next_obs)
@@ -184,14 +231,15 @@ def main():
 
             next_state = history.advance(next_obs)
 
-            agent.remember(
-                obs=state,
-                action_index=action_index,
-                reward=reward,
-                next_obs=next_state,
-                terminated=terminated,
-                next_available_actions=env.action_space,
-            )
+            with timer.measure("replay_insert"):
+                agent.remember(
+                    obs=state,
+                    action_index=action_index,
+                    reward=reward,
+                    next_obs=next_state,
+                    terminated=terminated,
+                    next_available_actions=env.action_space,
+                )
 
             loss = None
 
@@ -199,7 +247,11 @@ def main():
                 step >= args.warmup
                 and step % args.train_every == 0
             ):
-                loss = agent.learn()
+                with timer.measure("gradient_update"):
+                    loss = agent.learn()
+                    if loss is not None and not np.isfinite(loss):
+                        raise FloatingPointError(f"Nonfinite loss at selected action {step}")
+
 
             episode_step += 1
             episode_reward += reward
@@ -230,6 +282,10 @@ def main():
                     novelty.unique_states
                     if novelty is not None else 0
                 ),
+                "official_actions": env.shared.official_actions if args.backend == "shared" else step,
+                "controller_resets": env.shared.resets_sent if args.backend == "shared" else "",
+                "terminated": terminated,
+                "truncated": bool(not terminated and args.episode_limit and episode_step >= args.episode_limit),
             })
             file.flush()
 
@@ -243,9 +299,12 @@ def main():
                     f"time={elapsed:.1f}s"
                 )
 
+            if step in intermediate_paths:
+                save_checkpoint(intermediate_paths[step], step)
+
             if (
                 terminated
-                or episode_step >= args.episode_limit
+                or (args.episode_limit > 0 and episode_step >= args.episode_limit)
             ):
                 print(
                     f"Episode {episode} ended: "
@@ -258,7 +317,9 @@ def main():
                 episode_step = 0
                 episode_reward = 0.0
 
-                obs = env.reset()
+                with timer.measure("environment_reset"):
+                    obs = env.reset()
+
 
                 if obs is None:
                     raise RuntimeError("Reset failed")
@@ -270,18 +331,28 @@ def main():
                 obs = next_obs
                 state = next_state
 
-    torch.save({
-        "online_state_dict": agent.online.state_dict(),
-        "target_state_dict": agent.target.state_dict(),
-        "optimizer_state_dict": agent.optimizer.state_dict(),
-        "seed": args.seed,
-        "global_step": args.steps,
-        "gradient_steps": agent.gradient_steps,
-        "config": vars(args),
-    }, checkpoint_path)
+    timer.sync()
+    loop_seconds = time.perf_counter() - started
+    with timer.measure("final_checkpoint"):
+        save_checkpoint(checkpoint_path, args.steps)
 
     total_time = time.perf_counter() - started
 
+    summary = {
+        "config": {**vars(args), "output_root": str(args.output_root)},
+        "selected_actions": args.steps, "gradient_updates": agent.gradient_steps,
+        "loop_seconds": loop_seconds, "total_seconds_including_checkpoint": total_time,
+        "actions_per_second": args.steps / loop_seconds,
+        "stages_seconds": dict(timer.seconds), "stages_calls": dict(timer.calls),
+        "official_actions": env.shared.official_actions if args.backend == "shared" else args.steps,
+        "controller_resets": env.shared.resets_sent if args.backend == "shared" else None,
+        "torch_version": torch.__version__, "cuda_version": torch.version.cuda,
+        "device_name": torch.cuda.get_device_name(device) if device.type == "cuda" else "CPU",
+        "torch_threads": torch.get_num_threads(),
+        "max_cuda_memory_bytes": torch.cuda.max_memory_allocated(device) if device.type == "cuda" else 0,
+        "timing_note": "gradient_batch_encode_transfer is nested in gradient_update; action_selection includes encoding, mask upload and scalar download; gradient_update includes replay sampling, tensor transfers and loss.item download",
+    }
+    (log_dir / f"{run_name}_timing.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print("\n=== TRAINING SUMMARY ===")
     print("Interactions:", args.steps)
     print("Gradient updates:", agent.gradient_steps)

@@ -1,0 +1,338 @@
+{
+  "status": "proposed_not_approved_not_executed",
+  "selection": "fixed final checkpoints; no dev-score selection",
+  "purpose": "end-to-end systems with disclosed unequal training budgets; not an algorithm-only matched-training experiment",
+  "models": [
+    {
+      "algorithm": "DQN",
+      "configuration": "v0",
+      "training_seed": 42,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v0_ls20_seed42.pt",
+      "sha256": "3d5274e104df3b9b1803d8d280b5b45a8db268b2a4aa8b21969ead2a7d8aa33c",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v0",
+      "training_seed": 123,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v0_ls20_seed123.pt",
+      "sha256": "a14dc37a42229bdde6e426cfe276dee18a7e57bcb0efa7ee8fbc43473cdbb437",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v0",
+      "training_seed": 456,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v0_ls20_seed456.pt",
+      "sha256": "c41d8e3a483a093a4a6a90f1b0646e0dfa425762f282a69f3d7a4d70283cb47d",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v1",
+      "training_seed": 42,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v1_ls20_seed42.pt",
+      "sha256": "ab0ccb2ae1ce3aa8c3915a0fcde4520650e6ff3dedbfe45a90a5d4567f30c03a",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v1",
+      "training_seed": 123,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v1_ls20_seed123.pt",
+      "sha256": "2fc7784f1250c2165d11c9b04c97a7ec7534fcf55b3afa549a0172896ed0dafd",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v1",
+      "training_seed": 456,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v1_ls20_seed456.pt",
+      "sha256": "062fd19dc8cbec4557392ce39a632a926a0a20ceec70e6ad76515aa2c57a8a3f",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v2_history_only",
+      "training_seed": 42,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v2_history_only_ls20_seed42.pt",
+      "sha256": "26f640e5b2deb1064f9bd757c1de723fee0a03cb2003302b2d4b805e9bfcce64",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v2_history_only",
+      "training_seed": 123,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v2_history_only_ls20_seed123.pt",
+      "sha256": "dce55d4c70dd26ebb40159989c2adfe94c72852b8e268478f0fbc4d21c047e24",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v2_history_only",
+      "training_seed": 456,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v2_history_only_ls20_seed456.pt",
+      "sha256": "b6547fbf4092841f6aab516d979a66957654d139a3f389ed241b88f8c8b09016",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v2",
+      "training_seed": 42,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v2_ls20_seed42.pt",
+      "sha256": "ea3bcacc67ce6a2576205374ef9344a94a8f5f16cc9f5f9de41d5f690cd5b458",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v2",
+      "training_seed": 123,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v2_ls20_seed123.pt",
+      "sha256": "ef151127feb380233d5141a2c0594bd02c160db54b891a6d982da4f96a6d2661",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "DQN",
+      "configuration": "v2",
+      "training_seed": 456,
+      "training_selected_actions": 3000,
+      "training_game": "ls20-9607627b",
+      "checkpoint": "DQN/checkpoints/dqn_v2_ls20_seed456.pt",
+      "sha256": "86b2e9964a56eddab103ba43fcc49dca50205162d939566329b4325761607768",
+      "policy": "agents.dqn_agent:DQNPolicy",
+      "training_backend": "historical native",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "baseline",
+      "training_seed": 0,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/baseline_seed0/final_model.zip",
+      "sha256": "8496b151efef886a2e1ded1c4474b1e89a022a2c26a35d64963d65950556b9cf",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "baseline",
+      "training_seed": 1,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/baseline_seed1/final_model.zip",
+      "sha256": "64416e06ad6d63830bac523fce0d27729677546d853d67e7282686457d6454ac",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "baseline",
+      "training_seed": 2,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/baseline_seed2/final_model.zip",
+      "sha256": "6ec0098774276594cad7a2a725f69a304b3619eadb9db246258c8eded5303e0a",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "curiosity",
+      "training_seed": 0,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/curiosity_seed0/final_model.zip",
+      "sha256": "fddf7939fff04df504e15c2e01ca1f56caeb955a94631d1d821985aeea61f9d7",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "curiosity",
+      "training_seed": 1,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/curiosity_seed1/final_model.zip",
+      "sha256": "42ff09296e4cc4945879049bc162c967b422c43dd91026d3d3728cb8e004ebe1",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "curiosity",
+      "training_seed": 2,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/curiosity_seed2/final_model.zip",
+      "sha256": "97f0b19df9e9e22a5ab7b698bf802b6b26f88b7ceb7246c18b1c9b58853a359c",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "memory_only",
+      "training_seed": 0,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/memory_only_seed0/final_model.zip",
+      "sha256": "91d0043e157882046533fea4a53843fdb95fec9132d8bc099c76af3d92098069",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "memory_only",
+      "training_seed": 1,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/memory_only_seed1/final_model.zip",
+      "sha256": "ebb00a3a1ab72e00190c9b65f5019ebdd4d4b52f887658fa74ef5688db2f6636",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "memory_only",
+      "training_seed": 2,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/memory_only_seed2/final_model.zip",
+      "sha256": "ae6e427926c3c2771550f4811560e311c0fa52fc9e667f7b2b5f914271159bc0",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "memory_curiosity",
+      "training_seed": 0,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/memory_curiosity_seed0/final_model.zip",
+      "sha256": "48ca0259e5d102425b1dc597f484ab94d4eba303dfede8896aaa35774eb9a322",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "memory_curiosity",
+      "training_seed": 1,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/memory_curiosity_seed1/final_model.zip",
+      "sha256": "0cb44348b17a2a0806081805a79436d3e0e655043494a3c09d044b2cb9666a3b",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    },
+    {
+      "algorithm": "PPO",
+      "configuration": "memory_curiosity",
+      "training_seed": 2,
+      "training_timesteps": 503808,
+      "training_games": [
+        "ls20",
+        "ar25",
+        "bp35"
+      ],
+      "checkpoint": "PPO/logs/memory_curiosity_seed2/final_model.zip",
+      "sha256": "34644906f5a213ca8e8ab7de27bcb2f7f0b44d996bdeaea43bb1028de183ac05",
+      "policy": "agents.ppo_agent:PPOPolicy",
+      "main_ablation": true
+    }
+  ],
+  "supplementary_dqn_pilot": {
+    "seed": 42,
+    "shared_3k": "DQN/checkpoints/dqn_v0_ls20_seed42_shared10k_20261024_step3000.pt",
+    "shared_10k": "DQN/checkpoints/dqn_v0_ls20_seed42_shared10k_20261024.pt",
+    "training_budget": 10000,
+    "include_in_main_ablation": false
+  }
+}

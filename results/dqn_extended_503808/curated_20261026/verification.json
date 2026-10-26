@@ -1,0 +1,23 @@
+{
+  "checked_utc": "2026-10-26T10:24:04.146573+00:00",
+  "unit_tests_passed": 9,
+  "test_files": [
+    "tests/test_dqn_archive_audit.py",
+    "tests/test_dqn_result_import.py",
+    "tests/test_dqn_503808_evaluation.py"
+  ],
+  "full_archive_audit_valid": true,
+  "all_24_registry_endpoints_hash_validated": true,
+  "materialize_existing_matching_files_no_overwrite_check_passed": true,
+  "real_final_v0_v2_common_evaluator_smoke_valid": true,
+  "binary_paths_git_ignored": true,
+  "protected_training_source_hashes_unchanged": true,
+  "earlier_partial_archive_members_identical": true,
+  "formal_1000_action_evaluation_performed": false,
+  "source_sha256": {
+    "Experiments/audit_dqn_503808_archive.py": "317a26359571038b551a299e9f0d94658e1d9a4d5b9bb31147962ce3473d9075",
+    "Experiments/import_dqn_503808_results.py": "66ac37e10d231ce5a4c5ec6e564adda4bfb4e69984141af66d962090b5e0ad47",
+    "Experiments/evaluate_dqn_503808.py": "bada4912c416e332a14e8e699aa103c597a8ac61c4e07245e17132a6238114cb",
+    "Analysis/DQN/extended_503808/plot_training.py": "e48db374a134c59baf7bb2c13e6c47d58bba79cac62b3d961d626a7f038a0822"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "artifact": "Notebooks/dqn_continue_numerical_patch.zip",
+  "bytes": 7592,
+  "sha256": "2989e2cca68fe6f1e0673147f6d54c2f33a8e44b270ec86b126c7c99c512ef4a",
+  "authorization": "User approved the proposed documented numerical migration: can we just do whatever it takes to continue, time is running out",
+  "delivery": "Local additive patch; no Drive upload requested or performed",
+  "checks": {
+    "new_tests": "4 passed in 19.42s",
+    "real_cpu_latest_checkpoint_split_restore": "passed: 12 -> 22 equals 12 -> 17 -> 22 for all learner fields, replay and history",
+    "adopt_verified_continuation_without_repeating_actions": "passed",
+    "original_checkpoint_content_preserved": "passed",
+    "optimizer_drift_blocks_adoption": "passed",
+    "restoration_failure_blocks_matrix": "passed",
+    "cached_verified_result_resume": "passed",
+    "bash_syntax": "passed, exit 0",
+    "packaged_overlay_manifests": "passed",
+    "all_base_archive_members_unchanged": "passed",
+    "linux_line_endings_and_python_syntax": "passed"
+  },
+  "historical_bitwise_equivalence": false,
+  "historical_bitwise_gate": "Explicitly superseded by the user's numerical migration approval; no historical trajectory equivalence claimed",
+  "same_gpu_full_restoration_gate": "Still required; actual original 400K checkpoint is checked on Linux before the matrix can launch",
+  "original_source_for_current_user": "v0/v1/history-only seed42 complete at 450K; v2 seed42 original checkpoint at 400K; seeds123/456 pending",
+  "adopted_progress_if_linux_checks_pass": "400010/450000; ten verified continuation actions count once",
+  "protocol_budget_changed": false,
+  "driver_or_environment_installations": false,
+  "originals_overwritten": false,
+  "remote_gpu_restoration_executed_here": false,
+  "remote_matrix_launched_here": false,
+  "prior_archive_sha256": {
+    "dqn_linux_cu126_recovery.zip": "0e1ac8d70467e9610396ec93889b757d4a017e637b0088cc042007684766c290",
+    "dqn_linux_resume.zip": "8e492313191971521683c6b8932cfcef12c753feb504b4fcb1407be91f1da442",
+    "dqn_extended_full_source.zip": "3e85adc7cd9af2c61b05bc739d3080ffdcf1e754c11bbd2ed6a6f5a039339b5a"
+  }
+}

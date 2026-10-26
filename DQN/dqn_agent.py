@@ -2,6 +2,7 @@
 """Baseline DQN learning agent for ARC-AGI-3."""
 
 import random
+from contextlib import nullcontext
 
 import numpy as np
 import torch
@@ -28,9 +29,9 @@ def extract_frame(obs):
             f"Unexpected frame shape: {frame.shape}"
         )
 
-    if frame.min() < 0 or frame.max() >= 16:
+    if frame.min() < 0 or frame.max() > 16:
         raise ValueError(
-            "Observation has values outside 0-15"
+            "Observation has values outside colors 0-15 and padding 16"
         )
 
     return frame.astype(np.uint8, copy=True)
@@ -93,7 +94,9 @@ class DQNAgent:
             state = observation_to_tensor(
                 obs, device=self.device
             )
-            q_values = self.online(state)[0]
+            profiler = getattr(self, "profiler", None)
+            with profiler.measure("policy_forward") if profiler else nullcontext():
+                q_values = self.online(state)[0]
 
             legal_q = q_values.masked_fill(
                 ~mask.to(self.device),
@@ -133,17 +136,9 @@ class DQNAgent:
     def encode_batch(self, frames):
         """Convert [B,64,64] grids to [B,16,64,64]."""
         stacked = np.stack(frames)
-        if stacked.ndim == 4:
-            return encode_frames(stacked, device=self.device)
-        indices = torch.as_tensor(
-            stacked,
-            dtype=torch.long,
-            device=self.device,
-        )
-
-        return F.one_hot(
-            indices, num_classes=16
-        ).permute(0, 3, 1, 2).float()
+        if stacked.ndim == 3:
+            stacked = stacked[:, None]
+        return encode_frames(stacked, device=self.device)
 
     def learn(self):
         """Perform one DQN gradient update."""
@@ -154,38 +149,37 @@ class DQNAgent:
             self.batch_size, self.rng
         )
 
-        states = self.encode_batch(
-            [t.state for t in batch]
-        )
-        next_states = self.encode_batch(
-            [t.next_state for t in batch]
-        )
+        profiler = getattr(self, "profiler", None)
+        with profiler.measure("gradient_batch_encode_transfer") if profiler else nullcontext():
+            states = self.encode_batch([t.state for t in batch])
+            next_states = self.encode_batch([t.next_state for t in batch])
 
-        actions = torch.tensor(
-            [t.action for t in batch],
-            dtype=torch.long,
-            device=self.device,
-        )
+        with profiler.measure("gradient_labels_masks_transfer") if profiler else nullcontext():
+            actions = torch.tensor(
+                [t.action for t in batch],
+                dtype=torch.long,
+                device=self.device,
+            )
 
-        rewards = torch.tensor(
-            [t.reward for t in batch],
-            dtype=torch.float32,
-            device=self.device,
-        )
+            rewards = torch.tensor(
+                [t.reward for t in batch],
+                dtype=torch.float32,
+                device=self.device,
+            )
 
-        terminated = torch.tensor(
-            [t.terminated for t in batch],
-            dtype=torch.float32,
-            device=self.device,
-        )
+            terminated = torch.tensor(
+                [t.terminated for t in batch],
+                dtype=torch.float32,
+                device=self.device,
+            )
 
-        next_masks = torch.as_tensor(
-            np.stack([
-                t.next_valid_mask for t in batch
-            ]),
-            dtype=torch.bool,
-            device=self.device,
-        )
+            next_masks = torch.as_tensor(
+                np.stack([
+                    t.next_valid_mask for t in batch
+                ]),
+                dtype=torch.bool,
+                device=self.device,
+            )
 
         # Q(s, a) from the trainable online network.
         predicted_q = self.online(

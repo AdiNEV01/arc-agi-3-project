@@ -1,0 +1,13 @@
+# Preserve the exact Python bytes recorded by the training/checkpoint hash guards.
+*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Linux launchers and new documentation have explicit portable line endings.
+*.sh text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.ipynb text eol=lf
+*.png binary
+*.pdf binary
+*.zip binary
+*.pt binary

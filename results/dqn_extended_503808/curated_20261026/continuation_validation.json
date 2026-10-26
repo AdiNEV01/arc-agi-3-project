@@ -1,0 +1,28 @@
+{
+  "valid": true,
+  "all_72_original_frozen_milestone_hashes_preserved": true,
+  "all_12_original_450k_summary_prefixes_match": true,
+  "changed_protocol_keys": [
+    "checkpoint_actions",
+    "protocol_id",
+    "total_actions"
+  ],
+  "actions_per_model": 503808,
+  "total_matrix_actions": 6045696,
+  "additional_matrix_actions": 645696,
+  "historical_bitwise_equivalence": false,
+  "frozen_evaluation_status": "not yet performed",
+  "extension_gpu": "NVIDIA GeForce RTX 3050",
+  "extension_software": {
+    "python": "3.13.16",
+    "numpy": "2.5.4",
+    "torch": "2.11.0+cu126",
+    "arc-agi": "0.9.9",
+    "arcengine": "0.9.3",
+    "gymnasium": "1.4.0"
+  },
+  "numerical_migration_policy": "user_authorised_numerical_migration",
+  "artifact_archive_sha256": "52756cb244b7b0ca1fb62b06d14d52d3ad9481a0063c69ce06a60fdc611e0bcc",
+  "original_archive_modified": false,
+  "validation_scope": "Archive integrity, learner metadata and recorded history; no environment reconstruction executed"
+}

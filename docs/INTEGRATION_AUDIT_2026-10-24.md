@@ -163,3 +163,11 @@ The smoke config has a 60-second safety cap. For final action-budget-only runs,
 freeze a separate config with `max_seconds_per_game: null`; use the same config
 and cap for every agent. Do not evaluate candidate untouched games until all
 settings and checkpoint selection are frozen.
+
+
+1	Agree on the final evaluation settings and available checkpoints (Entire group)
+2	Run shared DQN vs PPO vs random evaluations	(Work, with team verification)
+3	Generate the definitive results table	(Work)
+4	Assemble the eight-page report	(Group, with Work assisting)
+5	Check submission files and evidence	(Submission owner)
+6	Review and merge integration branch into main	(Group)

@@ -1,0 +1,26 @@
+{
+  "valid": true,
+  "scope": "10-action development integration smoke only; not the formal1000-action evaluation",
+  "records": [
+    {
+      "variant": "v0",
+      "training_seed": 42,
+      "checkpoint_step": 503808,
+      "models_unchanged": true,
+      "game_runs": 3,
+      "selected_actions_per_game": 10,
+      "contract_checks_passed": true
+    },
+    {
+      "variant": "v2",
+      "training_seed": 42,
+      "checkpoint_step": 503808,
+      "models_unchanged": true,
+      "game_runs": 3,
+      "selected_actions_per_game": 10,
+      "contract_checks_passed": true
+    }
+  ],
+  "reserved_heldout_evaluated": false,
+  "learning_performed": false
+}

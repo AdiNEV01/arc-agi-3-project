@@ -1,0 +1,39 @@
+{
+  "checked_utc": "2026-10-26T14:32:15.950100+00:00",
+  "tests": {
+    "command": "python -m pytest -q --basetemp .pt",
+    "passed": 76,
+    "skipped": 11,
+    "seconds": 136.76,
+    "skip_reasons": "CUDA unavailable; optional historical DQN checkpoints and delivery ZIPs absent"
+  },
+  "protected_training_and_queue_hashes_match": {
+    "DQN/action_codec.py": true,
+    "DQN/dqn_agent.py": true,
+    "DQN/dqn_improvement_1.py": true,
+    "DQN/dqn_improvement_2.py": true,
+    "DQN/evaluate.py": true,
+    "DQN/extended_train.py": true,
+    "DQN/q_network.py": true,
+    "DQN/replay_buffer.py": true,
+    "DQN/shared_environment.py": true,
+    "DQN/test_task1.py": true,
+    "DQN/timing.py": true,
+    "DQN/train.py": true,
+    "arc_env/__init__.py": true,
+    "arc_env/encoding.py": true,
+    "arc_env/gym_adapter.py": true,
+    "Experiments/full_queue.py": true,
+    "Experiments/full_preflight.py": true,
+    "Experiments/drive_storage.py": true
+  },
+  "temporary_recovery_trees_and_cached_game_sources_included": false,
+  "new_model_or_delivery_binaries_included": false,
+  "latest_teammate_python_and_notebook_code_already_integrated": true,
+  "new_ppo_failure_summaries_pinned": "31c9a88de404ea31ae9201d41bbd4ce9a28a78ef",
+  "formal_final_evaluation_complete": false,
+  "joint_report_and_competition_evidence_complete": false,
+  "shared_dqn_model_url_present": false,
+  "main_branch_changed": false,
+  "push_performed": false
+}

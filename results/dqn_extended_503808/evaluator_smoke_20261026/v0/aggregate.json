@@ -1,0 +1,41 @@
+{
+  "agent_version": "v0_503808_contract_smoke",
+  "split": "dev",
+  "budget": 10,
+  "per_game": {
+    "cd82-fb555c5d": {
+      "score_mean": 0.0,
+      "score_std": 0.0,
+      "levels_mean": 0.0,
+      "levels_std": 0.0,
+      "win_rate": 0.0,
+      "n": 1
+    },
+    "ft09-0d8bbf25": {
+      "score_mean": 0.0,
+      "score_std": 0.0,
+      "levels_mean": 0.0,
+      "levels_std": 0.0,
+      "win_rate": 0.0,
+      "n": 1
+    },
+    "vc33-5430563c": {
+      "score_mean": 0.0,
+      "score_std": 0.0,
+      "levels_mean": 0.0,
+      "levels_std": 0.0,
+      "win_rate": 0.0,
+      "n": 1
+    }
+  },
+  "overall": {
+    "score_mean_over_seeds": 0.0,
+    "score_std_over_seeds": 0.0,
+    "per_seed_scores": [
+      0.0
+    ],
+    "total_levels_completed": 0,
+    "total_official_actions": 30,
+    "total_runtime_s": 0.43
+  }
+}

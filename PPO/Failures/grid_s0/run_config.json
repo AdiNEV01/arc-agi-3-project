@@ -1,0 +1,19 @@
+{
+  "experiment": "grid_ppo",
+  "game_id": "ls20",
+  "seed": 0,
+  "requested_timesteps": 500000,
+  "max_steps": 500,
+  "device": "cuda",
+  "observation_encoding": "16-channel one-hot colour grid, values 0 or 1",
+  "feature_extractor": "GridCNNFeaturesExtractor",
+  "learning_rate": 0.00025,
+  "n_steps": 256,
+  "batch_size": 64,
+  "n_epochs": 10,
+  "gamma": 0.99,
+  "gae_lambda": 0.95,
+  "clip_range": 0.2,
+  "entropy_coefficient": 0.01,
+  "training_reward_is_official_arc_score": false
+}

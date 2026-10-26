@@ -1,4 +1,10 @@
-# Task 1 DQN — team entry point
+# DQN: current and historical experiments
+
+The current controlled matrix has **12 completed models at 503,808 actions each**. Start with [the extended report](../Reports/DQN-Reports/extended_503808/TRAINING_RESULTS.md), [training tables and audits](../results/dqn_extended_503808/README.md), [the checkpoint registry](../Configs/dqn_503808_checkpoints.json) and [artifact access](../docs/ARTIFACT_ACCESS.md). Formal frozen evaluation of these final models remains outstanding.
+
+Extended training uses `DQN/extended_train.py` and the shared environment. The original training path and results below remain historical evidence.
+
+## Historical 3K Task 1 experiments
 
 This branch contains the implementation, trained checkpoints, training/evaluation data, consolidated tables, figures and report contribution. The empty original `dqn_baseline.py` placeholder has been replaced by the working baseline in `dqn_agent.py`, `q_network.py` and `train.py`.
 

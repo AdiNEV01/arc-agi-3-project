@@ -53,11 +53,12 @@ def encode_frames(frames, device="cpu"):
         frames = frames[None]
     if frames.ndim != 4 or frames.shape[-2:] != (64, 64):
         raise ValueError(f"Unexpected frame history shape: {frames.shape}")
-    if not np.issubdtype(frames.dtype, np.integer) or frames.min() < 0 or frames.max() >= 16:
-        raise ValueError("Expected integer colors 0-15")
-    indices = torch.as_tensor(frames.astype(np.int64), device=device)
+    if not np.issubdtype(frames.dtype, np.integer) or frames.min() < 0 or frames.max() > 16:
+        raise ValueError("Expected integer colors 0-15 or shared padding 16")
+    # Transfer compact replay grids; expand to int64 and one-hot on the device.
+    indices = torch.as_tensor(frames.astype(np.uint8, copy=False), device=device).long()
     b, f, h, w = indices.shape
-    return F.one_hot(indices, 16).permute(0, 1, 4, 2, 3).reshape(b, f * 16, h, w).float()
+    return F.one_hot(indices, 17)[..., :16].permute(0, 1, 4, 2, 3).reshape(b, f * 16, h, w).float()
 
 
 class QNetwork(nn.Module):
@@ -79,7 +80,11 @@ class QNetwork(nn.Module):
 
         # Q-values for ordinary discrete actions.
         self.discrete_head = nn.Sequential(
-            nn.AdaptiveAvgPool2d((4, 4)),
+            # The encoder is always 64x64. These non-overlapping 16x16
+            # means equal adaptive 64->4 pooling, whose CUDA backward
+            # is unsupported by strict deterministic PyTorch execution.
+            # Both pooling layers have no state-dict parameters.
+            nn.AvgPool2d(kernel_size=16, stride=16),
             nn.Flatten(),
             nn.Linear(64 * 4 * 4, 128),
             nn.ReLU(),

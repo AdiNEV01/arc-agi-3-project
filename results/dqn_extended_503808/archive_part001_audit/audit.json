@@ -1,0 +1,1834 @@
+{
+  "format": "dqn_503808_archive_audit_v1",
+  "archives": [
+    {
+      "name": "DQN_503808_CONTINUED_20261026T040955Z_0cff534c-20261026T082449Z-1-001.zip",
+      "bytes": 562659791,
+      "sha256": "b530a34b8cf1e3c11401443524726c7a0444d3c1a7125c5c04943e5117e6ef80",
+      "files": 181,
+      "crc_verified": true
+    }
+  ],
+  "jobs": [
+    {
+      "variant": "v0",
+      "seed": 42,
+      "completion_receipt_present": false,
+      "final_model_path": null,
+      "full_history_path": "v0/seed42/actions.csv.gz",
+      "history_validation": {
+        "actions": 503808,
+        "gradient_updates": 100562,
+        "per_game": {
+          "ls20-9607627b": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 2459,
+            "extension_task_reward": 0.0
+          },
+          "ar25-0c556536": {
+            "actions": 167936,
+            "task_reward": 2.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 171,
+            "extension_task_reward": 0.0
+          },
+          "bp35-0a0ad940": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 2630,
+            "extension_task_reward": 0.0
+          }
+        },
+        "finite_losses": true,
+        "round_robin_verified": true,
+        "epsilon_verified": true,
+        "interpretation": "Exploratory training history; not frozen evaluation performance"
+      },
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 317.2736900238211,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    },
+    {
+      "variant": "v0",
+      "seed": 123,
+      "completion_receipt_present": false,
+      "final_model_path": "v0/seed123/attempts/a_44a0ed56829b/frozen/step503808.pt",
+      "final_model_validation": {
+        "global_step": 503808,
+        "gradient_steps": 100562,
+        "num_frames": 1,
+        "novelty_beta": 0.0,
+        "finite_online_and_target": true,
+        "strict_cpu_model_load": true,
+        "finite_zero_input_forward": true,
+        "training_seconds_recorded": 1487.6680851210003
+      },
+      "final_model_sha256": "361b4be7b85fa53d848fa8d834432e0e65f014934bf0d6820e5a40d405db853d",
+      "full_history_path": null,
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 316.8298467803195,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    },
+    {
+      "variant": "v0",
+      "seed": 456,
+      "completion_receipt_present": true,
+      "completion_receipt_contract_valid": true,
+      "final_model_path": null,
+      "full_history_path": "v0/seed456/attempts/a_0ff1a68556bb/resume/step503808/history.csv.gz",
+      "history_validation": {
+        "actions": 503808,
+        "gradient_updates": 100562,
+        "per_game": {
+          "ls20-9607627b": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 2161,
+            "extension_task_reward": 0.0
+          },
+          "ar25-0c556536": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 164,
+            "extension_task_reward": 0.0
+          },
+          "bp35-0a0ad940": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 2624,
+            "extension_task_reward": 0.0
+          }
+        },
+        "finite_losses": true,
+        "round_robin_verified": true,
+        "epsilon_verified": true,
+        "interpretation": "Exploratory training history; not frozen evaluation performance"
+      },
+      "frozen_snapshot_checksum_checks": [
+        {
+          "path": "v0/seed456/frozen/step075000.pt",
+          "matches": true
+        },
+        {
+          "path": "v0/seed456/frozen/step150000.pt",
+          "matches": true
+        },
+        {
+          "path": "v0/seed456/frozen/step375000.pt",
+          "matches": true
+        },
+        {
+          "path": "v0/seed456/frozen/step450000.pt",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "variant": "v1",
+      "seed": 42,
+      "completion_receipt_present": false,
+      "final_model_path": null,
+      "full_history_path": "v1/seed42/attempts/a_039abf82a977/resume/step503808/history.csv.gz",
+      "history_validation": {
+        "actions": 503808,
+        "gradient_updates": 100562,
+        "per_game": {
+          "ls20-9607627b": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 366.23062929703605,
+            "wins": 0,
+            "gameovers": 2333,
+            "extension_task_reward": 0.0
+          },
+          "ar25-0c556536": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 24.099497853225383,
+            "wins": 0,
+            "gameovers": 156,
+            "extension_task_reward": 0.0
+          },
+          "bp35-0a0ad940": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 524.0168062409157,
+            "wins": 0,
+            "gameovers": 2632,
+            "extension_task_reward": 0.0
+          }
+        },
+        "finite_losses": true,
+        "round_robin_verified": true,
+        "epsilon_verified": true,
+        "interpretation": "Exploratory training history; not frozen evaluation performance"
+      },
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 313.99038788759185,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    },
+    {
+      "variant": "v1",
+      "seed": 123,
+      "completion_receipt_present": true,
+      "completion_receipt_contract_valid": true,
+      "final_model_path": "v1/seed123/frozen/step503808.pt",
+      "final_model_validation": {
+        "global_step": 503808,
+        "gradient_steps": 100562,
+        "num_frames": 1,
+        "novelty_beta": 0.01,
+        "finite_online_and_target": true,
+        "strict_cpu_model_load": true,
+        "finite_zero_input_forward": true,
+        "training_seconds_recorded": 1498.17650487
+      },
+      "final_model_sha256": "8984c9d892c537a56beca267e36674b174c2f4402d629d895901c51ae3cc0ccc",
+      "full_history_path": "v1/seed123/actions.csv.gz",
+      "history_validation": {
+        "actions": 503808,
+        "gradient_updates": 100562,
+        "per_game": {
+          "ls20-9607627b": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 212.95774323212032,
+            "wins": 0,
+            "gameovers": 2524,
+            "extension_task_reward": 0.0
+          },
+          "ar25-0c556536": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 151.0878205377679,
+            "wins": 0,
+            "gameovers": 255,
+            "extension_task_reward": 0.0
+          },
+          "bp35-0a0ad940": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 682.7621568157625,
+            "wins": 0,
+            "gameovers": 2653,
+            "extension_task_reward": 0.0
+          }
+        },
+        "finite_losses": true,
+        "round_robin_verified": true,
+        "epsilon_verified": true,
+        "interpretation": "Exploratory training history; not frozen evaluation performance"
+      },
+      "frozen_snapshot_checksum_checks": [
+        {
+          "path": "v1/seed123/frozen/step075000.pt",
+          "matches": true
+        },
+        {
+          "path": "v1/seed123/frozen/step150000.pt",
+          "matches": true
+        },
+        {
+          "path": "v1/seed123/frozen/step225000.pt",
+          "matches": true
+        },
+        {
+          "path": "v1/seed123/frozen/step450000.pt",
+          "matches": true
+        },
+        {
+          "path": "v1/seed123/frozen/step503808.pt",
+          "matches": true
+        }
+      ],
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 314.92130903527175,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    },
+    {
+      "variant": "v1",
+      "seed": 456,
+      "completion_receipt_present": false,
+      "final_model_path": "v1/seed456/attempts/a_d9999dc56136/frozen/step503808.pt",
+      "final_model_validation": {
+        "global_step": 503808,
+        "gradient_steps": 100562,
+        "num_frames": 1,
+        "novelty_beta": 0.01,
+        "finite_online_and_target": true,
+        "strict_cpu_model_load": true,
+        "finite_zero_input_forward": true,
+        "training_seconds_recorded": 1501.9103667180025
+      },
+      "final_model_sha256": "9ae3e12e2030453747c798f0cf1cc1a1dc6f685b0e6de2602d52564804e04f2d",
+      "full_history_path": null,
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 312.9907531032861,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    },
+    {
+      "variant": "v2_history_only",
+      "seed": 42,
+      "completion_receipt_present": false,
+      "final_model_path": null,
+      "full_history_path": "v2_history_only/seed42/actions.csv.gz",
+      "history_validation": {
+        "actions": 503808,
+        "gradient_updates": 100562,
+        "per_game": {
+          "ls20-9607627b": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 2149,
+            "extension_task_reward": 0.0
+          },
+          "ar25-0c556536": {
+            "actions": 167936,
+            "task_reward": 2.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 158,
+            "extension_task_reward": 0.0
+          },
+          "bp35-0a0ad940": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 2644,
+            "extension_task_reward": 0.0
+          }
+        },
+        "finite_losses": true,
+        "round_robin_verified": true,
+        "epsilon_verified": true,
+        "interpretation": "Exploratory training history; not frozen evaluation performance"
+      },
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 213.06648153775697,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    },
+    {
+      "variant": "v2_history_only",
+      "seed": 123,
+      "completion_receipt_present": false,
+      "final_model_path": null,
+      "full_history_path": "v2_history_only/seed123/actions.csv.gz",
+      "history_validation": {
+        "actions": 503808,
+        "gradient_updates": 100562,
+        "per_game": {
+          "ls20-9607627b": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 2522,
+            "extension_task_reward": 0.0
+          },
+          "ar25-0c556536": {
+            "actions": 167936,
+            "task_reward": 2.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 233,
+            "extension_task_reward": 1.0
+          },
+          "bp35-0a0ad940": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 0.0,
+            "wins": 0,
+            "gameovers": 2647,
+            "extension_task_reward": 0.0
+          }
+        },
+        "finite_losses": true,
+        "round_robin_verified": true,
+        "epsilon_verified": true,
+        "interpretation": "Exploratory training history; not frozen evaluation performance"
+      }
+    },
+    {
+      "variant": "v2_history_only",
+      "seed": 456,
+      "completion_receipt_present": false,
+      "final_model_path": "v2_history_only/seed456/frozen/step503808.pt",
+      "final_model_validation": {
+        "global_step": 503808,
+        "gradient_steps": 100562,
+        "num_frames": 4,
+        "novelty_beta": 0.0,
+        "finite_online_and_target": true,
+        "strict_cpu_model_load": true,
+        "finite_zero_input_forward": true,
+        "training_seconds_recorded": 2236.5165873840087
+      },
+      "final_model_sha256": "6f1c4f7891db8be3ad4b2297fce4e364e65986f756209f0ef61950e2000d046d",
+      "full_history_path": null,
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 214.49020394625427,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    },
+    {
+      "variant": "v2",
+      "seed": 42,
+      "completion_receipt_present": true,
+      "completion_receipt_contract_valid": true,
+      "final_model_path": "v2/seed42/frozen/step503808.pt",
+      "final_model_validation": {
+        "global_step": 503808,
+        "gradient_steps": 100562,
+        "num_frames": 4,
+        "novelty_beta": 0.01,
+        "finite_online_and_target": true,
+        "strict_cpu_model_load": true,
+        "finite_zero_input_forward": true,
+        "training_seconds_recorded": 3029.347293909006
+      },
+      "final_model_sha256": "8fc7f6f878fa09d6d7cb9ad661ff6c69cb3bb1899d9789340f51b438e098d245",
+      "full_history_path": "v2/seed42/attempts/a_bb00eeabe572/resume/step503808/history.csv.gz",
+      "history_validation": {
+        "actions": 503808,
+        "gradient_updates": 100562,
+        "per_game": {
+          "ls20-9607627b": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 430.91467839630116,
+            "wins": 0,
+            "gameovers": 1620,
+            "extension_task_reward": 0.0
+          },
+          "ar25-0c556536": {
+            "actions": 167936,
+            "task_reward": 2.0,
+            "intrinsic_reward": 223.508699434646,
+            "wins": 0,
+            "gameovers": 145,
+            "extension_task_reward": 0.0
+          },
+          "bp35-0a0ad940": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 743.0947669630975,
+            "wins": 0,
+            "gameovers": 2644,
+            "extension_task_reward": 0.0
+          }
+        },
+        "finite_losses": true,
+        "round_robin_verified": true,
+        "epsilon_verified": true,
+        "interpretation": "Exploratory training history; not frozen evaluation performance"
+      },
+      "frozen_snapshot_checksum_checks": [
+        {
+          "path": "v2/seed42/frozen/step075000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed42/frozen/step150000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed42/frozen/step225000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed42/frozen/step375000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed42/frozen/step450000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed42/frozen/step503808.pt",
+          "matches": true
+        }
+      ],
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 213.57387955445535,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    },
+    {
+      "variant": "v2",
+      "seed": 123,
+      "completion_receipt_present": true,
+      "completion_receipt_contract_valid": true,
+      "final_model_path": "v2/seed123/frozen/step503808.pt",
+      "final_model_validation": {
+        "global_step": 503808,
+        "gradient_steps": 100562,
+        "num_frames": 4,
+        "novelty_beta": 0.01,
+        "finite_online_and_target": true,
+        "strict_cpu_model_load": true,
+        "finite_zero_input_forward": true,
+        "training_seconds_recorded": 2240.113656123998
+      },
+      "final_model_sha256": "ecccb02ddb62e4a3db3731f6aaf4e33ddd5730ca900cf397beebef93fc5e9df8",
+      "full_history_path": "v2/seed123/actions.csv.gz",
+      "history_validation": {
+        "actions": 503808,
+        "gradient_updates": 100562,
+        "per_game": {
+          "ls20-9607627b": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 421.29181134017506,
+            "wins": 0,
+            "gameovers": 1927,
+            "extension_task_reward": 0.0
+          },
+          "ar25-0c556536": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 80.8150169676175,
+            "wins": 0,
+            "gameovers": 232,
+            "extension_task_reward": 0.0
+          },
+          "bp35-0a0ad940": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 582.966960083915,
+            "wins": 0,
+            "gameovers": 2638,
+            "extension_task_reward": 0.0
+          }
+        },
+        "finite_losses": true,
+        "round_robin_verified": true,
+        "epsilon_verified": true,
+        "interpretation": "Exploratory training history; not frozen evaluation performance"
+      },
+      "frozen_snapshot_checksum_checks": [
+        {
+          "path": "v2/seed123/frozen/step225000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed123/frozen/step300000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed123/frozen/step503808.pt",
+          "matches": true
+        }
+      ],
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 214.528510787716,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    },
+    {
+      "variant": "v2",
+      "seed": 456,
+      "completion_receipt_present": true,
+      "completion_receipt_contract_valid": true,
+      "final_model_path": null,
+      "full_history_path": "v2/seed456/attempts/a_b546f9acc147/resume/step503808/history.csv.gz",
+      "history_validation": {
+        "actions": 503808,
+        "gradient_updates": 100562,
+        "per_game": {
+          "ls20-9607627b": {
+            "actions": 167936,
+            "task_reward": 1.0,
+            "intrinsic_reward": 267.62703341217275,
+            "wins": 0,
+            "gameovers": 2442,
+            "extension_task_reward": 0.0
+          },
+          "ar25-0c556536": {
+            "actions": 167936,
+            "task_reward": 2.0,
+            "intrinsic_reward": 176.17287557164755,
+            "wins": 0,
+            "gameovers": 150,
+            "extension_task_reward": 0.0
+          },
+          "bp35-0a0ad940": {
+            "actions": 167936,
+            "task_reward": 0.0,
+            "intrinsic_reward": 705.0706749207972,
+            "wins": 0,
+            "gameovers": 2646,
+            "extension_task_reward": 0.0
+          }
+        },
+        "finite_losses": true,
+        "round_robin_verified": true,
+        "epsilon_verified": true,
+        "interpretation": "Exploratory training history; not frozen evaluation performance"
+      },
+      "frozen_snapshot_checksum_checks": [
+        {
+          "path": "v2/seed456/frozen/step225000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed456/frozen/step300000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed456/frozen/step375000.pt",
+          "matches": true
+        },
+        {
+          "path": "v2/seed456/frozen/step450000.pt",
+          "matches": true
+        }
+      ],
+      "producer_summary": {
+        "global_step": 503808,
+        "initial_step": 450000,
+        "new_actions": 53808,
+        "gradient_steps": 100562,
+        "finite_losses": true,
+        "new_updates": 10761,
+        "device_name": "NVIDIA GeForce RTX 3050",
+        "software": {
+          "python": "3.13.16",
+          "numpy": "2.5.4",
+          "torch": "2.11.0+cu126",
+          "arc-agi": "0.9.9",
+          "arcengine": "0.9.3",
+          "gymnasium": "1.4.0"
+        },
+        "actions_per_second_including_persistence": 213.535286589579,
+        "runtime_scope": "53,808-action continuation only; not total training time"
+      }
+    }
+  ],
+  "errors": [],
+  "missing_for_matrix_import": [
+    "EXTENSION_PROVENANCE.json",
+    "v0/seed42/RUN_COMPLETE.json",
+    "v0/seed42/frozen/step503808.pt",
+    "v0/seed123/RUN_COMPLETE.json",
+    "v0/seed123/actions.csv.gz",
+    "v0/seed456/frozen/step503808.pt",
+    "v0/seed456/frozen/step503808.pt",
+    "v1/seed42/RUN_COMPLETE.json",
+    "v1/seed42/frozen/step503808.pt",
+    "v1/seed456/RUN_COMPLETE.json",
+    "v1/seed456/actions.csv.gz",
+    "v2_history_only/seed42/RUN_COMPLETE.json",
+    "v2_history_only/seed42/frozen/step503808.pt",
+    "v2_history_only/seed123/RUN_COMPLETE.json",
+    "v2_history_only/seed123/frozen/step503808.pt",
+    "v2_history_only/seed456/RUN_COMPLETE.json",
+    "v2_history_only/seed456/actions.csv.gz",
+    "v2/seed123/frozen/step450000.pt",
+    "v2/seed456/frozen/step503808.pt",
+    "v2/seed456/frozen/step503808.pt"
+  ],
+  "frozen_evaluation_performed": false,
+  "training_or_restoration_performed": false,
+  "original_files_modified": false,
+  "result_root": "DQN_503808_CONTINUED_20261026T040955Z_0cff534c",
+  "inventory": {
+    "v1/seed42/a_039abf82a977.log": {
+      "bytes": 4561,
+      "sha256": "f130e1fe4eed30ada6e9241848c8e99d498197634f032f7b48977da75219ac3c"
+    },
+    "v0/seed42/metadata.json": {
+      "bytes": 4656,
+      "sha256": "fb98d04612c23932e77fd785be6e1635032c33bb32a477cf4fdab75d717c3d26"
+    },
+    "QUEUE.json": {
+      "bytes": 4357,
+      "sha256": "79131b40f141e13eb2ff74ff81da16926ddefe97f74e5a8f7a5648dbd569cb85"
+    },
+    "v1/seed456/a_d9999dc56136.log": {
+      "bytes": 4598,
+      "sha256": "56ff9ff7ca477a96e73b26181a30328ccc84dbe436ee5af0bd96a50cd2b94645"
+    },
+    "v0/seed123/metadata.json": {
+      "bytes": 4658,
+      "sha256": "ab6807f91965c2e3b9463ff5f456a22a7661af951a4c03ff662ab29f87f5ce8e"
+    },
+    "v2/seed42/summary.json": {
+      "bytes": 165809,
+      "sha256": "20f795a8d4f3760d44d94ec1fe3ea53efd9147cc8155860eb16df892d62522db"
+    },
+    "v2_history_only/seed456/summary.json": {
+      "bytes": 165806,
+      "sha256": "286428ebb48a0742944d9d548524062a4a35bf98e0f641ea9e7a60f3b942de92"
+    },
+    "extension_config.json": {
+      "bytes": 1661,
+      "sha256": "48410c380d654c99549d93d47ac6256d6a3718dd7b02041925b0cdb8e111708c"
+    },
+    "v0/seed456/a_0ff1a68556bb.log": {
+      "bytes": 4609,
+      "sha256": "ddd1b5440fd30aaaad6c49b5386a0438b96c4d587c11bf3cfbd5230cfc36ee06"
+    },
+    "v1/seed42/summary.json": {
+      "bytes": 164893,
+      "sha256": "6ed634517d819c774ec8889e8ce12b1052eb4c975e966e8675e92ed515ba03e0"
+    },
+    "v2_history_only/seed123/source_450k/RUN_COMPLETE.json": {
+      "bytes": 2025,
+      "sha256": "c0b085a662c68ad53578bddee2c8a217cf77767ca26ed6cf9449a3e51e48f51d"
+    },
+    "v1/seed456/metadata.json": {
+      "bytes": 4659,
+      "sha256": "a20324763a9a5e8e892310ef27c25d5765cf62834d5a835a941d5eddeb0c1213"
+    },
+    "v0/seed123/summary.json": {
+      "bytes": 165517,
+      "sha256": "556e18daaca5c1fd0c8e9c4c40130dcb674acbd146bdace0df692e3f77fbca96"
+    },
+    "v1/seed123/a_a8042e6d5f9e.log": {
+      "bytes": 4590,
+      "sha256": "fcdbb65da7baffb6339720ed30a152aafe7dbe15461e5dde312d1be4ba209f08"
+    },
+    "v2/seed123/summary.json": {
+      "bytes": 165313,
+      "sha256": "e00dc8f323a6a7ab12bb62729d32247571319aefd67bb4ecd93d446271334c4c"
+    },
+    "v2_history_only/seed123/a_227a52a36e22.log": {
+      "bytes": 5260,
+      "sha256": "94a1d63d20b85c62b702a9c43fd1ef1562e3b2e11c12328161f4bec6b7e5c62c"
+    },
+    "v2/seed456/RUN_COMPLETE.json": {
+      "bytes": 2109,
+      "sha256": "6f71f96c76d910bf0cdfe08912d14a5ae1347e29cfd614eed7c2dcc161d63897"
+    },
+    "extension_provenance/numerical_migration_450k/pip_freeze.txt": {
+      "bytes": 1292,
+      "sha256": "6f54cd6ea1e2e6d9839bd142142433343c6e9c6cb02840625b488b173e24a4c9"
+    },
+    "v1/seed123/RUN_COMPLETE.json": {
+      "bytes": 2109,
+      "sha256": "5892c0c0da53cba544b684d32a34b176f3f6dc497ec020e67f5460edd5c95470"
+    },
+    "v1/seed42/metadata.json": {
+      "bytes": 4657,
+      "sha256": "b6a898b38d24a5ec00d76fd3b686c11615d8188bbb2b63e9544e9ff694f6504c"
+    },
+    "v2/seed456/a_b546f9acc147.log": {
+      "bytes": 4596,
+      "sha256": "17891a98376bb8bd06c34ab60e416b213a4126f72bf834dc1abf00300ba83072"
+    },
+    "v2/seed42/RUN_COMPLETE.json": {
+      "bytes": 2100,
+      "sha256": "fcd5bfc8e885039bb1c8e8d2ecc1a16ddcc68cd5b08d0036eb13c00033a08bd3"
+    },
+    "v2/seed123/RUN_COMPLETE.json": {
+      "bytes": 2109,
+      "sha256": "968a3112cb3c87b4f31b41c3999a6fc94af9adb8a1b85c8ecdcde90419adaa5b"
+    },
+    "v2/seed456/summary.json": {
+      "bytes": 166008,
+      "sha256": "d867f4fccfa03ea51c3146ac134564fd0e743cd90eb1268d289b0fd70e3f63a8"
+    },
+    "progress.json": {
+      "bytes": 5864,
+      "sha256": "f8bf61a7461efacfab3fa4ec6ecf22c34d3db3e45c2e9581224542c268128070"
+    },
+    "extension_provenance/numerical_migration_450k/RESTORATION_PASSED.json": {
+      "bytes": 7021,
+      "sha256": "2170b22d33404e87a870bdd96ad3a3b195ac675d5309c640fc1efe9fef52bfb1"
+    },
+    "v2/seed42/metadata.json": {
+      "bytes": 4657,
+      "sha256": "1a6cb29a6475b071b94e35c16a318f07de070f7f5fc583c508649989f5d85157"
+    },
+    "v2/seed123/source_450k/summary.json": {
+      "bytes": 164688,
+      "sha256": "c77d62d62a3f9c2152f4d01f88f54bbb13e392a1fdd62e09caccfd6e900246a7"
+    },
+    "v0/seed456/RUN_COMPLETE.json": {
+      "bytes": 2109,
+      "sha256": "ea064c84d89ff4518717a50d0e78b0755a717889c8d7897f7c0ae217bf14d775"
+    },
+    "v2_history_only/seed123/source_450k/metadata.json": {
+      "bytes": 4537,
+      "sha256": "7a4afbdcad1e29124f0dddff951ce89cc49a07d142cea17536880ebcd97d4699"
+    },
+    "v1/seed42/source_450k/metadata.json": {
+      "bytes": 4516,
+      "sha256": "76ce82b483e355bdea30d8872eba772e08707dac178fb1616cd6b38f62114d47"
+    },
+    "v2_history_only/seed123/source_450k/summary.json": {
+      "bytes": 165105,
+      "sha256": "2c7c2b5f10bb349bfdef67181ba140d61e17c458f28f99b3abe3803fdb8131de"
+    },
+    "v2/seed123/source_450k/metadata.json": {
+      "bytes": 4525,
+      "sha256": "c6a2e42de4d32e8fcc5604a23a129bc199531138b4bc93a246e81428641b1463"
+    },
+    "v2_history_only/seed456/source_450k/RUN_COMPLETE.json": {
+      "bytes": 2025,
+      "sha256": "832cb25a988e456f7195193c5e9063714cfa6ad3fee09d490c6b913ac46e0fd3"
+    },
+    "v2_history_only/seed456/source_450k/metadata.json": {
+      "bytes": 4537,
+      "sha256": "e84ece081737ba0707341147b184d58dd0636d0f13aff0193897be682374a64b"
+    },
+    "v2/seed123/source_450k/RUN_COMPLETE.json": {
+      "bytes": 1921,
+      "sha256": "6f5cb30b96591494fde685d0d45323ec9191436c6100cd954ab18f772c3b2bc5"
+    },
+    "v0/seed42/source_450k/summary.json": {
+      "bytes": 164899,
+      "sha256": "99cb97f5a72e270a8a9a9cc3f2e02343309246eb63b89955910136acd86e0203"
+    },
+    "v0/seed42/source_450k/metadata.json": {
+      "bytes": 4515,
+      "sha256": "9a467dc6890d884c59f0258639fe63b0dd5dd94e675c74acdf02e6be34dc7ccf"
+    },
+    "v2_history_only/seed42/source_450k/RUN_COMPLETE.json": {
+      "bytes": 2017,
+      "sha256": "72cafb30f150b2ef8ba0da3ae963bb8487c38b3f66ef8fbc7afb42c45f3e102f"
+    },
+    "v1/seed42/source_450k/summary.json": {
+      "bytes": 164301,
+      "sha256": "df1a3a32544e2e019a5770acfcb1e371726099c4d2a4ebe8fdc149abfea8570a"
+    },
+    "v2_history_only/seed123/actions.csv.gz": {
+      "bytes": 9844477,
+      "sha256": "50ff49df91a0859e40cc5da4fa30025eea2766cd617505d10f80dee353cfdeb3"
+    },
+    "v1/seed456/frozen/step225000.pt": {
+      "bytes": 2652667,
+      "sha256": "e2451934245b3611cce86827b467f9c233c3b434ff015824822debb9de4d24d1"
+    },
+    "v2_history_only/seed123/frozen/step375000.pt": {
+      "bytes": 2873851,
+      "sha256": "9f35c09638fab2f013b5f4dd9fc529c0a4d1fb9131f2d7b1b8c7fb34ab6e6392"
+    },
+    "v2/seed123/actions.csv.gz": {
+      "bytes": 11715650,
+      "sha256": "0371155a3080d39d68c9fa60e2f319c7d1a4152ed226b9f8632a6e4cc93b4fc0"
+    },
+    "v0/seed42/actions.csv.gz": {
+      "bytes": 9433669,
+      "sha256": "f3813961f390d426a9c118886ee729b11181691fa5c5aaa54bc3477f9929530d"
+    },
+    "v1/seed456/frozen/step150000.pt": {
+      "bytes": 2652667,
+      "sha256": "ed2c40eb57945f46bbb0b82643a921539aa5f2d67562141bba2cec2fb2c174ca"
+    },
+    "v0/seed456/source_450k/RUN_COMPLETE.json": {
+      "bytes": 1921,
+      "sha256": "12100bbe57c161609f37f732032e3c96bdf01ef0dfe9d6ed280a53c8e750de13"
+    },
+    "v2_history_only/seed456/frozen/step300000.pt": {
+      "bytes": 2873851,
+      "sha256": "8e797e8b1b1b39036437359058a939edc0de4c8554dfc62cb69d26536fd51364"
+    },
+    "v2_history_only/seed123/frozen/step450000.pt": {
+      "bytes": 2873851,
+      "sha256": "db6cd59fed7e319e990f019ccfa1705870dafafc8578d8358f9c44d50211efcd"
+    },
+    "extension_provenance/numerical_migration_450k/verification_logs/v2_seed42/restored.log": {
+      "bytes": 600,
+      "sha256": "c7dc9f8704cf3d6996a3c4aac62d60eedc210ed25f08c30fb0916b1777474d7b"
+    },
+    "v1/seed123/source_450k/RUN_COMPLETE.json": {
+      "bytes": 1921,
+      "sha256": "309b4d239e0c83c6904de6460a8dd237edefa7efcb4638ca61c1d9dd7234dfd4"
+    },
+    "v1/seed456/frozen/step450000.pt": {
+      "bytes": 2652667,
+      "sha256": "6d936daab9d3d2e8d34c9714c50b957fb52f27b91d2532c426fa6566a011dbab"
+    },
+    "v2_history_only/seed123/frozen/step075000.pt": {
+      "bytes": 2873851,
+      "sha256": "bbfbb36c2bc4810a82b90057bb3c328bc9e347198ceb9b58ada5b71e963357d4"
+    },
+    "v1/seed123/source_450k/summary.json": {
+      "bytes": 164958,
+      "sha256": "b81765749183426a2555b92c2448d20dc332bf62843e19ec85300222bff81f72"
+    },
+    "v2_history_only/seed42/actions.csv.gz": {
+      "bytes": 9646715,
+      "sha256": "7c5b284d43dc9c680df1cdb6b861d03bf51a1d16c07aa7b89a00247423d5937b"
+    },
+    "v2_history_only/seed456/frozen/step503808.pt": {
+      "bytes": 2873915,
+      "sha256": "6f1c4f7891db8be3ad4b2297fce4e364e65986f756209f0ef61950e2000d046d"
+    },
+    "v1/seed456/frozen/step300000.pt": {
+      "bytes": 2652667,
+      "sha256": "438729d29605e03deeaac8ba289648e8bcb81b12dfa0c7cf24d429899474a3d5"
+    },
+    "v2/seed42/source_450k/RUN_COMPLETE.json": {
+      "bytes": 1913,
+      "sha256": "827009381a020a725c26848d430491375b07566fd53c1a75b74491501448273c"
+    },
+    "v2/seed42/source_450k/metadata.json": {
+      "bytes": 4612,
+      "sha256": "ae97713d39b14920a9a9167577f9f7759f1b2147f3fb33b0543faaa1fe5d89b8"
+    },
+    "v1/seed456/frozen/step375000.pt": {
+      "bytes": 2652667,
+      "sha256": "bf94b7fff968ccd67c2e3b5869cf265d308690dffd18e2b8a80f0110393bc258"
+    },
+    "extension_provenance/numerical_migration_450k/verification_logs/v2_seed42/prefix.log": {
+      "bytes": 600,
+      "sha256": "7754c840b351ea30f192e78a0d116f59e1e4905d617c5e3d42e44d87fcff47db"
+    },
+    "v1/seed123/actions.csv.gz": {
+      "bytes": 11890691,
+      "sha256": "9081eb5ed8be1f3b4e2acd317e99e3138455b7b5e4bd8221f81159eb20da2c67"
+    },
+    "v2/seed123/frozen/step225000.pt": {
+      "bytes": 2873851,
+      "sha256": "ab29383554489dcea7d20a8988c9c9161a8ee0a1693ca80f80451be823267aa3"
+    },
+    "v2_history_only/seed456/frozen/step150000.pt": {
+      "bytes": 2873851,
+      "sha256": "992e35fe6f258bef18a3f639d498c691767c368603ef0edfb7010a82a83c7571"
+    },
+    "v0/seed42/frozen/step225000.pt": {
+      "bytes": 2652667,
+      "sha256": "58016761b5d244222868a5d55ce6c64a332eee527890dd2a99409313413a2d8f"
+    },
+    "v2/seed42/frozen/step450000.pt": {
+      "bytes": 2873851,
+      "sha256": "aabad706a3a845d8e7d78d306e770a9110baed50d91f7407151437e24ebce1ac"
+    },
+    "v2/seed123/attempts/budget_extension_44f5f7a144/metadata.json": {
+      "bytes": 10016,
+      "sha256": "c9d5f182c8454855a47ebbf12ad3d76ac6addeef8991567ca5fafce96331885e"
+    },
+    "v2_history_only/seed456/frozen/step225000.pt": {
+      "bytes": 2873851,
+      "sha256": "319a20732edf5d6478c857493f41752625790fa6a015b897558e712975159408"
+    },
+    "v2_history_only/seed123/attempts/budget_extension_d2f5c24e05/metadata.json": {
+      "bytes": 10054,
+      "sha256": "410afe8d26efab75c9fa64fe94b50e59da9dc5c2dbb9abc4c6ccf682a5d7e470"
+    },
+    "v1/seed123/frozen/step150000.pt": {
+      "bytes": 2652667,
+      "sha256": "2ddc2cab42d41d7c0d2f5c142122a36f697f2e16873090623910ba2fec859db3"
+    },
+    "v0/seed42/frozen/step300000.pt": {
+      "bytes": 2652667,
+      "sha256": "efd9b3e58fde629e16752f3f81119195c65995a4e5870a17111222dc285dd1b4"
+    },
+    "v2/seed123/frozen/step300000.pt": {
+      "bytes": 2873851,
+      "sha256": "d85aac9f6b335a3ac32f358dedac2425d4644729434123451d789adee3f2368f"
+    },
+    "v1/seed456/attempts/a_d9999dc56136/summary.json": {
+      "bytes": 165572,
+      "sha256": "1c7fe75143054f336c5c76ed4c846e45d148f57431340c505a2ba461abd3ed91"
+    },
+    "v0/seed42/frozen/step075000.pt": {
+      "bytes": 2652667,
+      "sha256": "442ea41c2816b426ceada4e1a3ec187ae5624211943debf08323d747c6d889a6"
+    },
+    "v2/seed123/frozen/step503808.pt": {
+      "bytes": 2873915,
+      "sha256": "ecccb02ddb62e4a3db3731f6aaf4e33ddd5730ca900cf397beebef93fc5e9df8"
+    },
+    "v2/seed42/attempts/a_bb00eeabe572/gpu_samples.csv": {
+      "bytes": 1298,
+      "sha256": "d254659ad2bdd8e7f100bca74312ab2ec217e571ab6c6b448869e5d5ce1e5f1f"
+    },
+    "v0/seed456/attempts/a_0ff1a68556bb/gpu_samples.csv": {
+      "bytes": 1244,
+      "sha256": "26d53bb1d8fd434607bda3aa85d3b5532fd466b393a64fb9be982e5bc2c4dc1e"
+    },
+    "v0/seed42/attempts/a_ff549e5db843/summary.json": {
+      "bytes": 165548,
+      "sha256": "c0592287294286febb43c55ee322156c11f2df94af6e5d0d8cfd6da69bf5826f"
+    },
+    "v2/seed42/frozen/step375000.pt": {
+      "bytes": 2873851,
+      "sha256": "e67ffb340fd33f3a83a300f2de7937ceb574f1d0467894ce661a5f0936a4e29f"
+    },
+    "v1/seed456/attempts/budget_extension_99f9b3d507/metadata.json": {
+      "bytes": 10016,
+      "sha256": "f1abd76ffce56c09c469fcbed974a696ece4dd4d638925ea77d32a5b75bbde54"
+    },
+    "v2_history_only/seed123/frozen/step150000.pt": {
+      "bytes": 2873851,
+      "sha256": "c9c3864402daaa8345a771dd391cd1117d11b6807ebd4bea590834340f7100db"
+    },
+    "v0/seed42/attempts/a_ff549e5db843/metadata.json": {
+      "bytes": 4656,
+      "sha256": "fb98d04612c23932e77fd785be6e1635032c33bb32a477cf4fdab75d717c3d26"
+    },
+    "v0/seed42/attempts/a_ff549e5db843/gpu_samples.csv": {
+      "bytes": 1244,
+      "sha256": "8be0f0ced5d570030a4d454e9f7b60c57cfa421c48cb3eb3378bf39c78040229"
+    },
+    "v0/seed456/frozen/step150000.pt": {
+      "bytes": 2652667,
+      "sha256": "ad03dab73d9a05c69edcb68a31c9c96a13cea55cd397d2a19270fbd1cc4a0e09"
+    },
+    "v2/seed42/frozen/step225000.pt": {
+      "bytes": 2873851,
+      "sha256": "ed483445aff6b2efe3639779345b3a341fc44a1729dd50cb0317c4bdb31d8014"
+    },
+    "v1/seed42/frozen/step075000.pt": {
+      "bytes": 2652667,
+      "sha256": "2701a24e0c1ff7b5bd2349fb0a1372e45e96e12574151fc16bce8f79fb44b61a"
+    },
+    "v2/seed42/attempts/a_bb00eeabe572/summary.json": {
+      "bytes": 165809,
+      "sha256": "20f795a8d4f3760d44d94ec1fe3ea53efd9147cc8155860eb16df892d62522db"
+    },
+    "v0/seed456/frozen/step075000.pt": {
+      "bytes": 2652667,
+      "sha256": "d02faf57a962d6f7c05b7a4aaaf67ef06f5d0cdfd1c90a1e04c2de19be2ba6c7"
+    },
+    "v2/seed42/frozen/step150000.pt": {
+      "bytes": 2873851,
+      "sha256": "be7c96d201b1c9d90d34b0713006b0af709c14aa3ff9df99d75fd9d980c52631"
+    },
+    "v2_history_only/seed456/attempts/budget_extension_f694640df4/metadata.json": {
+      "bytes": 10054,
+      "sha256": "8a69df0efdf9831cbbcd2d15f086936e6d525e097096c0f60e735250b1036374"
+    },
+    "v2/seed42/frozen/step503808.pt": {
+      "bytes": 2873915,
+      "sha256": "8fc7f6f878fa09d6d7cb9ad661ff6c69cb3bb1899d9789340f51b438e098d245"
+    },
+    "v1/seed456/attempts/a_d9999dc56136/gpu_samples.csv": {
+      "bytes": 1244,
+      "sha256": "5592dfbf3ae5ea06e82be2bf4ad927c7fe815b1bde8e85ad3fbcf86f464224e6"
+    },
+    "v1/seed123/frozen/step225000.pt": {
+      "bytes": 2652667,
+      "sha256": "b97f03cc46d26d2400a27d3b965e6dc98ad388a31034e74f335bf24b41313afa"
+    },
+    "v2/seed123/attempts/a_b5adcd64944f/gpu_samples.csv": {
+      "bytes": 1298,
+      "sha256": "32ea7e9ccb27b65ddd61fed83867486567c94f7282d2ae0ef29ed75dd5b73ce5"
+    },
+    "v0/seed456/attempts/a_0ff1a68556bb/metadata.json": {
+      "bytes": 4658,
+      "sha256": "34a83b5c3baefbf939477550baa4e812ad26736ed4b08346552a4d813cef5f7f"
+    },
+    "v2/seed456/attempts/a_b546f9acc147/gpu_samples.csv": {
+      "bytes": 1298,
+      "sha256": "4dea5f9f06eaacfc3cfe8c06d9b8a391ebe77049571a77c496a2ef2fe172fb5d"
+    },
+    "v1/seed42/frozen/step225000.pt": {
+      "bytes": 2652667,
+      "sha256": "168cb8d03bec0be67fd660b88dab94d1c33b7eb34b3584567270b080b117c553"
+    },
+    "v2_history_only/seed42/attempts/a_cb2514504892/summary.json": {
+      "bytes": 165712,
+      "sha256": "46d92fcdcc165c573da1ac6b5be9ad9699b6eb45bbf54fcc080c095ee7859505"
+    },
+    "v1/seed42/attempts/budget_extension_b8c0c584e3/metadata.json": {
+      "bytes": 10004,
+      "sha256": "0d28ef6595d6c1fe576aa8b3fa7878cecf3d92bfc1c96234c884cc154d2f0f75"
+    },
+    "v2/seed42/frozen/step075000.pt": {
+      "bytes": 2873851,
+      "sha256": "789d152c736f8256d42149f3b21cc80e6df93cb9bc63914fb1ec278a808ffa0f"
+    },
+    "v2/seed456/attempts/a_b546f9acc147/metadata.json": {
+      "bytes": 4659,
+      "sha256": "508b074018678ed8ff193499af003a363eb99f9d7aaed0f0a18f74dc9c07ff18"
+    },
+    "v2_history_only/seed42/frozen/step300000.pt": {
+      "bytes": 2873851,
+      "sha256": "fb7c812cfb6f2186b4a286ef4eb5ac34151e61d59d309cc2d26aaca1d8a5fd78"
+    },
+    "v2/seed456/attempts/a_b546f9acc147/summary.json": {
+      "bytes": 166008,
+      "sha256": "d867f4fccfa03ea51c3146ac134564fd0e743cd90eb1268d289b0fd70e3f63a8"
+    },
+    "v2/seed456/frozen/step375000.pt": {
+      "bytes": 2873851,
+      "sha256": "bd8544d277f0eb342cda00df4af85f12de3d9d791bd505707f2df63c02236b85"
+    },
+    "v1/seed123/frozen/step450000.pt": {
+      "bytes": 2652667,
+      "sha256": "5c2186ab88db8f966cdad3f46bce9510b9492026eafe21791a84a7cca926c282"
+    },
+    "v2_history_only/seed42/frozen/step450000.pt": {
+      "bytes": 2873851,
+      "sha256": "df6295fc4f3137c2497fd8a665c9586fcbe99ca566156731a9aed84a10ad0a79"
+    },
+    "v2/seed456/attempts/budget_extension_cd1013bbb3/metadata.json": {
+      "bytes": 10016,
+      "sha256": "eb3cb3176211f5a06ec977e8bf485e649e288801a36e7b5599030b324998c0a4"
+    },
+    "v2/seed456/frozen/step450000.pt": {
+      "bytes": 2873851,
+      "sha256": "dde66f19aa760e02b68b4a218fb2a43627ac931a7845f2e1a2cc850afe4ece01"
+    },
+    "v0/seed123/attempts/a_44a0ed56829b/gpu_samples.csv": {
+      "bytes": 1244,
+      "sha256": "ebe3d8197c1f01c4f4fcb8dfe704c2c962c97668ebd1e3137003be8581aa43ee"
+    },
+    "v1/seed123/attempts/a_a8042e6d5f9e/summary.json": {
+      "bytes": 165581,
+      "sha256": "a902908d779b10f013ad80ea6b7accf03a53a84153847ddd8bc632c3dc7f8b74"
+    },
+    "v2/seed456/frozen/step225000.pt": {
+      "bytes": 2873851,
+      "sha256": "f3fc706e0e2b9b05ceb4d5f90cdc2bc70802e7b0312ddf1c766990bc33342775"
+    },
+    "v0/seed123/frozen/step225000.pt": {
+      "bytes": 2652667,
+      "sha256": "5dd6e1421cf981b1a81a2a569eb50d214db756c2d4f4041c1b0032219c662e7b"
+    },
+    "v0/seed456/frozen/step375000.pt": {
+      "bytes": 2652667,
+      "sha256": "585ed7e7571e2772e878a5f76131a7efdfe7c67eb6a32019a62938258959fc45"
+    },
+    "v0/seed123/attempts/a_44a0ed56829b/metadata.json": {
+      "bytes": 4658,
+      "sha256": "ab6807f91965c2e3b9463ff5f456a22a7661af951a4c03ff662ab29f87f5ce8e"
+    },
+    "v1/seed123/attempts/a_a8042e6d5f9e/metadata.json": {
+      "bytes": 4659,
+      "sha256": "19fd733863a1e6b97053b73b6b48e1461e3b51cdf53d2a99122da45a280cf04a"
+    },
+    "v0/seed123/frozen/step150000.pt": {
+      "bytes": 2652667,
+      "sha256": "03017460d374d90c251d4f4623840a30fd9a81912ca0ac37439249145a2f7d87"
+    },
+    "v2/seed456/frozen/step300000.pt": {
+      "bytes": 2873851,
+      "sha256": "e9d3f429a1ec28f7e31e2a63a7ba72600490ffed012a28dcf90624e9c7e6444b"
+    },
+    "v0/seed456/frozen/step450000.pt": {
+      "bytes": 2652667,
+      "sha256": "5c9a287601a9f6cd04ef1dbce4b14a3b04fbfb1127a27eebac8b903cd72b46e6"
+    },
+    "v2_history_only/seed456/attempts/a_1de348936eb2/frozen/step503808.pt": {
+      "bytes": 2873915,
+      "sha256": "6f1c4f7891db8be3ad4b2297fce4e364e65986f756209f0ef61950e2000d046d"
+    },
+    "v0/seed123/attempts/a_44a0ed56829b/frozen/step503808.pt": {
+      "bytes": 2652731,
+      "sha256": "361b4be7b85fa53d848fa8d834432e0e65f014934bf0d6820e5a40d405db853d"
+    },
+    "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step503808/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "6bb40ed0ee4ec3b94d36682cecbc22eab3b3df32f608eef22fb7dd746e209da3"
+    },
+    "v0/seed123/frozen/step375000.pt": {
+      "bytes": 2652667,
+      "sha256": "28fcb7624fccacde21f2d3b1a6864a236693d94c2c7e7c54cf3f5ec2d7eca8eb"
+    },
+    "v1/seed123/frozen/step075000.pt": {
+      "bytes": 2652667,
+      "sha256": "73f111fa1c52bb13c182df8f373e25c1167632235e0dd0ce65e1ffa9571540c4"
+    },
+    "v0/seed123/frozen/step450000.pt": {
+      "bytes": 2652667,
+      "sha256": "ad993bae6a82168973a4d08bc9fbd19bcb982731917f231b48439fd7a5a04577"
+    },
+    "v1/seed456/attempts/a_d9999dc56136/resume/step503808/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "5225b969ff23a506afad3ea5653198e0cb6aecb38200a1413cc63834a0ed2216"
+    },
+    "v1/seed123/frozen/step503808.pt": {
+      "bytes": 2652731,
+      "sha256": "8984c9d892c537a56beca267e36674b174c2f4402d629d895901c51ae3cc0ccc"
+    },
+    "v1/seed456/attempts/a_d9999dc56136/frozen/step503808.pt": {
+      "bytes": 2652731,
+      "sha256": "9ae3e12e2030453747c798f0cf1cc1a1dc6f685b0e6de2602d52564804e04f2d"
+    },
+    "v2_history_only/seed456/attempts/a_1de348936eb2/resume/step503808/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "7d75cdd1f33e78d646cd11b6062ed252fc9b4fcb3eadb3416e2f9d6263c5c3bd"
+    },
+    "v0/seed123/frozen/step300000.pt": {
+      "bytes": 2652667,
+      "sha256": "51bdd68e236e299aca50b3391a581a93516215e83c0101032f625e8ac4553395"
+    },
+    "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step500000/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "d04c75b76997bb3db555eb3b20acf181755481e1b6ca8bf030b0a3a355dc43b1"
+    },
+    "v2/seed123/attempts/a_b5adcd64944f/resume/step500000/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "63256961f0f212a6fdb12ad34a324e837b804426d65d6ef2c4dd2b1134006b8c"
+    },
+    "v0/seed456/attempts/a_0ff1a68556bb/resume/step500000/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "781aee0be1b0f780bcd2a27ee9e13b9cdf4e8634f3e7021c50db47416437aacb"
+    },
+    "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step503808/history.csv.gz": {
+      "bytes": 9844477,
+      "sha256": "50ff49df91a0859e40cc5da4fa30025eea2766cd617505d10f80dee353cfdeb3"
+    },
+    "v0/seed42/attempts/a_ff549e5db843/resume/step500000/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "6751199b3f9a0e8000476c13b092a714044f3c5cfbcbbfdc8d29feaa8cb4e30b"
+    },
+    "v1/seed456/attempts/a_d9999dc56136/resume/step500000/history.csv.gz": {
+      "bytes": 11815902,
+      "sha256": "10874241e3b077388f02ee7c74f2b99b7cca24f6564c457051f8a35c0f9d4699"
+    },
+    "v2_history_only/seed42/attempts/a_cb2514504892/resume/step503808/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "cb3c2f37ff452626601aa153ed2b01709c3b57d976992d15efa253a705bbc629"
+    },
+    "v0/seed456/attempts/a_0ff1a68556bb/resume/step503808/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "beaf914d6560964ca9dda2875ee6e716d3337fb25aec9853db95c5e3a0ea8e80"
+    },
+    "v1/seed123/attempts/a_a8042e6d5f9e/resume/step503808/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "46ebac6625dcb614f258fccb207dce668e3ebe54c99e5fe433a2bb5d2187dfbe"
+    },
+    "v2/seed42/attempts/a_bb00eeabe572/resume/step500000/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "c06e0f5764e191340a3583290099badec2ea131c8181676e2710c547c0576494"
+    },
+    "v0/seed456/attempts/a_0ff1a68556bb/actions.csv": {
+      "bytes": 62705704,
+      "sha256": "bc9e8347eabf00c510ea907e125633e299bbb163de9707ce3ca5ee391231c80e"
+    },
+    "v1/seed123/attempts/a_a8042e6d5f9e/resume/step503808/history.csv.gz": {
+      "bytes": 11890691,
+      "sha256": "9081eb5ed8be1f3b4e2acd317e99e3138455b7b5e4bd8221f81159eb20da2c67"
+    },
+    "v1/seed123/attempts/a_a8042e6d5f9e/resume/step500000/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "8a0ae05c71bc5e51f6ca678147754c300fbe7bc4799e0fc8bc066f2b19e4a0b6"
+    },
+    "v2/seed456/attempts/a_b546f9acc147/resume/step500000/COMPLETE.json": {
+      "bytes": 298,
+      "sha256": "11e6139e057aab5f678ba6e1c6c383537e3deac75f16e3798c4ed7f420534ef9"
+    },
+    "v2/seed456/attempts/a_b546f9acc147/resume/step503808/history.csv.gz": {
+      "bytes": 11887753,
+      "sha256": "d48537babe9b8a6d4bb9b0d8928d7c741e54b8edecd9944afe585da5aa404820"
+    },
+    "v1/seed456/attempts/a_d9999dc56136/resume/step500000/state.pt": {
+      "bytes": 47380685,
+      "sha256": "a5f5a146c78a3c3b25bce3b9d396ebf8b6331df3b9d7d3cf0c66c09f26412d5e"
+    },
+    "v0/seed456/attempts/a_0ff1a68556bb/resume/step500000/history.csv.gz": {
+      "bytes": 9862005,
+      "sha256": "7ddc4d24dba51493dd4eae4a78e40b766c48e479fd0128f2b33274cc405b1adf"
+    },
+    "v2_history_only/seed123/attempts/a_227a52a36e22/actions.csv": {
+      "bytes": 62485330,
+      "sha256": "e5e284b8f3945b352169f93d5b228b10a55531a1515c98a4912241789facfc59"
+    },
+    "v0/seed42/attempts/a_ff549e5db843/resume/step503808/history.csv.gz": {
+      "bytes": 9433669,
+      "sha256": "f3813961f390d426a9c118886ee729b11181691fa5c5aaa54bc3477f9929530d"
+    },
+    "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step500000/history.csv.gz": {
+      "bytes": 9775032,
+      "sha256": "66450fcae37f30f2caee4fb0e403f0464aa3ae4f8690568ebabd72c0c6b67b93"
+    },
+    "v0/seed456/attempts/a_0ff1a68556bb/resume/step503808/history.csv.gz": {
+      "bytes": 9932546,
+      "sha256": "247fea0465d23d2ee8778438bc8a94b761d7c12a6c362b361a133e7f1fe6d494"
+    },
+    "v2_history_only/seed42/attempts/a_cb2514504892/actions.csv": {
+      "bytes": 62296329,
+      "sha256": "6b3cc17bcd5c5fe3733c6bb54859bfe7ce12c97e5260f33324c0adc8e27da2db"
+    },
+    "v2/seed123/attempts/a_b5adcd64944f/resume/step500000/history.csv.gz": {
+      "bytes": 11627385,
+      "sha256": "007f71bf46ad4487532103e599531870971086773a28b808e2af0b81b18b4eed"
+    },
+    "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step503808/state.pt": {
+      "bytes": 46010765,
+      "sha256": "c4652328b5fb6a757d4d085ab872e33381d47017a74336315a458ed4ea3db95a"
+    },
+    "v0/seed42/attempts/a_ff549e5db843/resume/step500000/history.csv.gz": {
+      "bytes": 9365731,
+      "sha256": "55b9bcabcfed2d1d51a528e6b6e6b91cf258ba4c29ceaffb81ddb03e87ce5052"
+    },
+    "v1/seed42/attempts/a_039abf82a977/resume/step503808/history.csv.gz": {
+      "bytes": 11651456,
+      "sha256": "ec59e17980d463194148fcc92fdebeb123f4532ab89a1a6ae1bd2fa6bc3e6fde"
+    },
+    "v2/seed42/attempts/a_bb00eeabe572/resume/step503808/history.csv.gz": {
+      "bytes": 11292394,
+      "sha256": "f307b9e998ec397605bf2c5a5f3902f63b9295d920058db220222c80499faedc"
+    },
+    "v1/seed42/attempts/a_039abf82a977/resume/step500000/history.csv.gz": {
+      "bytes": 11563669,
+      "sha256": "0f1fb7fdcf38ed43c6249a1635fcadeec5ed53f2d5435578dc8e1904b7afce71"
+    },
+    "v1/seed123/attempts/a_a8042e6d5f9e/actions.csv": {
+      "bytes": 67779549,
+      "sha256": "5b38fd9de6af4f8880a92713783e10a69f5c859e0b901e69c9c8868fbbcd56fc"
+    },
+    "v0/seed42/attempts/a_ff549e5db843/resume/step503808/state.pt": {
+      "bytes": 45759821,
+      "sha256": "817dd89a39f8c69095a47ac3229f79d3c85f93c328db852907dc5c4feef16ecf"
+    },
+    "v2_history_only/seed456/attempts/a_1de348936eb2/resume/step503808/state.pt": {
+      "bytes": 46016589,
+      "sha256": "d2accb1a0cf73ef64dbdb37f0740eef34561e1032aa683543f9fd1150a5b68c7"
+    },
+    "v2/seed456/attempts/a_b546f9acc147/resume/step500000/history.csv.gz": {
+      "bytes": 11797873,
+      "sha256": "a35bee73b7f0b526bd4b29582b239bbad32e438357252998a2de14f3aa16ba7e"
+    },
+    "v0/seed123/attempts/a_44a0ed56829b/resume/step500000/history.csv.gz": {
+      "bytes": 9687834,
+      "sha256": "067c4abc1714be83b3fa40b062a93e54ca071820c6e6473e3655ed068d0d9e91"
+    },
+    "v1/seed123/attempts/a_a8042e6d5f9e/resume/step500000/state.pt": {
+      "bytes": 47534285,
+      "sha256": "a2c2e23e63b6b66a9c9aaedc060333f6751ec94482f1d24af5b7fec1d34357b7"
+    },
+    "v2_history_only/seed42/attempts/a_cb2514504892/resume/step503808/state.pt": {
+      "bytes": 45977869,
+      "sha256": "a37ec282dc1870990e00b4490514b791885f396f0cdb08d6acaff6565eadb5cd"
+    },
+    "v2/seed42/attempts/a_bb00eeabe572/actions.csv": {
+      "bytes": 67198635,
+      "sha256": "0083986baefafa3dd98163b045177ff689e256381fe1865c6069c84718d09da3"
+    },
+    "v1/seed123/attempts/a_a8042e6d5f9e/resume/step500000/history.csv.gz": {
+      "bytes": 11800201,
+      "sha256": "da70ce90afa239eefa1f861175b69dab7c182dc1bd887b7649cae9183181f4f9"
+    },
+    "v0/seed123/attempts/a_44a0ed56829b/resume/step503808/state.pt": {
+      "bytes": 45746893,
+      "sha256": "a77e2de251f637a559de0a655c2bd5704a2c7c0f15c355e29e41abdeba1a42cb"
+    },
+    "v2_history_only/seed456/attempts/a_1de348936eb2/resume/step500000/replay.npz": {
+      "bytes": 14917337,
+      "sha256": "329ca6b13ed082feacf0c3335afb0f1c66aa48d9074a4986c9a3af2e96eecd63"
+    },
+    "v2_history_only/seed456/attempts/a_1de348936eb2/resume/step503808/replay.npz": {
+      "bytes": 14966242,
+      "sha256": "e97aab0099508a8d97d11d72dc397da68bdf4719aa091662adf223a7458c1807"
+    },
+    "v2_history_only/seed42/attempts/a_cb2514504892/resume/step500000/state.pt": {
+      "bytes": 45652813,
+      "sha256": "0553e66c64fdfc3d20e276f7d9bae84ed1a1dba377466c1b7b32acf86eaa1438"
+    },
+    "v2/seed123/attempts/a_b5adcd64944f/resume/step500000/replay.npz": {
+      "bytes": 13929013,
+      "sha256": "27f0a1abfe991be13d64edcb3b0b90988124726bbc81791c4cd91ea604b2c8ae"
+    },
+    "v2_history_only/seed42/attempts/a_cb2514504892/resume/step500000/replay.npz": {
+      "bytes": 15250611,
+      "sha256": "0a0483cd4ca0973dc99d5c9cc3ba622b1e2d7d5519486f53cca25e2952d47bd4"
+    },
+    "v2/seed123/attempts/a_b5adcd64944f/resume/step503808/replay.npz": {
+      "bytes": 13998890,
+      "sha256": "585205ea928890e997dc51c7b2aace6212ba8248b6ebedd0c49c143109a0a09b"
+    },
+    "v2/seed42/attempts/a_bb00eeabe572/resume/step503808/replay.npz": {
+      "bytes": 15473655,
+      "sha256": "bcf8695ec6dd8f37dede4d8d030d4602e9a11c0fa49966e0bbd92d78ead7bf30"
+    },
+    "v2/seed456/attempts/a_b546f9acc147/resume/step500000/state.pt": {
+      "bytes": 48059597,
+      "sha256": "188952359db56197cc72f3a5483dabe17c0d0ba959e68f94f25ffb80c71bb1f5"
+    },
+    "v1/seed456/attempts/a_d9999dc56136/resume/step500000/replay.npz": {
+      "bytes": 3543305,
+      "sha256": "1bb27c2896fdf54b5eeef7af425437538071d055eba8d05ca218ad8cd80d8752"
+    },
+    "v1/seed123/attempts/a_a8042e6d5f9e/resume/step500000/replay.npz": {
+      "bytes": 3254574,
+      "sha256": "55a8859aee1207f073f3118b1e77a0c06236d1a6589918ba6843daa884fcc532"
+    },
+    "v0/seed456/attempts/a_0ff1a68556bb/resume/step500000/replay.npz": {
+      "bytes": 2904259,
+      "sha256": "fdbe03154a2e4735f1f4a331d3431d20910d5adbd7c096dce124e541500dadb6"
+    },
+    "v0/seed42/attempts/a_ff549e5db843/resume/step503808/replay.npz": {
+      "bytes": 3392317,
+      "sha256": "0d24c431c6555e69ef8ec2928d25a403b7a60b6801f60419d878b27951ebb2f9"
+    },
+    "v0/seed42/attempts/a_ff549e5db843/resume/step500000/replay.npz": {
+      "bytes": 3413699,
+      "sha256": "2f9c57d2726800f6912e4e02f22b660d1b3cfc147308ca80b8a15c0b3cacabcd"
+    },
+    "v1/seed42/attempts/a_039abf82a977/resume/step503808/replay.npz": {
+      "bytes": 3003130,
+      "sha256": "d88caf5c39a711c19b121ac66bf8ebd92e2c4691b5c44a457b7aad76a2b7d8a3"
+    }
+  },
+  "protocol": {
+    "protocol_id": "dqn_extended_v1_20261024_continued_to_503808",
+    "training_games": [
+      "ls20-9607627b",
+      "ar25-0c556536",
+      "bp35-0a0ad940"
+    ],
+    "sampling": "deterministic round robin, one selected action per game turn",
+    "total_actions": 503808,
+    "variants": [
+      "v0",
+      "v1",
+      "v2_history_only",
+      "v2"
+    ],
+    "seeds": [
+      42,
+      123,
+      456
+    ],
+    "epsilon_start": 1.0,
+    "epsilon_end": 0.1,
+    "epsilon_decay": 150000,
+    "batch_size": 8,
+    "buffer_capacity": 20000,
+    "warmup": 1000,
+    "train_every": 5,
+    "lr": 0.0001,
+    "gamma": 0.99,
+    "target_update_interval": 250,
+    "novelty_beta": 0.01,
+    "checkpoint_actions": [
+      75000,
+      150000,
+      225000,
+      300000,
+      375000,
+      450000,
+      503808
+    ],
+    "resume_every": 25000,
+    "log_every": 1000,
+    "reset_mode": "level",
+    "episode_limit": 0,
+    "click_grid": 64,
+    "reward": "nonnegative newly completed level count; novelty on latest grid per game for V1/V2",
+    "torch_threads": 1,
+    "deterministic_algorithms": true,
+    "development_games": [
+      "ft09-0d8bbf25",
+      "vc33-5430563c",
+      "cd82-fb555c5d"
+    ],
+    "training_diagnostic_games": [
+      "ls20-9607627b",
+      "ar25-0c556536",
+      "bp35-0a0ad940"
+    ],
+    "heldout_pending_confirmation": [
+      "sb26-7fbdac44",
+      "sk48-d8078629",
+      "su15-1944f8ab"
+    ],
+    "excluded_from_unseen_claims": [
+      "ls20",
+      "ar25",
+      "bp35",
+      "cd82",
+      "ft09",
+      "vc33",
+      "g50t",
+      "ka59",
+      "dc22"
+    ],
+    "evaluation_seeds": [
+      0,
+      1,
+      2
+    ],
+    "evaluation_actions": 1000,
+    "full_matrix_gate": "requires validated V0 and V2 CUDA pilots under this exact protocol; runner never launches matrix by default"
+  },
+  "producer_claims_all_12_complete": true,
+  "local_training_source_matches": {
+    "DQN/action_codec.py": true,
+    "DQN/dqn_agent.py": true,
+    "DQN/dqn_improvement_1.py": true,
+    "DQN/dqn_improvement_2.py": true,
+    "DQN/evaluate.py": true,
+    "DQN/extended_train.py": true,
+    "DQN/q_network.py": true,
+    "DQN/replay_buffer.py": true,
+    "DQN/shared_environment.py": true,
+    "DQN/test_task1.py": true,
+    "DQN/timing.py": true,
+    "DQN/train.py": true,
+    "arc_env/__init__.py": true,
+    "arc_env/encoding.py": true,
+    "arc_env/gym_adapter.py": true,
+    "Experiments/full_queue.py": true,
+    "Experiments/full_preflight.py": true,
+    "Experiments/drive_storage.py": true
+  },
+  "recovery_receipt_checks": [
+    {
+      "path": "v0/seed42/attempts/a_ff549e5db843/resume/step500000/state.pt",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v0/seed42/attempts/a_ff549e5db843/resume/step500000/replay.npz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v0/seed42/attempts/a_ff549e5db843/resume/step500000/history.csv.gz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v0/seed456/attempts/a_0ff1a68556bb/resume/step500000/state.pt",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v0/seed456/attempts/a_0ff1a68556bb/resume/step500000/replay.npz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v0/seed456/attempts/a_0ff1a68556bb/resume/step500000/history.csv.gz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v0/seed456/attempts/a_0ff1a68556bb/resume/step503808/state.pt",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v0/seed456/attempts/a_0ff1a68556bb/resume/step503808/replay.npz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v0/seed456/attempts/a_0ff1a68556bb/resume/step503808/history.csv.gz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v1/seed123/attempts/a_a8042e6d5f9e/resume/step500000/state.pt",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v1/seed123/attempts/a_a8042e6d5f9e/resume/step500000/replay.npz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v1/seed123/attempts/a_a8042e6d5f9e/resume/step500000/history.csv.gz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v1/seed123/attempts/a_a8042e6d5f9e/resume/step503808/state.pt",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v1/seed123/attempts/a_a8042e6d5f9e/resume/step503808/replay.npz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v1/seed123/attempts/a_a8042e6d5f9e/resume/step503808/history.csv.gz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v1/seed456/attempts/a_d9999dc56136/resume/step503808/state.pt",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v1/seed456/attempts/a_d9999dc56136/resume/step503808/replay.npz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v1/seed456/attempts/a_d9999dc56136/resume/step503808/history.csv.gz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2/seed123/attempts/a_b5adcd64944f/resume/step500000/state.pt",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2/seed123/attempts/a_b5adcd64944f/resume/step500000/replay.npz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2/seed123/attempts/a_b5adcd64944f/resume/step500000/history.csv.gz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2/seed42/attempts/a_bb00eeabe572/resume/step500000/state.pt",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2/seed42/attempts/a_bb00eeabe572/resume/step500000/replay.npz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2/seed42/attempts/a_bb00eeabe572/resume/step500000/history.csv.gz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2/seed456/attempts/a_b546f9acc147/resume/step500000/state.pt",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2/seed456/attempts/a_b546f9acc147/resume/step500000/replay.npz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2/seed456/attempts/a_b546f9acc147/resume/step500000/history.csv.gz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step500000/state.pt",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step500000/replay.npz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step500000/history.csv.gz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step503808/state.pt",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step503808/replay.npz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2_history_only/seed123/attempts/a_227a52a36e22/resume/step503808/history.csv.gz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2_history_only/seed42/attempts/a_cb2514504892/resume/step503808/state.pt",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2_history_only/seed42/attempts/a_cb2514504892/resume/step503808/replay.npz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2_history_only/seed42/attempts/a_cb2514504892/resume/step503808/history.csv.gz",
+      "present": false,
+      "checksum_matches": null
+    },
+    {
+      "path": "v2_history_only/seed456/attempts/a_1de348936eb2/resume/step503808/state.pt",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2_history_only/seed456/attempts/a_1de348936eb2/resume/step503808/replay.npz",
+      "present": true,
+      "checksum_matches": true
+    },
+    {
+      "path": "v2_history_only/seed456/attempts/a_1de348936eb2/resume/step503808/history.csv.gz",
+      "present": false,
+      "checksum_matches": null
+    }
+  ],
+  "counts": {
+    "final_models_present": 6,
+    "final_models_cpu_validated": 6,
+    "full_histories_validated": 9,
+    "completion_receipts_present": 5
+  },
+  "ready_for_full_matrix_import": false,
+  "audit_runtime": {
+    "python": "3.12.10",
+    "torch": "2.14.1+cpu",
+    "device": "cpu"
+  },
+  "limitations": [
+    "Producer completion claims are distinct from independently available payloads.",
+    "CPU loading is not a CUDA restoration or deterministic continuation test.",
+    "Historical T4/cu130 to RTX3050/cu126 numerical migration remains a reproducibility limitation.",
+    "No frozen evaluation was run; reserved games remain untouched."
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "evidence_sha256": "c17c18067159314f7f21ef8e99b1214072e89eac5193b0d79316e2dd8ccc682b",
+  "baseline_source_zip": "dqn_extended_source_20261024T210856472779Z.zip",
+  "baseline_source_sha256": "91f2735dc3ef874fecb87d79f848a11897628db9705f3f4d07ae5412eed79b32",
+  "review": "results/extended_pilots_20261024T211337Z_f07f3651_review/assessment.json",
+  "allowed_durability_change": "DQN.extended_train.publish only; verified by AST comparison, no learner changes"
+}

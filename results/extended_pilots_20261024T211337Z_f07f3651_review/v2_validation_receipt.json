@@ -1,0 +1,129 @@
+{
+  "valid": true,
+  "required_actions": 75000,
+  "variant": "v2",
+  "seed": 42,
+  "device_name": "Tesla T4",
+  "expected_updates": 14801,
+  "per_game_actions": {
+    "ls20-9607627b": 25000,
+    "ar25-0c556536": 25000,
+    "bp35-0a0ad940": 25000
+  },
+  "frozen_sha256": "a8acce4d8ef42b3a32611fc452d6fdcf698587e2d5efca03a6375bf1b50f9ffa",
+  "protocol": {
+    "protocol_id": "dqn_extended_v1_20261024",
+    "training_games": [
+      "ls20-9607627b",
+      "ar25-0c556536",
+      "bp35-0a0ad940"
+    ],
+    "sampling": "deterministic round robin, one selected action per game turn",
+    "total_actions": 450000,
+    "variants": [
+      "v0",
+      "v1",
+      "v2_history_only",
+      "v2"
+    ],
+    "seeds": [
+      42,
+      123,
+      456
+    ],
+    "epsilon_start": 1.0,
+    "epsilon_end": 0.1,
+    "epsilon_decay": 150000,
+    "batch_size": 8,
+    "buffer_capacity": 20000,
+    "warmup": 1000,
+    "train_every": 5,
+    "lr": 0.0001,
+    "gamma": 0.99,
+    "target_update_interval": 250,
+    "novelty_beta": 0.01,
+    "checkpoint_actions": [
+      75000,
+      150000,
+      225000,
+      300000,
+      375000,
+      450000
+    ],
+    "resume_every": 25000,
+    "log_every": 1000,
+    "reset_mode": "level",
+    "episode_limit": 0,
+    "click_grid": 64,
+    "reward": "nonnegative newly completed level count; novelty on latest grid per game for V1/V2",
+    "torch_threads": 1,
+    "deterministic_algorithms": true,
+    "development_games": [
+      "ft09-0d8bbf25",
+      "vc33-5430563c",
+      "cd82-fb555c5d"
+    ],
+    "training_diagnostic_games": [
+      "ls20-9607627b",
+      "ar25-0c556536",
+      "bp35-0a0ad940"
+    ],
+    "heldout_pending_confirmation": [
+      "sb26-7fbdac44",
+      "sk48-d8078629",
+      "su15-1944f8ab"
+    ],
+    "excluded_from_unseen_claims": [
+      "ls20",
+      "ar25",
+      "bp35",
+      "cd82",
+      "ft09",
+      "vc33",
+      "g50t",
+      "ka59",
+      "dc22"
+    ],
+    "evaluation_seeds": [
+      0,
+      1,
+      2
+    ],
+    "evaluation_actions": 1000,
+    "full_matrix_gate": "requires validated V0 and V2 CUDA pilots under this exact protocol; runner never launches matrix by default"
+  },
+  "source_sha256": {
+    "DQN/action_codec.py": "65f68dfb3fe74f3fbcdf21922035f0d5dc7d0e9205b9dac9d85e12f09b8cd54c",
+    "DQN/dqn_agent.py": "10d4755590c6e642c8a1429e3d2ca58ec2293c88651b93a1ebd8a61a82da47b2",
+    "DQN/dqn_improvement_1.py": "f68edb25d7947a17722ad7a6e15414e266fe2fc30cf7c1f726660d1e476d9e14",
+    "DQN/dqn_improvement_2.py": "5c0eb36262c573794d76a51173653b8c51d5166519dccc9bb5bd3d5c3ad33a4a",
+    "DQN/evaluate.py": "bc9160522f4f87c47a84ce3bb1c3d238139d690ea25e45c88c8dd612cde27ced",
+    "DQN/extended_train.py": "345fd11e59980ca94a80af6fd2491a08d9bcf3e03a01bc077bd5dcb9d5aceb4d",
+    "DQN/q_network.py": "8b4c09da8703a26a111cb5d8d4d77c7c465b170015b4b66268db41f2fdb18b4a",
+    "DQN/replay_buffer.py": "3bf221942ae9238adf9e2e979f506df92221b6367d98d02300f41e293d91dc5a",
+    "DQN/shared_environment.py": "5af3ec31bfb42b96990c991599269dc124539ef362d0e36be88f7f8d69103ac5",
+    "DQN/test_task1.py": "e6969faebad07dbbce33e6e7a00299e734d5012e197b7cb24fb5cda8bb5d59ec",
+    "DQN/timing.py": "2486ed3915227d120e44043a8bc269c0b4dd2c179e84e7bcc38a2ce618f2645f",
+    "DQN/train.py": "451880272e42d0d7d688cc9725dcf0da3ea10c381ce0f461834964b27f6cd601",
+    "arc_env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "arc_env/encoding.py": "082636059b38dc2b12cd7b85773be5ca0e1d5cc9f60027d608b939c4d4c62ad2",
+    "arc_env/gym_adapter.py": "aea5eeab660d40bd97316aa051aa526905310c4c658839f6e28c7c8bff8d5700"
+  },
+  "runtime_assets": {
+    "environment_files/ls20/9607627b/ls20.py": "67cc85888eeef68f125cbb5f5fb158e9ca455d6bca46b171790f556fcabf934e",
+    "environment_files/ls20/9607627b/metadata.json": "247f2152a4342d86efe5fec204e0f881efecf33a6cd132013790db93df48e6e3",
+    "environment_files/ar25/0c556536/ar25.py": "6aed29a43629d8f9537d3d84553cec095b5d0002225db1c407754ffd4343b694",
+    "environment_files/ar25/0c556536/metadata.json": "8cb992770299c8daec2b778f16a94974bc24807b541a32aec0c9c69880c02034",
+    "environment_files/bp35/0a0ad940/bp35.py": "1451627fcc3eacd2d6bfef86bd6de1467180a7d6daed48c5a70c96ec9b9eee41",
+    "environment_files/bp35/0a0ad940/metadata.json": "7e947e5ee4e9f666aeeda19a9c4eabdac4c25db3a4331cfd434c304b87a14828"
+  },
+  "actions_per_second_including_persistence": 182.36583644830463,
+  "training_quality_note": "zero task reward does not fail infrastructure validation",
+  "gpu_samples": 75,
+  "sampled_gpu_utilization_percent": {
+    "mean": 46.346666666666664,
+    "min": 7.0,
+    "max": 52.0,
+    "note": "periodic instantaneous samples; not a continuous time-weighted utilization estimate"
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "evidence_sha256": "c17c18067159314f7f21ef8e99b1214072e89eac5193b0d79316e2dd8ccc682b",
+  "pilots": [
+    {
+      "variant": "v0",
+      "seed": 42,
+      "global_step": 75000,
+      "gradient_steps": 14801,
+      "loop_seconds_including_persistence": 339.1643169939998,
+      "checkpoint_and_persistence_seconds": 9.270312344000331,
+      "actions_per_second_including_persistence": 221.13175308275967,
+      "compute_actions_per_second": 227.3457502799153,
+      "peak_cuda_memory_bytes": 138940928,
+      "frozen_sha256": "3710b47f716e91c4caa98b2d0b42f5965e73cc8d06c6edd499cdb4ba91794ac3",
+      "checkpoint_loaded_and_verified": true,
+      "last25k_actions_s": 204.2329183039994,
+      "loss_first100_mean": 0.000971817171607654,
+      "loss_last100_mean": 0.002512152827493992,
+      "max_loss": 0.20692357420921326,
+      "final_epsilon": 0.550006,
+      "per_game": [
+        {
+          "game": "ls20-9607627b",
+          "actions": 25000,
+          "task_reward": 1.0,
+          "intrinsic_reward": 0.0,
+          "wins": 0,
+          "gameovers": 293,
+          "episodes": 294,
+          "resets": 293,
+          "final_levels": 1
+        },
+        {
+          "game": "ar25-0c556536",
+          "actions": 25000,
+          "task_reward": 0.0,
+          "intrinsic_reward": 0.0,
+          "wins": 0,
+          "gameovers": 9,
+          "episodes": 10,
+          "resets": 9,
+          "final_levels": 0
+        },
+        {
+          "game": "bp35-0a0ad940",
+          "actions": 25000,
+          "task_reward": 0.0,
+          "intrinsic_reward": 0.0,
+          "wins": 0,
+          "gameovers": 390,
+          "episodes": 391,
+          "resets": 390,
+          "final_levels": 0
+        }
+      ],
+      "task_reward_events": [
+        {
+          "global_step": "33982",
+          "game": "ls20-9607627b",
+          "game_actions": "11328",
+          "task_reward": "1.0",
+          "levels_completed": "1"
+        }
+      ],
+      "gpu_utilization_samples": {
+        "mean": 36.946666666666665,
+        "min": 4.0,
+        "max": 41.0,
+        "note": "periodic instantaneous samples; not a continuous time-weighted utilization estimate"
+      }
+    },
+    {
+      "variant": "v2",
+      "seed": 42,
+      "global_step": 75000,
+      "gradient_steps": 14801,
+      "loop_seconds_including_persistence": 411.2612398279998,
+      "checkpoint_and_persistence_seconds": 24.236734405999414,
+      "actions_per_second_including_persistence": 182.36583644830463,
+      "compute_actions_per_second": 193.78617878013216,
+      "peak_cuda_memory_bytes": 451301888,
+      "frozen_sha256": "a8acce4d8ef42b3a32611fc452d6fdcf698587e2d5efca03a6375bf1b50f9ffa",
+      "checkpoint_loaded_and_verified": true,
+      "last25k_actions_s": 173.86041521457315,
+      "loss_first100_mean": 0.0011372939932743976,
+      "loss_last100_mean": 0.006925792849106074,
+      "max_loss": 0.5194878578186035,
+      "final_epsilon": 0.550006,
+      "per_game": [
+        {
+          "game": "ls20-9607627b",
+          "actions": 25000,
+          "task_reward": 0.0,
+          "intrinsic_reward": 140.43242677908248,
+          "wins": 0,
+          "gameovers": 191,
+          "episodes": 192,
+          "resets": 191,
+          "final_levels": 0
+        },
+        {
+          "game": "ar25-0c556536",
+          "actions": 25000,
+          "task_reward": 0.0,
+          "intrinsic_reward": 10.335847514347819,
+          "wins": 0,
+          "gameovers": 14,
+          "episodes": 15,
+          "resets": 14,
+          "final_levels": 0
+        },
+        {
+          "game": "bp35-0a0ad940",
+          "actions": 25000,
+          "task_reward": 0.0,
+          "intrinsic_reward": 152.16734598431935,
+          "wins": 0,
+          "gameovers": 390,
+          "episodes": 391,
+          "resets": 390,
+          "final_levels": 0
+        }
+      ],
+      "task_reward_events": [],
+      "gpu_utilization_samples": {
+        "mean": 46.346666666666664,
+        "min": 7.0,
+        "max": 52.0,
+        "note": "periodic instantaneous samples; not a continuous time-weighted utilization estimate"
+      }
+    }
+  ],
+  "development": {
+    "learned_runs": 18,
+    "random_runs": 9,
+    "learned_all_zero_score": true,
+    "learned_levels_total": 0,
+    "random_levels_total": 2,
+    "random_mean_score": 0.00688327217261012,
+    "random_nonzero_runs": [
+      {
+        "game_id": "ft09-0d8bbf25",
+        "seed": 2,
+        "score_official": 0.023740126630271984,
+        "levels_completed": 1,
+        "success": false
+      },
+      {
+        "game_id": "cd82-fb555c5d",
+        "seed": 2,
+        "score_official": 0.03820932292321909,
+        "levels_completed": 1,
+        "success": false
+      }
+    ],
+    "independent_training_seeds_per_variant": 1,
+    "all_evaluator_invariants_pass": true,
+    "behavior": [
+      {
+        "variant": "v0",
+        "game_id": "ft09-0d8bbf25",
+        "seed": 0,
+        "action_counts": {
+          "ACTION6(15,5)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v0",
+        "game_id": "vc33-5430563c",
+        "seed": 0,
+        "action_counts": {
+          "ACTION6(35,3)": 420,
+          "ACTION6(55,34)": 580
+        },
+        "action_entropy_nats": 0.6802920001921535
+      },
+      {
+        "variant": "v0",
+        "game_id": "cd82-fb555c5d",
+        "seed": 0,
+        "action_counts": {
+          "ACTION6(30,36)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v0",
+        "game_id": "ft09-0d8bbf25",
+        "seed": 1,
+        "action_counts": {
+          "ACTION6(15,5)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v0",
+        "game_id": "vc33-5430563c",
+        "seed": 1,
+        "action_counts": {
+          "ACTION6(35,3)": 420,
+          "ACTION6(55,34)": 580
+        },
+        "action_entropy_nats": 0.6802920001921535
+      },
+      {
+        "variant": "v0",
+        "game_id": "cd82-fb555c5d",
+        "seed": 1,
+        "action_counts": {
+          "ACTION6(30,36)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v0",
+        "game_id": "ft09-0d8bbf25",
+        "seed": 2,
+        "action_counts": {
+          "ACTION6(15,5)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v0",
+        "game_id": "vc33-5430563c",
+        "seed": 2,
+        "action_counts": {
+          "ACTION6(35,3)": 420,
+          "ACTION6(55,34)": 580
+        },
+        "action_entropy_nats": 0.6802920001921535
+      },
+      {
+        "variant": "v0",
+        "game_id": "cd82-fb555c5d",
+        "seed": 2,
+        "action_counts": {
+          "ACTION6(30,36)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v2",
+        "game_id": "ft09-0d8bbf25",
+        "seed": 0,
+        "action_counts": {
+          "ACTION6(14,4)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v2",
+        "game_id": "vc33-5430563c",
+        "seed": 0,
+        "action_counts": {
+          "ACTION6(59,23)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v2",
+        "game_id": "cd82-fb555c5d",
+        "seed": 0,
+        "action_counts": {
+          "ACTION6(30,42)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v2",
+        "game_id": "ft09-0d8bbf25",
+        "seed": 1,
+        "action_counts": {
+          "ACTION6(14,4)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v2",
+        "game_id": "vc33-5430563c",
+        "seed": 1,
+        "action_counts": {
+          "ACTION6(59,23)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v2",
+        "game_id": "cd82-fb555c5d",
+        "seed": 1,
+        "action_counts": {
+          "ACTION6(30,42)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v2",
+        "game_id": "ft09-0d8bbf25",
+        "seed": 2,
+        "action_counts": {
+          "ACTION6(14,4)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v2",
+        "game_id": "vc33-5430563c",
+        "seed": 2,
+        "action_counts": {
+          "ACTION6(59,23)": 1000
+        },
+        "action_entropy_nats": -0.0
+      },
+      {
+        "variant": "v2",
+        "game_id": "cd82-fb555c5d",
+        "seed": 2,
+        "action_counts": {
+          "ACTION6(30,42)": 1000
+        },
+        "action_entropy_nats": -0.0
+      }
+    ]
+  },
+  "matrix_cost": {
+    "estimated_training_hours": 7.504255568219996,
+    "with_25_percent_reserve_hours": 9.380319460274995,
+    "assumption": "V1~V0, history-only~V2; multi-game 75K rate extrapolated, not measured 450K",
+    "matrix_launched": false,
+    "last25k_rates_hours": 7.986083153159994,
+    "last25k_rates_plus25percent_hours": 9.982603941449993
+  },
+  "zip_crc_pass": true,
+  "all_source_hashes_match": true,
+  "heldout_evaluated": false,
+  "limits": [
+    "Full replay/resume generations and separate CUDA reconstruction result omitted from compact ZIP; Colab validation receipts included.",
+    "Only one independent training seed per variant.",
+    "75K ends at epsilon0.55; later inference mix and game states can change rate."
+  ],
+  "evaluation_cost": {
+    "measured_18_policy_game_runs_seconds": 51.309,
+    "linear_648_run_loop_minutes": 30.785399999999996,
+    "excludes": "imports, model loading, persistence, random/PPO and final heldout; game progress can change cost"
+  }
+}

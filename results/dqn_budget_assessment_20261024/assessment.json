@@ -1,0 +1,369 @@
+{
+  "pilot": {
+    "selected_actions": 10000,
+    "gradient_updates": 1988,
+    "seconds": 410.14007180000044,
+    "actions_per_second": 24.381914100986386,
+    "max_levels_completed": 0,
+    "task_reward_sum": 0.0,
+    "last_official_actions": 10000,
+    "last_controller_resets": 72,
+    "truncations": 0,
+    "finite_losses": true,
+    "device": "CPU",
+    "torch_threads": 1,
+    "fresh_run_not_resume": true,
+    "config": {
+      "game": "ls20",
+      "seed": 42,
+      "steps": 10000,
+      "episode_limit": 0,
+      "batch_size": 8,
+      "warmup": 64,
+      "train_every": 5,
+      "lr": 0.0001,
+      "gamma": 0.99,
+      "epsilon_start": 1.0,
+      "epsilon_end": 0.1,
+      "epsilon_decay": 2000,
+      "variant": "v0",
+      "novelty_beta": 0.01,
+      "buffer_capacity": 3000,
+      "target_update_interval": 250,
+      "num_frames": 1,
+      "run_suffix": "shared10k_20261024",
+      "backend": "shared",
+      "operation_mode": "offline",
+      "reset_mode": "level",
+      "checkpoint_steps": [
+        3000
+      ]
+    }
+  },
+  "runtime_estimates": [
+    {
+      "selected_actions_per_model": 10000,
+      "v0_seconds_measured_or_linear": 410.14007180000044,
+      "per_variant_estimated_seconds": {
+        "v0": 410.14007180000044,
+        "v1": 559.5794483198874,
+        "v2_history_only": 1440.7693026992458,
+        "v2": 1240.9678282801603
+      },
+      "all_4_configurations_3_seeds_seconds_serial": 10954.369953297883,
+      "assumption": "linear V0 extrapolation; other variants scaled by historical 3K median runtime ratios; not measured new history training"
+    },
+    {
+      "selected_actions_per_model": 30000,
+      "v0_seconds_measured_or_linear": 1230.4202154000013,
+      "per_variant_estimated_seconds": {
+        "v0": 1230.4202154000013,
+        "v1": 1678.7383449596628,
+        "v2_history_only": 4322.307908097738,
+        "v2": 3722.9034848404813
+      },
+      "all_4_configurations_3_seeds_seconds_serial": 32863.10985989365,
+      "assumption": "linear V0 extrapolation; other variants scaled by historical 3K median runtime ratios; not measured new history training"
+    },
+    {
+      "selected_actions_per_model": 75000,
+      "v0_seconds_measured_or_linear": 3076.0505385000033,
+      "per_variant_estimated_seconds": {
+        "v0": 3076.0505385000033,
+        "v1": 4196.845862399156,
+        "v2_history_only": 10805.769770244344,
+        "v2": 9307.258712101204
+      },
+      "all_4_configurations_3_seeds_seconds_serial": 82157.77464973413,
+      "assumption": "linear V0 extrapolation; other variants scaled by historical 3K median runtime ratios; not measured new history training"
+    },
+    {
+      "selected_actions_per_model": 450000,
+      "v0_seconds_measured_or_linear": 18456.30323100002,
+      "per_variant_estimated_seconds": {
+        "v0": 18456.30323100002,
+        "v1": 25181.075174394937,
+        "v2_history_only": 64834.61862146606,
+        "v2": 55843.55227260722
+      },
+      "all_4_configurations_3_seeds_seconds_serial": 492946.6478984047,
+      "assumption": "linear V0 extrapolation; other variants scaled by historical 3K median runtime ratios; not measured new history training"
+    }
+  ],
+  "ppo_validation_budget": [
+    {
+      "experiment": "baseline",
+      "training_seed": 0,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "baseline",
+      "training_seed": 1,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "baseline",
+      "training_seed": 2,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "curiosity",
+      "training_seed": 0,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "curiosity",
+      "training_seed": 1,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "curiosity",
+      "training_seed": 2,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "memory_only",
+      "training_seed": 0,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "memory_only",
+      "training_seed": 1,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "memory_only",
+      "training_seed": 2,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "memory_curiosity",
+      "training_seed": 0,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "memory_curiosity",
+      "training_seed": 1,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    },
+    {
+      "experiment": "memory_curiosity",
+      "training_seed": 2,
+      "actual_training_transitions": 503808,
+      "actual_optimizer_steps_from_saved_state": [
+        78720
+      ],
+      "validation_calls": 6,
+      "episodes_per_call": 5,
+      "validation_actions_excluded_from_num_timesteps": 3000,
+      "validation_callback_local_timesteps": [
+        75000,
+        150000,
+        225000,
+        300000,
+        375000,
+        450000
+      ]
+    }
+  ],
+  "ppo_recorded_gpu_training_hours_total": 12.198169999718665,
+  "ppo_transitions_per_training_game": 167936,
+  "ppo_to_legacy_dqn_total_transition_ratio": 167.936,
+  "ppo_to_pilot_dqn_total_transition_ratio": 50.3808,
+  "source_sha256": {
+    "DQN/train.py": "bd8f646e166ccd08585da9a1d3206722e0eec1ec77f4521823ebbdece3d67df7",
+    "DQN/shared_environment.py": "5af3ec31bfb42b96990c991599269dc124539ef362d0e36be88f7f8d69103ac5",
+    "DQN/dqn_agent.py": "678023c5ded15e90948a1f6893eb7091dd46d985ea015c1f8ce1423a9d6cfecd",
+    "DQN/q_network.py": "283a58f2232f96df6c83103adccb6fc8f7aa6bba3c3a9d3f5ac66d9df5ae222e",
+    "DQN/action_codec.py": "65f68dfb3fe74f3fbcdf21922035f0d5dc7d0e9205b9dac9d85e12f09b8cd54c",
+    "arc_env/gym_adapter.py": "aea5eeab660d40bd97316aa051aa526905310c4c658839f6e28c7c8bff8d5700"
+  },
+  "full_24_model_evaluation_run": false,
+  "historical_artifacts_preserved": 130,
+  "development_summary": [
+    {
+      "model": "native_3k_v0",
+      "evaluations": 6,
+      "total_levels": 0,
+      "mean_official_local_score": 0.0,
+      "all_invariants_passed": true
+    },
+    {
+      "model": "shared_3k_v0",
+      "evaluations": 6,
+      "total_levels": 0,
+      "mean_official_local_score": 0.0,
+      "all_invariants_passed": true
+    },
+    {
+      "model": "shared_10k_v0",
+      "evaluations": 6,
+      "total_levels": 0,
+      "mean_official_local_score": 0.0,
+      "all_invariants_passed": true
+    }
+  ],
+  "development_evaluation_actions": 18000,
+  "development_evaluation_seconds": 149.643,
+  "historical_smoke_checkpoint_hashes_unchanged": true,
+  "all_12_new_ppo_final_hashes_unchanged": true,
+  "recommended_today_dqn_actions_per_primary_model": 3000,
+  "next_homogeneous_dqn_training_budget_if_time_available": 10000,
+  "recommendation": "Keep existing 3K four-by-three ablation primary; new 10K V0 pilot is sensitivity evidence. No additional matrix training today unless a new three-hour compute allocation is explicitly chosen.",
+  "no_untouched_games_used": true,
+  "no_push_or_main_merge_performed": true
+}

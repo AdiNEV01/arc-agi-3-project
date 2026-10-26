@@ -1,0 +1,932 @@
+{
+  "format": "submission_source_inventory_v1",
+  "source_refs": {
+    "origin/main": "af5811f1324b88ebb88838ce92b3769237e9965b",
+    "origin/PPO": "31c9a88de404ea31ae9201d41bbd4ce9a28a78ef",
+    "origin/task3-interface": "b56c6a2e9938faa323868e7fde498cfff2f1c529",
+    "origin/feature/dqn-task1": "6e79be60cb2a7cbdc04ab2fe061ffe9223f88b78",
+    "origin/integration/2026-10-24": "151f3d3660eed14d4c1c5904fe34966acec5e881"
+  },
+  "teammate_python_and_notebook_source_already_integrated": true,
+  "ppo_failure_source_ref": "31c9a88de404ea31ae9201d41bbd4ce9a28a78ef",
+  "ppo_failure_files": [
+    {
+      "path": "PPO/Failures/analysis/all_evaluation_episodes.csv",
+      "git_blob": "bc9a1f2edf38901862d3ccd7b4c00b18d5fdbd7c",
+      "bytes": 1221,
+      "included_in_submission_tree": true,
+      "sha256": "061e54b822aafc180c054884e8a9cfb4fae6d23220fc6edf3655ffa9ac61f76d"
+    },
+    {
+      "path": "PPO/Failures/analysis/analysis_summary.md",
+      "git_blob": "739624803ef131de390595f54ac94708699cf3c1",
+      "bytes": 1034,
+      "included_in_submission_tree": true,
+      "sha256": "585dd0914df4a1c29d67af6fad68bfa3bc8b62e9d1707e7a0099baef31be66af"
+    },
+    {
+      "path": "PPO/Failures/analysis/episode_ending_states.png",
+      "git_blob": "ecd4c229a874c07bb6f55cd2e9db651ca2d5f07a",
+      "bytes": 46352,
+      "included_in_submission_tree": true,
+      "sha256": "31879d99c77e8f9ba452baade381c26b78aa8f828606cd4f66830601166ee4a4"
+    },
+    {
+      "path": "PPO/Failures/analysis/evaluation_by_seed.csv",
+      "git_blob": "0bd406c69236b47d5ba48fd0bd75e2fb71423099",
+      "bytes": 360,
+      "included_in_submission_tree": true,
+      "sha256": "03d6fccf63969e627ea57b938c1d82d2673ec3b451ebab474687255020a6cb7a"
+    },
+    {
+      "path": "PPO/Failures/analysis/evaluation_dashboard.png",
+      "git_blob": "da78e9c93276a209970454be393f60971e26e8f4",
+      "bytes": 121591,
+      "included_in_submission_tree": true,
+      "sha256": "4eb5ef957bb7aab1a1d60affc1e731564f5ee2482f744e00bd6fcbf31b29bb5f"
+    },
+    {
+      "path": "PPO/Failures/analysis/evaluation_summary.csv",
+      "git_blob": "8174a3ad735705efafffdafd5337ba70b45362ea",
+      "bytes": 423,
+      "included_in_submission_tree": true,
+      "sha256": "5030de48ffc875baaab69869b13b2b2fe7fe12b8086a5bea4a1e46d4b0f20ecd"
+    },
+    {
+      "path": "PPO/Failures/analysis/per_seed_success_rates.png",
+      "git_blob": "f033d0997a7c0146b407695b23325861bdfcc8de",
+      "bytes": 42075,
+      "included_in_submission_tree": true,
+      "sha256": "15584e0b387729ce2a05e6648c95a51452901b98e043478bfebda10f7ace9b84"
+    },
+    {
+      "path": "PPO/Failures/analysis_final/all_evaluation_episodes.csv",
+      "git_blob": "7401c26832cc81e2d33e9cfdcb903f978ea4ca3d",
+      "bytes": 5753,
+      "included_in_submission_tree": true,
+      "sha256": "e7f835fff156a46aa41c5b91a9d5b30dc2fe11473bd77a159ed57cca6b0f6d04"
+    },
+    {
+      "path": "PPO/Failures/analysis_final/analysis_summary.md",
+      "git_blob": "cd78589d281064fe1cd04e0e48ef0c851a3ba4ad",
+      "bytes": 1493,
+      "included_in_submission_tree": true,
+      "sha256": "0c2286a2a2c8ed23d0fed70bf564fe63a6d8ce844758d91d2d5f378d7f3e77d5"
+    },
+    {
+      "path": "PPO/Failures/analysis_final/episode_ending_states.png",
+      "git_blob": "a2b920bd026668d621cf76db08c52ff1c6f5df58",
+      "bytes": 72046,
+      "included_in_submission_tree": true,
+      "sha256": "c989c6c249a0b992d74523a9351e09aedd30c8a5fb7f3c0bcfe1922cc7b3102f"
+    },
+    {
+      "path": "PPO/Failures/analysis_final/evaluation_by_seed.csv",
+      "git_blob": "9b59ad0ca47c5bb2d6e862d400b626074b7d8dba",
+      "bytes": 1191,
+      "included_in_submission_tree": true,
+      "sha256": "c89b225afa92ab05281fafaa14841110d93be36c5a060672238088738e4065a9"
+    },
+    {
+      "path": "PPO/Failures/analysis_final/evaluation_dashboard.png",
+      "git_blob": "843a5c81ced81c68bd1ef8a318ecad5af1ad2161",
+      "bytes": 168215,
+      "included_in_submission_tree": true,
+      "sha256": "4621bb6b8dad7154024c7ed51c9c94e31f0d8a3a704daf7dc8325cd6241ebc18"
+    },
+    {
+      "path": "PPO/Failures/analysis_final/evaluation_summary.csv",
+      "git_blob": "16d1fbc68a7b323e0a785a8612c9bddda637e08c",
+      "bytes": 958,
+      "included_in_submission_tree": true,
+      "sha256": "08e040f5fee189fe4d35e362c6cc728694b2c6febd80aff6b501671a0b03ae0a"
+    },
+    {
+      "path": "PPO/Failures/analysis_final/per_seed_success_rates.png",
+      "git_blob": "657c92daa02dddeb04233028ce36e043e92c2132",
+      "bytes": 68625,
+      "included_in_submission_tree": true,
+      "sha256": "5b2ea838bb33ef0b09b1d6897483967e9a1f2fa6def93f2f402dead4c2c240c0"
+    },
+    {
+      "path": "PPO/Failures/analysis_final/training_comparison.png",
+      "git_blob": "c48194a3e8c01449ee7404159367e8e0830d41ee",
+      "bytes": 208037,
+      "included_in_submission_tree": true,
+      "sha256": "af833d20a2edc1e35026b7fa344505662395e9f67cedbcb3553f2238e2ba477f"
+    },
+    {
+      "path": "PPO/Failures/baseline_s0/episodes.csv",
+      "git_blob": "8cb7131ca7b18b44eac85ae95b1954112d4634ba",
+      "bytes": 304704,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s0/monitor.csv",
+      "git_blob": "be9caff260c11c1c3499b1ad3d5e38c32b78a20a",
+      "bytes": 123068,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s0/plots/training_dashboard.png",
+      "git_blob": "13ab3eeea14c3750437ad26d41caa3d53091599e",
+      "bytes": 344468,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s0/ppo_final.zip",
+      "git_blob": "e1ee5603620bb80cb15e2b371f136a00dbf3aed5",
+      "bytes": 7252632,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s0/ppo_last.zip",
+      "git_blob": "e1ee5603620bb80cb15e2b371f136a00dbf3aed5",
+      "bytes": 7252632,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s0/rollout_metrics.csv",
+      "git_blob": "4cc4aabd9b04204c3b6869f173cd6f249d86d8a2",
+      "bytes": 89207,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s0/run_config.json",
+      "git_blob": "7abf7766bc79d9a08fe145cb628c3227ced0eedc",
+      "bytes": 971,
+      "included_in_submission_tree": true,
+      "sha256": "fc4dd9f4561e3f829c3b5a5ebb50cd7d464cb531f8b0f9066a5a81f288006c79"
+    },
+    {
+      "path": "PPO/Failures/baseline_s0/sb3_logs/progress.csv",
+      "git_blob": "f14d35ebae14a900ee4b238963dd77a5b0f12ba9",
+      "bytes": 340494,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s0/summary.json",
+      "git_blob": "240d135f1d2ca8532d8f3344171e333f29442b0a",
+      "bytes": 757,
+      "included_in_submission_tree": true,
+      "sha256": "827218dd0365ce5f16403cf10aea2adcfe14d128cbe215421e383ad6855aa1e8"
+    },
+    {
+      "path": "PPO/Failures/baseline_s1/episodes.csv",
+      "git_blob": "86a6086c68e8d0aa7cf96f060252f2244fae611c",
+      "bytes": 343997,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s1/monitor.csv",
+      "git_blob": "4e9376b142db9d5621ad1a499b441d69f4441688",
+      "bytes": 138005,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s1/plots/training_dashboard.png",
+      "git_blob": "5d3f4cfe1442572fde8e7eb728589d1e54012a63",
+      "bytes": 337371,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s1/ppo_final.zip",
+      "git_blob": "b740c56c9e7059ea77f49fbec1f4fb9a538213da",
+      "bytes": 7252632,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s1/ppo_last.zip",
+      "git_blob": "b740c56c9e7059ea77f49fbec1f4fb9a538213da",
+      "bytes": 7252632,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s1/rollout_metrics.csv",
+      "git_blob": "61307c72f45f5cfc0bcfdd1e27d65b3be515a8ee",
+      "bytes": 89166,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s1/run_config.json",
+      "git_blob": "e33dc946098cf761d5bac0dcfaa93f07419d7e29",
+      "bytes": 971,
+      "included_in_submission_tree": true,
+      "sha256": "cc7a143fa871836dcdd337da7b2d40a0dccba0c23de35369c684f1cea6c126e0"
+    },
+    {
+      "path": "PPO/Failures/baseline_s1/sb3_logs/progress.csv",
+      "git_blob": "28c2714a9c69f1c3def4502a42695beee096e7df",
+      "bytes": 339691,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s1/summary.json",
+      "git_blob": "7dd687e5484700becb0b03bf560bde9749fc2dec",
+      "bytes": 757,
+      "included_in_submission_tree": true,
+      "sha256": "f71e29aad42f59219dc5f32420dd4dd2a68ae265df7b456ec27379e2140b3794"
+    },
+    {
+      "path": "PPO/Failures/baseline_s2/episodes.csv",
+      "git_blob": "a138bed6081ee47649bd6bfe918432fbaf9deb59",
+      "bytes": 342077,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s2/monitor.csv",
+      "git_blob": "3d0bc77afc1e469ad53735a47ae53136b8989286",
+      "bytes": 137297,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s2/plots/training_dashboard.png",
+      "git_blob": "bbe58987b4f16eaa97edf1616908468414624081",
+      "bytes": 356319,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s2/ppo_final.zip",
+      "git_blob": "f60608b1e71c5f0d04243dcdc5faec9cd7d899f4",
+      "bytes": 7252628,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s2/ppo_last.zip",
+      "git_blob": "f60608b1e71c5f0d04243dcdc5faec9cd7d899f4",
+      "bytes": 7252628,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s2/rollout_metrics.csv",
+      "git_blob": "13a9753391ac4da13fb87667bea501b942615826",
+      "bytes": 89214,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s2/run_config.json",
+      "git_blob": "67e3097802748b14f1d58454f0da981fc8d619fc",
+      "bytes": 971,
+      "included_in_submission_tree": true,
+      "sha256": "6a56a0a838a65ccc9f61a0f68ad57ec9dbf88b4a169e7b32136843bd7bd33255"
+    },
+    {
+      "path": "PPO/Failures/baseline_s2/sb3_logs/progress.csv",
+      "git_blob": "51e2da9da25f0af694f92de5ef06de387ee3794e",
+      "bytes": 339660,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/baseline_s2/summary.json",
+      "git_blob": "aece9e4fb58b616e3d7efe46ee8160f210b4828f",
+      "bytes": 758,
+      "included_in_submission_tree": true,
+      "sha256": "845f06773e457a3429bea8309a7c568447bfc319ad0afe0b425f8fefb1c32cc5"
+    },
+    {
+      "path": "PPO/Failures/evaluations/ppo_2m_baseline_s0_20261020_161049/episodes.csv",
+      "git_blob": "27078d2eb55fc15e8cb4379873dd6238e58babc2",
+      "bytes": 555,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/evaluations/ppo_2m_baseline_s0_20261020_161049/summary.json",
+      "git_blob": "e4dddc9ec63159ead9ac96289ebfe5e018aa4a43",
+      "bytes": 703,
+      "included_in_submission_tree": true,
+      "sha256": "0a771ab67fa92fef45b0e31118839ad149b6e048f79a6ffe84595860d09323f9"
+    },
+    {
+      "path": "PPO/Failures/evaluations/random_s0_s1_s2_20261020_160924/episodes.csv",
+      "git_blob": "5a4450147cc477fcd196acdb05f7a1288da68cf9",
+      "bytes": 432,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/evaluations/random_s0_s1_s2_20261020_160924/summary.json",
+      "git_blob": "128c27b0f32a6ad4f949742fc35e6a057e53b9d5",
+      "bytes": 671,
+      "included_in_submission_tree": true,
+      "sha256": "56d88290b08a94e4dcc1e777be440d66a04b4c0d011be5b9d8c049999dda5e62"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/baseline_s0_20261022_100140/episodes.csv",
+      "git_blob": "44246c3604b8eafe55b7ac30873b85c1137c91ec",
+      "bytes": 565,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/baseline_s0_20261022_100140/summary.json",
+      "git_blob": "c52daa26b2ccaf34031626a9380b3eeb7ba1e485",
+      "bytes": 726,
+      "included_in_submission_tree": true,
+      "sha256": "95bc2e2d810bce559120836f7fc0fc142cb72d7409d0ce2ab142206450c3b3eb"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/baseline_s1_20261022_100245/episodes.csv",
+      "git_blob": "4e5c63eec12313ac08c2eda037acbf3c54f0d187",
+      "bytes": 566,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/baseline_s1_20261022_100245/summary.json",
+      "git_blob": "f45c82803abe1df38d4b9b2f49d1f210692a0b62",
+      "bytes": 726,
+      "included_in_submission_tree": true,
+      "sha256": "1f3b3a3b086030b174b0171148998b79182ef2c10718fe99244297151072cf65"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/baseline_s2_20261022_100402/episodes.csv",
+      "git_blob": "8f49d369cafa6fb6d64b3fdf2a77e4dba47ce815",
+      "bytes": 566,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/baseline_s2_20261022_100402/summary.json",
+      "git_blob": "e4788697d8a239fd2d17d42ff5d459413c3194e2",
+      "bytes": 726,
+      "included_in_submission_tree": true,
+      "sha256": "a649885e1eff72e554af6e8f5efbe15504f1a22cceb37bc2e68d2aa61c1c6f60"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/grid_s0_20261022_100223/episodes.csv",
+      "git_blob": "4e87734602f779685bc8d77794276dd881dd8a43",
+      "bytes": 528,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/grid_s0_20261022_100223/summary.json",
+      "git_blob": "ef9b262145a577249d15fd2c6ba2065c75d5c467",
+      "bytes": 710,
+      "included_in_submission_tree": true,
+      "sha256": "73b48b7fa33c6836770cb81e03f779ee41009655934a5c14ec33bc0dc0293768"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/grid_s1_20261022_100329/episodes.csv",
+      "git_blob": "3168aeb6a283f38b699f9c3c6fd486d33f2a9d33",
+      "bytes": 529,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/grid_s1_20261022_100329/summary.json",
+      "git_blob": "ba4d2599a6d2b8db7af527a80e5bd2fe7685696a",
+      "bytes": 710,
+      "included_in_submission_tree": true,
+      "sha256": "632a41ba09475ddb1cd0046c6e398ce1c8ad9cdf71004e46cc031c811f87d466"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/grid_s2_20261022_100444/episodes.csv",
+      "git_blob": "4253d9dee6069e771ab399e4a4fffc2149d62a14",
+      "bytes": 529,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/grid_s2_20261022_100444/summary.json",
+      "git_blob": "6feea0f3cf66d46b25783cbd30e2b3fb6afd74e6",
+      "bytes": 710,
+      "included_in_submission_tree": true,
+      "sha256": "a226a967db7824effecb45467204619f2a84477c815aa1894ab75ddf5da495e6"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/novelty_s0_20261022_100202/episodes.csv",
+      "git_blob": "9ec6b7cf4ff186ad14db28285b2a6861be9bd0de",
+      "bytes": 561,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/novelty_s0_20261022_100202/summary.json",
+      "git_blob": "ada2eb5ac5ef83c756d14ed1d135e0daf8c134d3",
+      "bytes": 723,
+      "included_in_submission_tree": true,
+      "sha256": "b003d8c7e5943b3e239bf65f8d3e90457337cd720daf20db7e0669dec9ce3ec4"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/novelty_s1_20261022_100306/episodes.csv",
+      "git_blob": "976f6f42fc64beee454b658bd2927bfb4f51982d",
+      "bytes": 560,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/novelty_s1_20261022_100306/summary.json",
+      "git_blob": "80d69fc6a34e1e61fd9e5bd52ce2ca449f0d6d35",
+      "bytes": 723,
+      "included_in_submission_tree": true,
+      "sha256": "86b9276caaadc8219197058466c856e43725759c17d6db0e356ea2e381ba092c"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/novelty_s2_20261022_100423/episodes.csv",
+      "git_blob": "26e7f4a3620c725a52fc973552e540bdf69e630f",
+      "bytes": 561,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/novelty_s2_20261022_100423/summary.json",
+      "git_blob": "f59d05889e86aaa1d9d62ed974d883a73e3d7db5",
+      "bytes": 721,
+      "included_in_submission_tree": true,
+      "sha256": "fbf3e6f8f1b67ea7c8fa54c27925082dd7d9165e6d81a953b2f7abe224fda126"
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/random_reference_20261022_100118/episodes.csv",
+      "git_blob": "3b48c5f26d943186f2120ea5e6d89d3d7e408e8d",
+      "bytes": 490,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/final_evaluations/random_reference_20261022_100118/summary.json",
+      "git_blob": "6c3906ea0d60e5b5eac4c702cc35691067766465",
+      "bytes": 703,
+      "included_in_submission_tree": true,
+      "sha256": "19b6a15ef41663d49dad5993f5b7aea3b20a9955d3b708c9c5ee85028a9d5080"
+    },
+    {
+      "path": "PPO/Failures/grid_s0/episodes.csv",
+      "git_blob": "fbc6658f6ba70736d563261b82009701dc64a6d4",
+      "bytes": 329698,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s0/monitor.csv",
+      "git_blob": "2c46034af76a5a8a4a8b45e3e4889ece805adae2",
+      "bytes": 134005,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s0/plots/training_dashboard.png",
+      "git_blob": "ae51bf5958d612f9be3e7ba923ef462771203c9d",
+      "bytes": 326439,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s0/ppo_final.zip",
+      "git_blob": "8382f475cb717a579e1f138fd2713732cccf9a39",
+      "bytes": 5641267,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s0/rollout_metrics.csv",
+      "git_blob": "c93e7e90d688d13eb3fed06301070a68fae58a2b",
+      "bytes": 89742,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s0/run_config.json",
+      "git_blob": "9426e3a2c3b8ef53ed652f2f98b1361707e32c43",
+      "bytes": 488,
+      "included_in_submission_tree": true,
+      "sha256": "e5e58a017f77b33f5b2fca60cd9403c7904a033c321cfc0713c941f54b041c66"
+    },
+    {
+      "path": "PPO/Failures/grid_s0/sb3_logs/progress.csv",
+      "git_blob": "ffc2bf2e10a06150b72ce1d0b9ddb4d28cd85515",
+      "bytes": 345121,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s0/summary.json",
+      "git_blob": "bf6d96d3bf1212faeeab57ade374995dc60bb24c",
+      "bytes": 356,
+      "included_in_submission_tree": true,
+      "sha256": "b73702b39324d439843463b465845831ac3ed2308094e962937bbc0c01d54173"
+    },
+    {
+      "path": "PPO/Failures/grid_s1/episodes.csv",
+      "git_blob": "61e8561bb7fe211bc62973a740fbc0fff7fafff3",
+      "bytes": 345328,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s1/monitor.csv",
+      "git_blob": "5d57dc1fd23d9f4af60e2ad025d0815ebac17235",
+      "bytes": 139875,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s1/plots/training_dashboard.png",
+      "git_blob": "3ef1754eee9ba5e636b7bec71fef4842ebefc371",
+      "bytes": 322967,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s1/ppo_final.zip",
+      "git_blob": "b320ee107cf785e4785ec711132fd77ebb534901",
+      "bytes": 5641267,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s1/rollout_metrics.csv",
+      "git_blob": "4c280b5c8e8a484762d94b1bb9fbec0e0ebff442",
+      "bytes": 89816,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s1/run_config.json",
+      "git_blob": "87d18714ddd821ba106477e0c8d02bcad0fb86bb",
+      "bytes": 488,
+      "included_in_submission_tree": true,
+      "sha256": "d2f9eef872c3e76aa7962cc1ac89090630a50cc86661fd971064b72e1c28118b"
+    },
+    {
+      "path": "PPO/Failures/grid_s1/sb3_logs/progress.csv",
+      "git_blob": "ab80405122c94b21b1961ed811e09a250257e1ea",
+      "bytes": 343311,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s1/summary.json",
+      "git_blob": "64c45c4f371a6b965e58fb6d30d903ec10452a37",
+      "bytes": 356,
+      "included_in_submission_tree": true,
+      "sha256": "9fab0a6b06b79be344e69fe077a05fae9c6e18a8c2b592fab07961e97c43a132"
+    },
+    {
+      "path": "PPO/Failures/grid_s2/episodes.csv",
+      "git_blob": "a307c2f26da358cfa0a567d3bec29384957c1ff1",
+      "bytes": 180420,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s2/monitor.csv",
+      "git_blob": "79ed501777abdb7f5ca47c567f7c87c387ab88c8",
+      "bytes": 75609,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s2/plots/training_dashboard.png",
+      "git_blob": "3d9decdfdd88055f54845a2641f9cceb4fb0b6a5",
+      "bytes": 306639,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s2/ppo_final.zip",
+      "git_blob": "e7357f92b2dff0b17a836ab1bdd895ba57cec7e7",
+      "bytes": 5641267,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s2/rollout_metrics.csv",
+      "git_blob": "1d72dec1c1a64fe54e51b252bde23ef09341bbc5",
+      "bytes": 89858,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s2/run_config.json",
+      "git_blob": "fe04946b5f6725f0a4b96a69ab95315e155824f6",
+      "bytes": 488,
+      "included_in_submission_tree": true,
+      "sha256": "516a41a6006f562ff65771e642c4a08e2212d2e663beba3ca77e6c1bfe6c4e40"
+    },
+    {
+      "path": "PPO/Failures/grid_s2/sb3_logs/progress.csv",
+      "git_blob": "53531c04b9c80bd8fd8759530eab8b8a0e11a79b",
+      "bytes": 345986,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/grid_s2/summary.json",
+      "git_blob": "284be9f3e57cd69902ac6c085c6983cf413fa8a3",
+      "bytes": 356,
+      "included_in_submission_tree": true,
+      "sha256": "bcd5190c65519c2e6123ddece670ff3ff7f35f841cc372a99f0ed004cd015ad4"
+    },
+    {
+      "path": "PPO/Failures/novelty_s0/episodes.csv",
+      "git_blob": "45a9391e5dfde5ba1c6b47882094a5905c16d1a6",
+      "bytes": 448216,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s0/monitor.csv",
+      "git_blob": "f7bf592c53c2cfb22b6092d5540c108da471da50",
+      "bytes": 154515,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s0/plots/training_dashboard.png",
+      "git_blob": "b8035132638d41018b4a1c5c49fd680da8472f1d",
+      "bytes": 384243,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s0/ppo_final.zip",
+      "git_blob": "88df288cf636cb6cc581d19f02392039847d9b6f",
+      "bytes": 7252628,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s0/rollout_metrics.csv",
+      "git_blob": "4d2fe26498c1ecd02f3b75956c1f20bb571f876d",
+      "bytes": 89094,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s0/run_config.json",
+      "git_blob": "8e4993c52246d150064022138094caf6982f47bf",
+      "bytes": 391,
+      "included_in_submission_tree": true,
+      "sha256": "b1554050925bde4081ba9de47d39f95447380093c3703c133c78211fffd1f39c"
+    },
+    {
+      "path": "PPO/Failures/novelty_s0/sb3_logs/progress.csv",
+      "git_blob": "9e141cdddef61f5020e1bbb322adc6282f33fb4e",
+      "bytes": 365110,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s0/summary.json",
+      "git_blob": "20cbf789a3b82f24c0231946586a8cd4e61a6489",
+      "bytes": 382,
+      "included_in_submission_tree": true,
+      "sha256": "15f0f8b2f4dfdd1498f13860eacb37c9be88d5908b40035d34ffd31e53119cc8"
+    },
+    {
+      "path": "PPO/Failures/novelty_s1/episodes.csv",
+      "git_blob": "25cbfc60531ab9fa48ae77341aa66f1739143980",
+      "bytes": 392057,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s1/monitor.csv",
+      "git_blob": "6ab2a76eca02e1ceaefb70405801e38febee5133",
+      "bytes": 136086,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s1/plots/training_dashboard.png",
+      "git_blob": "2f7e5268e09cd22a094994ab2ef19efd3a8d05cd",
+      "bytes": 402635,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s1/ppo_final.zip",
+      "git_blob": "6d3cc174de2d7bdb793a5e6c7d01ed71294fe5d4",
+      "bytes": 7252632,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s1/rollout_metrics.csv",
+      "git_blob": "add6dfd038b20578fc9f02913160846f34ca9735",
+      "bytes": 89156,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s1/run_config.json",
+      "git_blob": "04cead9666686ae09e57a5065ced94920a2c28c2",
+      "bytes": 391,
+      "included_in_submission_tree": true,
+      "sha256": "1c466add4943344d1c23c4906bf306b522186db224006f17960d00849da9e892"
+    },
+    {
+      "path": "PPO/Failures/novelty_s1/sb3_logs/progress.csv",
+      "git_blob": "ba7da7a039a83f806c455d78a9a68e4e275501bf",
+      "bytes": 366084,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s1/summary.json",
+      "git_blob": "7d41bcb0c7c108a7087a37b0d02df0459e5c58c2",
+      "bytes": 382,
+      "included_in_submission_tree": true,
+      "sha256": "5feedf1a895041e9831bfd0e0865708a0286621b569a2c1d57652091089aaa40"
+    },
+    {
+      "path": "PPO/Failures/novelty_s2/episodes.csv",
+      "git_blob": "47faf207944246876c80b7ca7f03da619ee6dd3a",
+      "bytes": 437518,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s2/monitor.csv",
+      "git_blob": "43edf90cc2e55a7e2bf1aaa772978448ddcbfc7f",
+      "bytes": 151151,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s2/plots/training_dashboard.png",
+      "git_blob": "27f74f7969ee1d92c7c57b16e3fe686f48250742",
+      "bytes": 403346,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s2/ppo_final.zip",
+      "git_blob": "27c8c0dedce893843d543cb03e432db1ec527d79",
+      "bytes": 7252632,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s2/rollout_metrics.csv",
+      "git_blob": "ae882e0a53c9f79bb0fcbe6e05952358e20e86aa",
+      "bytes": 89086,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s2/run_config.json",
+      "git_blob": "5ee898c0f33d7be9d539fae590e5013b01958272",
+      "bytes": 391,
+      "included_in_submission_tree": true,
+      "sha256": "143edd09e675518eae542e5c59289bbf3961befb5610184437651756bac4b887"
+    },
+    {
+      "path": "PPO/Failures/novelty_s2/sb3_logs/progress.csv",
+      "git_blob": "9521598325f7c378ffdb886f8d0dfda38956e389",
+      "bytes": 366060,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/novelty_s2/summary.json",
+      "git_blob": "550e48a21af0245512fe176e3feb35ff335ad445",
+      "bytes": 382,
+      "included_in_submission_tree": true,
+      "sha256": "64f275ac4e7fceda2ef825b5e02513ac6ce934b3201921d38b28df8f43e9ee28"
+    },
+    {
+      "path": "PPO/Failures/ppo_2m_baseline_s0/episodes.csv",
+      "git_blob": "a52536bb2b9e7b66e68c9dfbc0ce50bb712066c7",
+      "bytes": 1383034,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/ppo_2m_baseline_s0/monitor.csv",
+      "git_blob": "f7e49087e0187547648fc3df4612bdd31ac8b367",
+      "bytes": 551661,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/ppo_2m_baseline_s0/plots/training_dashboard.png",
+      "git_blob": "f287a14e6348e8a58e060ac5f6455c04101ab262",
+      "bytes": 303034,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/ppo_2m_baseline_s0/ppo_final.zip",
+      "git_blob": "9229746b42a39fb5ef0f8e678dcf0872025ad1e1",
+      "bytes": 7252631,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/ppo_2m_baseline_s0/ppo_last.zip",
+      "git_blob": "9229746b42a39fb5ef0f8e678dcf0872025ad1e1",
+      "bytes": 7252631,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/ppo_2m_baseline_s0/rollout_metrics.csv",
+      "git_blob": "86c695f2fdcc6023b4d7fd4327ce69e7694aeb8c",
+      "bytes": 360013,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/ppo_2m_baseline_s0/run_config.json",
+      "git_blob": "4df57907f42c5c0a63f279ea7c93566898cf3328",
+      "bytes": 972,
+      "included_in_submission_tree": true,
+      "sha256": "2aac266449aca8f69cc5e49daf8e127ab920ba2777e40e8c447da9e3c60c1709"
+    },
+    {
+      "path": "PPO/Failures/ppo_2m_baseline_s0/sb3_logs/progress.csv",
+      "git_blob": "9a5de20406833b9bc4302d4b55c0e04bef5601a0",
+      "bytes": 1374258,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/ppo_2m_baseline_s0/summary.json",
+      "git_blob": "2c34112fec820749d44afc2d04375a49635245d1",
+      "bytes": 786,
+      "included_in_submission_tree": true,
+      "sha256": "e9515ce145e033b063c53b7e7156a1601b35e42c90bd23a6da7274bb22c89271"
+    },
+    {
+      "path": "PPO/Failures/replays/ppo_seed0/episode.gif",
+      "git_blob": "f4235467e97aae6c4ab58b0f3aa09bd962ba2622",
+      "bytes": 831493,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays/ppo_seed0/trajectory.csv",
+      "git_blob": "ada2612df13e26b9dc811857eb229baf168d276e",
+      "bytes": 5320,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/baseline_s0_seed10/episode.gif",
+      "git_blob": "d798c3c718435b209e279951b33e3f848193e495",
+      "bytes": 837151,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/baseline_s0_seed10/trajectory.csv",
+      "git_blob": "76a879d61565b2eb65b50ce089ae4270b6f09038",
+      "bytes": 5191,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/baseline_s1_seed10/episode.gif",
+      "git_blob": "63eef608e4d7a18e61998edd7ccc75c8be5d338e",
+      "bytes": 822820,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/baseline_s1_seed10/trajectory.csv",
+      "git_blob": "fe22fb3dc35c69d0a2ddab95125504a236ccaeeb",
+      "bytes": 5281,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/baseline_s2_seed10/episode.gif",
+      "git_blob": "5abac8e5507e8b9f4ce983019a2d6944d3b7b1e4",
+      "bytes": 844941,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/baseline_s2_seed10/trajectory.csv",
+      "git_blob": "75cbcbb0b3f2b733f84373755292b35953354371",
+      "bytes": 5180,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/grid_s0_seed10/episode.gif",
+      "git_blob": "f4235467e97aae6c4ab58b0f3aa09bd962ba2622",
+      "bytes": 831493,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/grid_s0_seed10/trajectory.csv",
+      "git_blob": "ada2612df13e26b9dc811857eb229baf168d276e",
+      "bytes": 5320,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/grid_s1_seed10/episode.gif",
+      "git_blob": "51db281c8423dafedffb24a319066e8f084cfbea",
+      "bytes": 3266972,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/grid_s1_seed10/trajectory.csv",
+      "git_blob": "e2b748d609e73e52a65888a0560de067593cf1b1",
+      "bytes": 19027,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/grid_s2_seed10/episode.gif",
+      "git_blob": "f4235467e97aae6c4ab58b0f3aa09bd962ba2622",
+      "bytes": 831493,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/grid_s2_seed10/trajectory.csv",
+      "git_blob": "ada2612df13e26b9dc811857eb229baf168d276e",
+      "bytes": 5320,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/novelty_s0_seed10/episode.gif",
+      "git_blob": "5abac8e5507e8b9f4ce983019a2d6944d3b7b1e4",
+      "bytes": 844941,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/novelty_s0_seed10/trajectory.csv",
+      "git_blob": "75cbcbb0b3f2b733f84373755292b35953354371",
+      "bytes": 5180,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/novelty_s1_seed10/episode.gif",
+      "git_blob": "5abac8e5507e8b9f4ce983019a2d6944d3b7b1e4",
+      "bytes": 844941,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/novelty_s1_seed10/trajectory.csv",
+      "git_blob": "75cbcbb0b3f2b733f84373755292b35953354371",
+      "bytes": 5180,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/novelty_s2_seed10/episode.gif",
+      "git_blob": "f4235467e97aae6c4ab58b0f3aa09bd962ba2622",
+      "bytes": 831493,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/novelty_s2_seed10/trajectory.csv",
+      "git_blob": "ada2612df13e26b9dc811857eb229baf168d276e",
+      "bytes": 5320,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/random_seed10/episode.gif",
+      "git_blob": "369017dce68a1160f38d9ef87b00a2dc4be72a3d",
+      "bytes": 842641,
+      "included_in_submission_tree": false
+    },
+    {
+      "path": "PPO/Failures/replays_final_11989_26098/random_seed10/trajectory.csv",
+      "git_blob": "57df656afc221b8514eb35f3886dadfbacd7fc31",
+      "bytes": 5242,
+      "included_in_submission_tree": false
+    }
+  ],
+  "curation": "Small summaries/configs/figures copied byte-for-byte; raw run logs and weights remain available on the pinned source branch"
+}

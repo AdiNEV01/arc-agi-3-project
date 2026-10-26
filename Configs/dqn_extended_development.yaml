@@ -1,0 +1,11 @@
+# Only already exposed games. No heldout key is provided deliberately.
+games:
+  dev: [ft09-0d8bbf25, vc33-5430563c, cd82-fb555c5d]
+  training_diagnostic: [ls20-9607627b, ar25-0c556536, bp35-0a0ad940]
+eval:
+  seeds: [0, 1, 2]
+  game_seed: same_as_run
+  max_actions_per_game: 1000
+  max_seconds_per_game: null
+  click_grid: 64
+  operation_mode: offline

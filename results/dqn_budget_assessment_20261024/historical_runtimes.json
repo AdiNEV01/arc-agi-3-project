@@ -1,0 +1,38 @@
+[
+  {
+    "variant": "v0",
+    "historical_3000_seconds_by_seed": [
+      69.08,
+      96.101,
+      78.197
+    ],
+    "median_seconds": 78.197
+  },
+  {
+    "variant": "v1",
+    "historical_3000_seconds_by_seed": [
+      68.226,
+      106.689,
+      138.437
+    ],
+    "median_seconds": 106.689
+  },
+  {
+    "variant": "v2_history_only",
+    "historical_3000_seconds_by_seed": [
+      242.241,
+      328.253,
+      274.696
+    ],
+    "median_seconds": 274.696
+  },
+  {
+    "variant": "v2",
+    "historical_3000_seconds_by_seed": [
+      236.602,
+      254.035,
+      178.704
+    ],
+    "median_seconds": 236.602
+  }
+]

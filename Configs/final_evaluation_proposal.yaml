@@ -1,0 +1,16 @@
+# PROPOSAL ONLY. Do not run the full matrix until the user approves this protocol.
+approval_required: true
+checkpoint_selection:
+  ppo: Configs/ppo_final_checkpoints.json
+  dqn: Configs/final_checkpoint_selection_proposal.json
+games:
+  dev: [ls20-9607627b, ft09-0d8bbf25]
+  # Candidates only: all teammates must confirm no prior exposure.
+  heldout_pending_confirmation: [sb26-7fbdac44, sk48-d8078629, su15-1944f8ab]
+eval:
+  seeds: [0, 1, 2]
+  game_seed: same_as_run
+  max_actions_per_game: 1000
+  max_seconds_per_game: null
+  click_grid: 64
+  operation_mode: offline

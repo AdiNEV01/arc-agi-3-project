@@ -1,0 +1,49 @@
+{
+  "new_artifact": "Notebooks/dqn_linux_cu126_recovery.zip",
+  "archives": {
+    "Notebooks/dqn_linux_cu126_recovery.zip": {
+      "sha256": "0e1ac8d70467e9610396ec93889b757d4a017e637b0088cc042007684766c290",
+      "bytes": 8056745
+    },
+    "Notebooks/dqn_linux_resume.zip": {
+      "sha256": "8e492313191971521683c6b8932cfcef12c753feb504b4fcb1407be91f1da442",
+      "bytes": 8039443
+    },
+    "Notebooks/dqn_extended_full_source.zip": {
+      "sha256": "3e85adc7cd9af2c61b05bc739d3080ffdcf1e754c11bbd2ed6a6f5a039339b5a",
+      "bytes": 8031996
+    }
+  },
+  "historical_archives_unchanged": true,
+  "original_learner_and_environment_members_byte_identical": 15,
+  "all_original_colab_archive_members_preserved": true,
+  "checks": {
+    "migration_tests": "11 passed in 27.18s",
+    "bash_syntax_both_scripts": "passed",
+    "packaged_source_and_adapter_manifest_verification": "passed",
+    "linux_shell_line_endings": "passed"
+  },
+  "host_test_software": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "torch": "2.14.1+cpu",
+    "arc-agi": "0.9.9",
+    "arcengine": "0.9.3",
+    "gymnasium": "1.4.0"
+  },
+  "host_test_device": "CPU, Windows",
+  "synthetic_cuda_metadata_tests": "conversion/policy tests only, no CUDA execution claimed",
+  "remote_rtx_3050_cuda_verified": false,
+  "original_google_drive_checkpoint_equivalence_verified": false,
+  "matrix_resumed": false,
+  "driver_or_existing_venv_modified": false,
+  "historical_checkpoints_modified": false,
+  "target_environment": {
+    "python": "3.13.16",
+    "torch": "2.11.0+cu126",
+    "cuda": "12.6"
+  },
+  "remote_acceptance_gate": "Actual RTX batch8 one/four-frame backward+Adam; all interrupted jobs reproduce historical checkpoint bitwise and latest-state resume matches uninterrupted path; stop on any mismatch",
+  "reproducibility_limit": "Finite historical/same-GPU tests cannot guarantee all future cross-hardware trajectories",
+  "drive_upload": "User chose to keep the new CUDA 12.6 bundle local. No Drive upload completed."
+}

@@ -1,0 +1,18 @@
+{
+  "experiment": "novelty_ppo",
+  "game_id": "ls20",
+  "seed": 2,
+  "requested_timesteps": 500000,
+  "max_steps": 500,
+  "device": "cuda",
+  "novelty_scale": 0.001,
+  "learning_rate": 0.00025,
+  "n_steps": 256,
+  "batch_size": 64,
+  "n_epochs": 10,
+  "gamma": 0.99,
+  "gae_lambda": 0.95,
+  "clip_range": 0.2,
+  "entropy_coefficient": 0.01,
+  "training_reward_is_official_arc_score": false
+}

@@ -1,63 +1,74 @@
-# ARC-AGI-3 integration
+# ARC-AGI-3: DQN and PPO
 
-Local integration of all three task branches and current remote main, on
-`integration/2026-10-24`. Nothing has been pushed or merged to main.
+This team repository contains DQN and MaskablePPO baselines, novelty and memory improvements, ablations, shared frozen-policy evaluation, and audited experiment evidence.
 
-**Start with the [integration audit and today's plan](docs/INTEGRATION_AUDIT_2026-10-24.md).**
+**Current state:** training is complete for both 12-model final matrices at **503,808 training interactions per model**. The common final evaluation, joint report and competition evidence remain outstanding. See [submission status](SUBMISSION_STATUS.md) for the complete checklist.
 
-## Shared evaluation
+## Start here
 
-- `arc_env.gym_adapter.ArcGymEnv`: shared grid/action/reset contract.
-- `agents.dqn_agent:DQNPolicy`: frozen original DQN checkpoints.
-- `agents.ppo_agent:PPOPolicy`: frozen seven-action MaskablePPO checkpoints.
-- Root `evaluate.py`: common official local scorecard and trajectories.
-- `agents.kaggle_bridge.PolicyBridge`: helper for the official starter. Actual
-  Kaggle execution and submission evidence are still needed.
+- [Extended DQN report](Reports/DQN-Reports/extended_503808/TRAINING_RESULTS.md), [training summaries and audit](results/dqn_extended_503808/README.md), [figures](Analysis/DQN/extended_503808/figures/).
+- [DQN checkpoint registry](Configs/dqn_503808_checkpoints.json) and [actual training configuration](Configs/dqn_503808_training.json).
+- [PPO final checkpoint registry](Configs/ppo_final_checkpoints.json) and [verified metadata](results/ppo_finals_verified_20261024_complete/verification.json).
+- [Model access and reproduction](docs/ARTIFACT_ACCESS.md).
+- [Historical PPO failure analysis](PPO/Failures/README.md), [historical DQN 3K experiments](DQN/README.md).
+- [Common interface and scoring contract](docs/interface.md), [notebook guide](Notebooks/README.md).
 
-Legacy DQN/PPO training scripts retain their original contracts. They have not
-been silently migrated to shared-wrapper training. Original PPO scripts run from
-the `PPO` directory, where `arc_env.py` differs from the root `arc_env` package.
-Use the root evaluator for new evaluation evidence.
+| Final matrix | Variants | Independent training seeds | Interactions per model |
+| --- | --- | --- | ---: |
+| DQN | baseline, novelty, history only, history + novelty | 42, 123, 456 | 503,808 |
+| PPO | baseline, curiosity, memory only, memory + curiosity | 0, 1, 2 | 503,808 |
 
-## Setup and checks
+Equal training interaction counts do not equalise rewards, action spaces, data reuse or compute. Historical proxy scores and exploratory training rewards are distinct from official local scorecard measurements and Kaggle scores. All changes, including unsuccessful improvements, need evidence-backed interpretation.
 
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-$env:OMP_NUM_THREADS='1'
-$env:MKL_NUM_THREADS='1'
-.\.venv\Scripts\python.exe -m pytest tests DQN/test_task1.py -q
-.\.venv\Scripts\python.exe -m Experiments.integration_smoke --out results/my_new_smoke
+## Setup and code checks
+
+Use a separate Python 3.12 environment for portable CPU checks. Keep the verified Linux recovery environment unchanged when continuing historical training.
+
+```bash
+python -m venv .venv
+# Linux/macOS:
+source .venv/bin/activate
+# Windows PowerShell instead:
+# .\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python -m pytest -q
 ```
 
-DQN artifact tests and the complete smoke require the separately distributed
-`DQN/checkpoints/*.pt`. These exist in this checkout but are Git-ignored. Smoke
-also requires the cached ls20 game. Do not inspect hidden game rules to design agents.
+Tests cover action masks, frame history, resets, scoring, device handling, replay/optimizer/RNG restoration and interrupted queues. CUDA checks skip without a GPU; historical checkpoint/delivery checks skip explicitly when their external fixtures are absent. Portable tests use public test fixtures rather than reserved games. On Windows, a short temporary path such as `--basetemp .pt` avoids long-path failures.
 
-This chat used the original `.venv312` interpreter plus libraries in the isolated
-`.integration-deps` folder, leaving the original environment unchanged. Tested
-versions are in `results/integration_audit/runtime_versions.json`. The original
-PPO machine freeze is preserved in `requirements-ppo-original.txt`; the root
-requirements avoid its platform-specific CUDA wheel pin.
+Runtime/package evidence is recorded with the experiments. Root requirements support portable setup; they are not a replacement for the exact cu126 recovery environment described in [README_CU126.md](README_CU126.md).
 
-24 tests passed. Final smoke evidence is in
-`results/integration_smoke_verified_20261024/verification.json`: 14 compatibility
-runs, not comparative performance evidence. Its full-pixel click protocol differs
-from the original Task 3 8x8-click random baseline; do not pool the results.
+## Completed-model evaluation
 
-The historical split in `Configs/eval.yaml` conflicts with actual agent usage.
-Read the audit before claiming untouched-heldout performance. The historical
-PPO CSV uses proxy scores and unavailable 75K-450K checkpoints; only three
-12,288-step PPO pilots are available. See `PPO/Report/ppo_report_draft.tex`.
+Download the verified DQN artifact from the location in the registry, then materialize weights without training:
 
-## Task 1 — DQN implementation and final results
+```bash
+python -m Experiments.evaluate_dqn_503808 --materialize-from /path/to/DQN_503808_CONTINUED_20261026T040955Z_0cff534c.zip --steps 450000 503808 --validate-only
+```
 
-The complete DQN contribution is on branch `feature/dqn-task1`.
+Game caches are external. Follow [artifact access](docs/ARTIFACT_ACCESS.md) to obtain only the declared exposed games through the official toolkit. Then evaluate all twelve final models on ft09/vc33/cd82, evaluation seeds 0/1/2 and 1,000 selected actions per game, plus a matched random reference:
 
-- [Start here: DQN results and team guide](DQN/README.md)
-- [Report contribution](Reports/DQN-Reports/final_task1/DQN_Task1_report.md)
-- [Reproduction commands and full output paths](Reports/DQN-Reports/final_task1/README.md)
-- [Per-seed comparison CSV](Tables/DQN-Tables/final_task1/per_seed_results.csv)
-- [Report figures (PNG and PDF)](Analysis/DQN/final_task1/figures/)
+```bash
+python -m Experiments.evaluate_dqn_503808 --device cpu --out results/dqn_extended_503808/development_final_unique
+```
 
-All four configurations (baseline, novelty, history only, and novelty + history) were trained for 3,000 interactions per seed on ls20. All twelve frozen evaluations completed zero levels. V1 seed123 reached one level during exploratory training only. The report documents the reset, seeding and zero-shot transfer limitations; local scores are not official Kaggle scores.
+Use CUDA in the verified Linux environment, or add `--steps 450000 503808` for the paired-budget comparison. Always use a new output folder. This path freezes weights and performs no learning. See the report for the exact evaluation contract and output files.
+
+Root `evaluate.py` is the common evaluator for all policies:
+
+- `agents.dqn_agent:DQNPolicy` loads frozen DQN weights.
+- `agents.ppo_agent:PPOPolicy` loads frozen seven-action MaskablePPO weights.
+- `arc_env.gym_adapter.ArcGymEnv` defines the shared action/reset/scoring contract.
+- `agents.kaggle_bridge.PolicyBridge` is a competition integration helper; actual Kaggle execution and submission evidence are separate requirements.
+
+Extended DQN training uses `DQN/extended_train.py` and the shared environment. Original native DQN and PPO scripts retain their historical contracts. PPO legacy training runs from `PPO/`, where its `arc_env.py` differs from the root package. Read the relevant protocol before reproducing training.
+
+## Evidence and artifact policy
+
+Keep source, configs, compact tables, figures and reports in Git. Full DQN recovery/replay archives, raw histories, temporary delivery packages, virtual environments, credentials and downloaded game rules remain external or Git-ignored. The checkpoint registries carry exact hashes and source references.
+
+Original V0/V1/V2 files and historical results remain preserved. The DQN migration from T4/cu130 to RTX3050/cu126 was authorised and documented; historical cross-hardware bitwise equivalence failed. Current training audit does not claim another environment-restoration run.
+
+Reserved sb26/sk48/su15 games remain unconfirmed and untested. Old split labels in `Configs/eval.yaml` are historical and do not establish unseen evaluation. Current development evaluation uses `Configs/dqn_extended_development.yaml`; final-evaluation proposals remain unapproved proposals.
+
+Earlier planning/audit documents under `docs/` retain their original dates and can contain superseded recommendations. Use this README, [submission status](SUBMISSION_STATUS.md) and the current registries as entry points. No new training, reserved-game evaluation, Kaggle submission or main-branch merge is performed by setup or testing.
