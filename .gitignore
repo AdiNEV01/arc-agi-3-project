@@ -314,3 +314,5 @@ results/integration_smoke_20261024/
 /EXTENSION_503808_ACTIVE.json
 /NUMERICAL_ACTIVE_RESULTS.json
 /LINUX_CHECKPOINT_LOCATION.json
+
+/.ptshared*/

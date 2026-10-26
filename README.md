@@ -40,6 +40,14 @@ Runtime/package evidence is recorded with the experiments. Root requirements sup
 
 ## Completed-model evaluation
 
+The final shared comparison uses [all 24 final DQN/PPO models](Configs/final_shared_checkpoints.json), the [fixed development protocol](Configs/final_shared_development.yaml), and [the shared evaluation launcher](docs/FINAL_SHARED_EVALUATION.md). After materializing both algorithms' registered models and obtaining the declared offline games:
+
+```bash
+python -m Experiments.evaluate_final_shared --device cpu
+```
+
+This runs a separate DQN/PPO/random smoke first, then **216 learned-policy game evaluations plus 9 random evaluations**, all at the final 503,808 checkpoint. Use CUDA in the verified cu126 environment. No 450K snapshots enter this final comparison. Formal results remain pending until the full run finishes.
+
 Download the verified DQN artifact from the location in the registry, then materialize weights without training:
 
 ```bash

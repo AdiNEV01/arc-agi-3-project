@@ -1,0 +1,31 @@
+{
+  "versions": {
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.4",
+    "arc-agi": "0.9.9",
+    "arcengine": "0.9.3",
+    "gymnasium": "1.4.0",
+    "stable-baselines3": "2.9.0",
+    "sb3-contrib": "2.9.0",
+    "cloudpickle": "3.1.2"
+  },
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "device": "cpu",
+  "gpu": null,
+  "deterministic_algorithms": true,
+  "cuda_build": null,
+  "cudnn_version": null,
+  "source_training_budgets_equal": 503808,
+  "protocol_sha256": "a5f830a5b9f4708f1e013a05d52634ce8b566fceaefab4056b07b970762a13a5",
+  "registry_sha256": "e0c3603fe59fcda599c251e8abf2b32d92bb2ce9d0c5f5ceb3feac40abf7dd8b",
+  "source_sha256": {
+    "evaluate.py": "d076fa03ee52972427b1010d3daa9420413a18a46b1dcd5ebb0b6d5bae6526e7",
+    "agents/dqn_agent.py": "8cdb99f4738caedd63dad2d994289a57b28beb1a5ff88eac58d4999db0cdfcd2",
+    "agents/ppo_agent.py": "0bcec7db78ad20242b016333c58c6c0b0d0a05719867829b19ec2896f440e394",
+    "agents/checkpoint_encoding.py": "03a57713fd3ef791243e8ad2c12c3ae0463cc0988c56aaf5bfe7e0aba322da1b",
+    "arc_env/gym_adapter.py": "aea5eeab660d40bd97316aa051aa526905310c4c658839f6e28c7c8bff8d5700",
+    "arc_env/encoding.py": "082636059b38dc2b12cd7b85773be5ca0e1d5cc9f60027d608b939c4d4c62ad2",
+    "Experiments/evaluate_final_shared.py": "5cf01c9bedfd7abb1bb7178364111b5fb100dca4d2f95e996f690ca95bf482f3"
+  }
+}

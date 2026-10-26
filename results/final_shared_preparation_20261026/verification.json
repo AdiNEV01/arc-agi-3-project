@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-26T15:56:52.831980+00:00",
+  "models_loaded": 24,
+  "checkpoint_step": 503808,
+  "dqn_models": 12,
+  "ppo_models": 12,
+  "unit_tests_passed": 5,
+  "real_smoke_learned_game_runs": 12,
+  "real_smoke_random_game_runs": 3,
+  "smoke_selected_action_cap": 10,
+  "smoke_device": "cpu",
+  "frozen_weights_and_optimizer_guards_passed": true,
+  "no_learning": true,
+  "reserved_heldout_evaluated": false,
+  "formal_full_evaluation_performed": false,
+  "intended_formal_learned_runs": 216,
+  "intended_formal_random_runs": 9,
+  "linux_cuda_verification_pending": true,
+  "portable_ppo_dependencies_included": true
+}

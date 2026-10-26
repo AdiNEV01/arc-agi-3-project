@@ -1,0 +1,10 @@
+# Final-checkpoint development comparison. Reserved games are deliberately absent.
+games:
+  dev: [ft09-0d8bbf25, vc33-5430563c, cd82-fb555c5d]
+eval:
+  seeds: [0, 1, 2]
+  game_seed: same_as_run
+  max_actions_per_game: 1000
+  max_seconds_per_game: null
+  click_grid: 64
+  operation_mode: offline

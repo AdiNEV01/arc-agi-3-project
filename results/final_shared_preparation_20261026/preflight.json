@@ -1,0 +1,218 @@
+[
+  {
+    "id": "DQN_v0_seed42",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "bc9a25d5f366840cdbfdea99ff314c664e6acc07ac771a923a045db510055600"
+    }
+  },
+  {
+    "id": "DQN_v0_seed123",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "7b945d96abce0e2c564f61ff1c93a2daac4e8fe560ff2ab95da838efb76a91de"
+    }
+  },
+  {
+    "id": "DQN_v0_seed456",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "9b2794b30774a5ae4db8ed67656d7a3b48f413de53c9ef50331e1063e6c2bbdb"
+    }
+  },
+  {
+    "id": "DQN_v1_seed42",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "e4a5a07edfe0faf8d06551ea382770f709410f0424e23209a9e890ae7a5c559e"
+    }
+  },
+  {
+    "id": "DQN_v1_seed123",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "81f773f1a0328fb8d341d9c4656ac99346c0e977eee13b40e20649b735758f00"
+    }
+  },
+  {
+    "id": "DQN_v1_seed456",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "10fc750b9e36346fceebc0d93e18c07008fade2fb61680b33ae370c6a8323e04"
+    }
+  },
+  {
+    "id": "DQN_v2_history_only_seed42",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "06d757c4831cff6fa7b0f003d31c79ebe57f9abba144fee58bd7ffa09f743930"
+    }
+  },
+  {
+    "id": "DQN_v2_history_only_seed123",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "b51c207de8012a5e6c2b81e9a576d88fb152caf397a709623fb17f8fd79ec2f3"
+    }
+  },
+  {
+    "id": "DQN_v2_history_only_seed456",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "1ac481478bdd4b8101569ee96ff4f0ac7c2b0e8d3a93f4535c53ed69fc34cbb9"
+    }
+  },
+  {
+    "id": "DQN_v2_seed42",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "367892232f8bd35a56fb1914d91677df042279f203d0a3725f92c90881aa65ba"
+    }
+  },
+  {
+    "id": "DQN_v2_seed123",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "db7dcb19f6359ceefb7c3b019541dd8eaceec7fd3ce099dc6c8173b983b3ce1b"
+    }
+  },
+  {
+    "id": "DQN_v2_seed456",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "d1c8e8be0168af32737cc2e9ee489e9073dc7bf691bf4489254e98b8bfcd3ce6"
+    }
+  },
+  {
+    "id": "PPO_baseline_seed0",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "39cfe69679520bb7759a5e29d1554aebdbf1b6b43db1bccd8f19a61c049b303b"
+    }
+  },
+  {
+    "id": "PPO_baseline_seed1",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "fc4979b19bf48bb922152be1bc84203fd496a2e238dfa6f23ed5d367680c4d21"
+    }
+  },
+  {
+    "id": "PPO_baseline_seed2",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "b9fd496066b4d11161fe75561f6d119f742bbe5d80b9be196d74adfee359d9ac"
+    }
+  },
+  {
+    "id": "PPO_curiosity_seed0",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "40223b6f3fd26da9a824f72e8fde6028677667927d147bf972db68119742994b"
+    }
+  },
+  {
+    "id": "PPO_curiosity_seed1",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "0fe41f1cd36ef09d37dbc9366bf76f856b7e2bccb4e02c95cf372606ad48dce7"
+    }
+  },
+  {
+    "id": "PPO_curiosity_seed2",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "2e9db7dd5eb4a9b59c7e33e8ba7bef0c19ba535568c298db24c36ce2b6e3fe51"
+    }
+  },
+  {
+    "id": "PPO_memory_only_seed0",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "b06678d5d227ab4f1ebf40342a9640b32ff97ff13b8416fcfefc5c16d6a0c587"
+    }
+  },
+  {
+    "id": "PPO_memory_only_seed1",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "5a0fb783cf45480b2228f9a5cc2cf1c2337d3ad2119d844727fcfba1b850421f"
+    }
+  },
+  {
+    "id": "PPO_memory_only_seed2",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "b26dff2e9295a4ae4f646cafd13f8ffb3cc08cab3e784497b52164b586a87693"
+    }
+  },
+  {
+    "id": "PPO_memory_curiosity_seed0",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "5344a50e790a331bb6312aa243b0461dc061648ac4a8335d6289f9be229c4bf4"
+    }
+  },
+  {
+    "id": "PPO_memory_curiosity_seed1",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "2c5575782b8d31b196ef2c49effe51026c38f6cb632e8f33ca88f3cc866c676f"
+    }
+  },
+  {
+    "id": "PPO_memory_curiosity_seed2",
+    "checks": {
+      "weights_unchanged": true,
+      "optimizer_state_unchanged": true,
+      "gradient_updates_allowed": false,
+      "weights_sha256": "50a514482f8009fd48c07b83582a88286a2f408b49381ca5b187ed742d8c63f2"
+    }
+  }
+]

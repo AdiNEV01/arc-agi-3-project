@@ -1,0 +1,23 @@
+{
+  "valid": true,
+  "formal_evaluation": false,
+  "smoke": {
+    "valid": true,
+    "formal_evaluation": false,
+    "learned_policy_game_runs": 12,
+    "random_game_runs": 3,
+    "selected_action_cap": 10,
+    "evaluation_seeds": [
+      0
+    ],
+    "model_count": 4,
+    "checkpoint_step": 503808,
+    "reserved_heldout_evaluated": false,
+    "learning_performed": false
+  },
+  "full": null,
+  "wall_seconds": 5.462195200001588,
+  "all_checkpoint_hashes_unchanged": true,
+  "no_learning": true,
+  "reserved_heldout_evaluated": false
+}
